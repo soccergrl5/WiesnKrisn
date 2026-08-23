@@ -11,10 +11,11 @@ namespace WiesnKrisn
 
         private float _pos = 0f;
 
-        private float _speed = 10f;
+        private readonly float _speed = 10f;
         
         private void Start()
         {
+            // Calculate Boundaries for Camera
             float cameraWidth = Camera.main.orthographicSize * Camera.main.aspect;
             
             _rightMax = backgroundWidth / 2 - cameraWidth;
@@ -23,15 +24,18 @@ namespace WiesnKrisn
 
         private void Update()
         {
-            float movement;
+            if (InputBlock.Instance.IsBlocked() || InputBlock.Instance.IsPaused()) return;
+            
+            // Move Camera
+            float movement = 0f;
             
             if (Input.GetKey(KeyCode.D))
             {
-                movement = Time.deltaTime * _speed;
+                movement += Time.deltaTime * _speed;
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                movement = - Time.deltaTime * _speed;
+                movement -= Time.deltaTime * _speed;
             }
             else
             {
