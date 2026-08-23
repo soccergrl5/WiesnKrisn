@@ -1,0 +1,34 @@
+# TextMesh Pro files
+*/[Aa]ssets/TextMesh*Pro/
+*/[Aa]ssets/TextMesh*Pro.meta
+
+# Visual Studio cache directory
+.vs/
+# Gradle cache directory
+.gradle/
+# JetBrains Rider
+.idea/
+
+# Unity Related
+*/.utmp/
+*/Library/
+*/Logs/
+*/obj/
+*/UserSettings/
+
+*/Temp/
+
+*_BurstDebugInformation_DoNotShip/
+
+*.vsconfig
+*.csproj
+*.sln
+
+# Gimp 
+*.xcf
+
+# Exports
+Export/
+*.zip
+
+Privat/
