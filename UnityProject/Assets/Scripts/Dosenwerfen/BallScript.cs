@@ -79,7 +79,6 @@ public class BallScript : MonoBehaviour
           //Since the mouse moves in 2d but we need 3d coordinates, the y coordinate of the mouse movement is used for z
           var ballrb = ball.GetComponent<Rigidbody>();
           ballrb.linearVelocity = new Vector3(0.1f * _velocity.x, 0.1f *_velocity.y, 0.1f * _velocity.y);
-          print(ball.GetComponent<Transform>().position);
           _ballThrown = false;
     }
     private Vector3 GetVelocityFromMouse(Vector3 currentMousePos)
