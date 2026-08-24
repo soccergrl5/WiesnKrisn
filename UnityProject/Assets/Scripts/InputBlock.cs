@@ -4,6 +4,8 @@
     {
         public static InputBlock Instance = new InputBlock();
         
+        private InputBlock(){}
+        
         private bool _blocked = false;
         private bool _paused = false;
         

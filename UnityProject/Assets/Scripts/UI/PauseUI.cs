@@ -24,12 +24,17 @@ namespace WiesnKrisn.UI
         {
             gameObject.SetActive(false);
             InputBlock.Instance.OnResume();
+            
+            if (InputBlock.Instance.IsBlocked()) return;
+            Cursor.visible = false;
         }
 
         private void Show()
         {
             gameObject.SetActive(true);
             InputBlock.Instance.OnPause();
+            
+            Cursor.visible = true;
         }
     }
 }
