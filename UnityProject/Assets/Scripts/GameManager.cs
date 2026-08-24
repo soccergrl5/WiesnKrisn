@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using WiesnKrisn.Movement;
 using WiesnKrisn.Roles;
 
 namespace WiesnKrisn
@@ -8,7 +9,7 @@ namespace WiesnKrisn
     {
         public static GameManager Instance {get; private set;}
 
-        private float _camPosition = 0f;
+        private float _camPosition = -75f;
 
         private void Awake()
         {
@@ -32,6 +33,18 @@ namespace WiesnKrisn
         public void GoToOutdoorArea()
         {
             SceneManager.LoadScene("OutdoorAreaScene");
+        }
+
+        public void ChangeLocation(string scene)
+        {
+            if (scene == "OutdoorAreaScene")
+            {
+                GoToOutdoorArea();
+                return;
+            }
+            
+            SaveCamPosition();
+            SceneManager.LoadScene(scene);
         }
 
         public void StartMiniGame(Games game)

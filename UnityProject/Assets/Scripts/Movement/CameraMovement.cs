@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace WiesnKrisn
+namespace WiesnKrisn.Movement
 {
     public class CameraMovement : MonoBehaviour
     {
@@ -13,7 +13,7 @@ namespace WiesnKrisn
 
         private float _pos = 0f;
 
-        private readonly float _speed = 10f;
+        private const float Speed = 10f;
 
         private void Awake()
         {
@@ -43,11 +43,11 @@ namespace WiesnKrisn
             
             if (Input.GetKey(KeyCode.D))
             {
-                movement += Time.deltaTime * _speed;
+                movement += Time.deltaTime * Speed;
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                movement -= Time.deltaTime * _speed;
+                movement -= Time.deltaTime * Speed;
             }
             else
             {
