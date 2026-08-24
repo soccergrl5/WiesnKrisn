@@ -1,9 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace WiesnKrisn.Interactable
 {
-    public class LeaveTentInteraction : MonoBehaviour
+    public class InteractableSceneAutomatic : MonoBehaviour
     {
         private InteractableScene _interactableScene;
 

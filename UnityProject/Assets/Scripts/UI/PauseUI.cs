@@ -1,15 +1,26 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace WiesnKrisn.UI
 {
     public class PauseUI : MonoBehaviour
     {
         public static PauseUI Instance {get; private set;}
+        
+        [SerializeField] private Button resumeButton;
+        [SerializeField] private Button mainMenuButton;
 
         private void Awake()
         {
             Instance = this;
             Hide();
+            
+            resumeButton.onClick.AddListener(Hide);
+            
+            mainMenuButton.onClick.AddListener(() =>
+            {
+                GameManager.Instance.BackToMainMenu();
+            });
         }
 
         public void ToggleUI()

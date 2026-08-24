@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace WiesnKrisn.Menus
@@ -21,6 +22,8 @@ namespace WiesnKrisn.Menus
             difficulty.onClick.AddListener(() =>
             {
                 _inEasyMode = !_inEasyMode;
+                
+                difficulty.GetComponentInChildren<TMP_Text>().text = _inEasyMode ? "Difficulty: Easy" : "Difficulty: Hard";
             });
             
             settings.onClick.AddListener(() =>

@@ -169,6 +169,8 @@ namespace WiesnKrisn.Roles
         /// <param name="twoTruths2">Second Witness for 2 Truths</param>
         private Dictionary<Witnesses, int[]> TypeDistribution(Witnesses twoTruths1, Witnesses twoTruths2)
         {
+            _testimonies = new Dictionary<Witnesses, WitnessTestimony>();
+            
             Dictionary<Witnesses, int[]> distribution = new Dictionary<Witnesses, int[]>();
             
             Random random = new Random();

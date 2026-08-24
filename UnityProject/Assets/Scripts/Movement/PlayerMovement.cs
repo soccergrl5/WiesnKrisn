@@ -7,7 +7,7 @@ namespace WiesnKrisn.Movement
         private float _rightMax;
         private float _leftMax;
 
-        private float _pos;
+        private float _pos = -7;
         
         private const float Speed = 5f;
         
@@ -17,6 +17,8 @@ namespace WiesnKrisn.Movement
 
             _rightMax = cameraWidth - 0.8f;
             _leftMax  = -cameraWidth + 0.8f;
+            
+            transform.position = new Vector3(_pos, transform.position.y, transform.position.z);
         }
         
         private void Update()

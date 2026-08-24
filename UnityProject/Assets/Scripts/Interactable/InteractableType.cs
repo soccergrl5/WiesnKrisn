@@ -29,7 +29,5 @@ namespace WiesnKrisn.Interactable
         }
 
         protected abstract void Interaction();
-        
-        public bool IsInteractable() => _interactable;
     }
 }

@@ -6,11 +6,11 @@
         AperoliGroup,
         AutoscooterKid,
         KarussellKid,
-        Influencer,
+        Influenci,
         SuessigkeitenFan,
         Achterbahni,
         Geisterbahni,
         DosiWerfi,
-        GreiferTypi,
+        GreifiTypi,
     }
 }
