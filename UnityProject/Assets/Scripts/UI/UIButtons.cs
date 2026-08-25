@@ -19,7 +19,7 @@ namespace WiesnKrisn.UI
             if (Input.GetKeyUp(KeyCode.Tab))
                 _interactedTab = false;
             
-            if (InputBlock.Instance.IsPaused()) return;
+            if (InputBlock.Instance.IsPaused() || InputBlock.Instance.IsTextbox()) return;
             
             // Buttons Pressed
             if (Input.GetKey(KeyCode.E) && !_interactedE)
