@@ -396,7 +396,7 @@ Camera:
   m_GameObject: {fileID: 1197530848}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -832,6 +832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchDirection: {x: 0, y: 0}
+  grabber: {fileID: 942988110}
 --- !u!4 &1714249101
 Transform:
   m_ObjectHideFlags: 0

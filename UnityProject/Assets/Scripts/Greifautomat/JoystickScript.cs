@@ -68,7 +68,6 @@ public class JoystickScript: MonoBehaviour, IDragHandler, IPointerUpHandler, IPo
 	{
 
 		Vector2 initMousePos =ped.pressEventCamera.ScreenToWorldPoint(Input.mousePosition);
-		//joyStickparent.transform.position = initMousePos;
 		OnDrag(ped);
 
 	}
@@ -79,12 +78,7 @@ public class JoystickScript: MonoBehaviour, IDragHandler, IPointerUpHandler, IPo
 	/// </summary>
 	public virtual void OnPointerUp(PointerEventData ped)
 	{
-
-		InputDirection = Vector2.zero;
-		//_innerCircle.rectTransform.anchoredPosition = Vector3.zero;
-		_innerCircle.transform.position = Vector2.zero;
-		OnJoyStickMoved?.Invoke(InputDirection);
-		
+		_innerCircle.transform.position = transform.position;
 	}
 
 	/// <summary>
