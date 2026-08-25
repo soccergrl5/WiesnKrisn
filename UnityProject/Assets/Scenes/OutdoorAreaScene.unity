@@ -305,6 +305,7 @@ Transform:
   - {fileID: 1890332274}
   - {fileID: 1462828012}
   - {fileID: 1415590738}
+  - {fileID: 1968458759}
   - {fileID: 383043234}
   - {fileID: 1252392300}
   - {fileID: 1243246505}
@@ -320,6 +321,8 @@ GameObject:
   m_Component:
   - component: {fileID: 622418696}
   - component: {fileID: 622418697}
+  - component: {fileID: 622418699}
+  - component: {fileID: 622418698}
   m_Layer: 0
   m_Name: Riesenrad_Strom
   m_TagString: Untagged
@@ -397,6 +400,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &622418698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622418695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9dbb7bfe1940f1879a3fa1d7add1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableAttraction: FerrisWheel
+--- !u!61 &622418699
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622418695}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.7206786, y: 4.43}
+    newSize: {x: 3.7206786, y: 4.43}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 3.7206786, y: 4.43}
+  m_EdgeRadius: 0
 --- !u!1001 &622912479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -841,6 +903,8 @@ GameObject:
   m_Component:
   - component: {fileID: 868069688}
   - component: {fileID: 868069689}
+  - component: {fileID: 868069691}
+  - component: {fileID: 868069690}
   m_Layer: 0
   m_Name: Achterbahn_Strom
   m_TagString: Untagged
@@ -918,6 +982,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &868069690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868069687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9dbb7bfe1940f1879a3fa1d7add1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableAttraction: RollerCoster
+--- !u!61 &868069691
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868069687}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.510823, y: 1.5699999}
+    newSize: {x: 4.510823, y: 1.5699999}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 4.510823, y: 1.5699999}
+  m_EdgeRadius: 0
 --- !u!1001 &891496143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1485,11 +1608,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1100221110222785188, guid: bd53956968470cd4691372540ecefe11, type: 3}
       propertyPath: m_Size.x
-      value: 3.7406824
+      value: 1.821503
       objectReference: {fileID: 0}
     - target: {fileID: 1100221110222785188, guid: bd53956968470cd4691372540ecefe11, type: 3}
       propertyPath: m_Size.y
       value: 6.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100221110222785188, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.9595898
       objectReference: {fileID: 0}
     - target: {fileID: 1100221110222785188, guid: bd53956968470cd4691372540ecefe11, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -1873,6 +2000,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1544751314}
   - component: {fileID: 1544751315}
+  - component: {fileID: 1544751317}
+  - component: {fileID: 1544751316}
   m_Layer: 0
   m_Name: Autoscooter_Strom
   m_TagString: Untagged
@@ -1950,6 +2079,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1544751316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544751313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9dbb7bfe1940f1879a3fa1d7add1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableAttraction: Autoscooter
+--- !u!61 &1544751317
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544751313}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.0403724, y: 3.78}
+    newSize: {x: 2.0403724, y: 3.78}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.0403724, y: 3.78}
+  m_EdgeRadius: 0
 --- !u!1 &1758501594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2367,6 +2555,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1950104981}
   - component: {fileID: 1950104982}
+  - component: {fileID: 1950104984}
+  - component: {fileID: 1950104983}
   m_Layer: 0
   m_Name: Geisterbahn_Strom
   m_TagString: Untagged
@@ -2444,6 +2634,167 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1950104983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950104980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9dbb7bfe1940f1879a3fa1d7add1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableAttraction: GhostTrain
+--- !u!61 &1950104984
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950104980}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.6204782, y: 4.2599998}
+    newSize: {x: 2.6204782, y: 4.2599998}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.6204782, y: 4.2599998}
+  m_EdgeRadius: 0
+--- !u!1001 &1968458758
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 582225149}
+    m_Modifications:
+    - target: {fileID: 1100221110222785188, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8215027
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100221110222785188, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_Size.y
+      value: 6.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100221110222785188, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.9750345
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100221110222785188, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.7406824
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100221110222785188, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 6.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107845554260498535, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: interactableName
+      value: AperoliGroup2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042803012045204939, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_Name
+      value: AperoliGroup2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908445012930038945, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1930187339369063787, guid: a375b98f9fae2de4ba1947422e28f15d, type: 3}
+    - target: {fileID: 2908445012930038945, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346016681917035370, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346016681917035370, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346016681917035370, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.857
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346016681917035370, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.226
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346016681917035370, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346016681917035370, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346016681917035370, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346016681917035370, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346016681917035370, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346016681917035370, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346016681917035370, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346016681917035370, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bd53956968470cd4691372540ecefe11, type: 3}
+--- !u!4 &1968458759 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8346016681917035370, guid: bd53956968470cd4691372540ecefe11, type: 3}
+  m_PrefabInstance: {fileID: 1968458758}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2006711356
 GameObject:
   m_ObjectHideFlags: 0
@@ -2662,6 +3013,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2063997607}
   - component: {fileID: 2063997608}
+  - component: {fileID: 2063997610}
+  - component: {fileID: 2063997609}
   m_Layer: 0
   m_Name: Karussel_Strom
   m_TagString: Untagged
@@ -2739,6 +3092,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2063997609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063997606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9dbb7bfe1940f1879a3fa1d7add1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableAttraction: Karussell
+--- !u!61 &2063997610
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063997606}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.4204416, y: 4.83}
+    newSize: {x: 2.4204416, y: 4.83}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.4204416, y: 4.83}
+  m_EdgeRadius: 0
 --- !u!1001 &7966176080166249450
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -59,6 +59,13 @@ namespace WiesnKrisn.Roles
 
         private Dictionary<Witnesses, WitnessTestimony> _testimonies = new Dictionary<Witnesses, WitnessTestimony>();
         
+        private readonly List<Witnesses> _extraWitnesses = new List<Witnesses>()
+        {
+            Witnesses.SaufiGroup2,
+            Witnesses.AperoliGroup2,
+            Witnesses.KarussellParents
+        };
+        
         private Suspects _mainSuspect;
         private Suspects _lover;
 
@@ -125,10 +132,14 @@ namespace WiesnKrisn.Roles
             Witnesses twoTruths2 = Witnesses.SaufiGroup;
             Random random = new Random();
             
-            while (twoTruths1 == Witnesses.SaufiGroup || twoTruths1 == Witnesses.AperoliGroup)
+            while (twoTruths1 == Witnesses.SaufiGroup
+                   || twoTruths1 == Witnesses.AperoliGroup
+                   || _extraWitnesses.Contains(twoTruths1))
                 twoTruths1 = (Witnesses)random.Next(Enum.GetValues(typeof(Witnesses)).Length);
             
-            while (twoTruths2 == Witnesses.SaufiGroup || twoTruths2 == Witnesses.AperoliGroup
+            while (twoTruths2 == Witnesses.SaufiGroup
+                   || twoTruths2 == Witnesses.AperoliGroup
+                   || _extraWitnesses.Contains(twoTruths2)
                    || twoTruths2 == twoTruths1)
                 twoTruths2 = (Witnesses)random.Next(Enum.GetValues(typeof(Witnesses)).Length);
             
@@ -229,7 +240,8 @@ namespace WiesnKrisn.Roles
                 if (witnesses == Witnesses.SaufiGroup
                     || witnesses == Witnesses.AperoliGroup
                     || witnesses == twoTruths1
-                    || witnesses == twoTruths2)
+                    || witnesses == twoTruths2
+                    || _extraWitnesses.Contains(witnesses))
                     continue;
                 
                 // Special Cases for End of List
@@ -504,29 +516,60 @@ namespace WiesnKrisn.Roles
         private int[] SelectFromLists(List<int> list1, List<int> list2, List<int> list3, int[] testimonies)
         {
             Random random = new Random();
+            List<int> tmp;
             
             if (testimonies[0] == -1)
             {
+                tmp = new List<int>();
+                
                 testimonies[0] = list1[random.Next(list1.Count)];
                 while (testimonies[0] == testimonies[1] ||
                        testimonies[0] == testimonies[2])
+                {
+                    tmp.Add(testimonies[0]);
+                    list1.Remove(testimonies[0]);
+                    
                     testimonies[0] = list1[random.Next(list1.Count)];
+                }
+
+                foreach (int tp in tmp)
+                    list1.Add(tp);
             }
 
             if (testimonies[1] == -1)
             {
+                tmp = new List<int>();
+
                 testimonies[1] = list2[random.Next(list2.Count)];
                 while (testimonies[1] == testimonies[0] ||
                        testimonies[1] == testimonies[2])
+                {
+                    tmp.Add(testimonies[1]);
+                    list1.Remove(testimonies[1]);
+
                     testimonies[1] = list2[random.Next(list2.Count)];
+                }
+
+                foreach (int tp in tmp)
+                    list1.Add(tp);
             }
 
             if (testimonies[2] == -1)
             {
+                tmp = new List<int>();
+
                 testimonies[2] = list3[random.Next(list3.Count)];
                 while (testimonies[2] == testimonies[0] ||
                        testimonies[2] == testimonies[1])
+                {
+                    tmp.Add(testimonies[2]);
+                    list1.Remove(testimonies[2]);
+
                     testimonies[2] = list3[random.Next(list3.Count)];
+                }
+
+                foreach (int tp in tmp)
+                    list1.Add(tp);
             }
             
             return testimonies;
@@ -534,6 +577,15 @@ namespace WiesnKrisn.Roles
 
         public string GetTestimonyForWitness(Witnesses witnesses, int index)
         {
+            if (witnesses == Witnesses.KarussellParents)
+                witnesses = Witnesses.KarussellKid;
+            
+            if (witnesses == Witnesses.SaufiGroup2)
+                witnesses = Witnesses.SaufiGroup;
+            
+            if (witnesses == Witnesses.AperoliGroup2)
+                witnesses = Witnesses.AperoliGroup;
+            
             return _testimonies[witnesses].GetTestimonies()[index];
         }
     }

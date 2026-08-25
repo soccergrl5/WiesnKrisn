@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using WiesnKrisn.Roles;
 using WiesnKrisn.UI;
 
@@ -16,7 +17,7 @@ namespace WiesnKrisn.Interactable.Texts
         private int _currentSelectedOption;
         private bool _waitForOption;
         
-        private int _hintsTheresSomethingWrong = 2;
+        private int _hintsTheresSomethingWrong = 0;
 
         private bool _waitForUI;
         private string[] _waitForUITexts;
@@ -110,7 +111,7 @@ namespace WiesnKrisn.Interactable.Texts
                         
                         if (_currentSelectedOption == 1)
                         {
-                            GameManager.Instance.PlayWithWitness(_currentWitness);
+                            DoGameOption();
                         }
                         else
                         {
@@ -218,7 +219,7 @@ namespace WiesnKrisn.Interactable.Texts
                     }
                     else
                     {
-                        DisplayText(_currentText.Refuse, _currentText.RefuseTime);
+                        DisplayText(_currentText.Mass, _currentText.MassTime);
                     }
                     break;
             }
@@ -288,6 +289,35 @@ namespace WiesnKrisn.Interactable.Texts
             Cursor.visible         = false;
             
             ShowNextTextbox();
+        }
+
+        private void DoGameOption()
+        {
+            List<Witnesses> specials =  new List<Witnesses>() { Witnesses.SaufiGroup , Witnesses.SaufiGroup2};
+            if (specials.Contains(_currentWitness))
+            {
+                GameManager.Instance.BuyBeer();
+
+                _currentProgress = "Mass";
+                _progressInPart  = 0;
+                
+                DisplayText(_currentText.Mass, _currentText.MassTime);
+                return;
+            }
+
+            specials = new List<Witnesses>() { Witnesses.AperoliGroup, Witnesses.AperoliGroup2 };
+            if (specials.Contains(_currentWitness))
+            {
+                GameManager.Instance.BuyAperol();
+
+                _currentProgress = "Mass";
+                _progressInPart  = 0;
+                
+                DisplayText(_currentText.Mass, _currentText.MassTime);
+                return;
+            }
+            
+            GameManager.Instance.PlayWithWitness(_currentWitness);
         }
 
         public void MiniGamePlayed(bool success)

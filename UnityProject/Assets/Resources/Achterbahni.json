@@ -1,0 +1,72 @@
+﻿{
+  "Intro": [
+    "Hi, have you checked out all the sweets at the candy stand yet?"
+  ],
+  "NoIntel": [
+    "They're absolutely delicious!",
+    "You gotta try the chocolate-coated apples, they're the best!",
+    "Oh and if you haven't already, drink a few beers.\nTrust me, talking becomes so much easier when you're tipsy.",
+    "And here I am, chatting up a storm."
+  ],
+  "IntelGathered": [
+    "Now that you mention it, I saw some weird person walking around the place.",
+    "They [].",
+    "But if you wanna know more, you need to take a ride in the rollercoaster with me.",
+    "And don't you scream like a toddler!\nYou're supposed to have fun!"
+  ],
+  "Refuse": [
+    "No? Why not?\nAre you scared?"
+  ],
+  "Success": [
+    "You're a brave one, aren't you?\nYou don't get scared by anything that easy, huh?",
+    "To that person I saw.",
+    "They [].",
+    "That's all from me.\nCatch ya later!"
+  ],
+  "Fail": [
+    "You really are a coward.\nEven my younger brother has more balls than you."
+  ],
+  "Retry":[
+    "Trying to beat the coward-allegations?\nAlright, another round!"
+  ],
+  "Mass": [
+    "You may be more angsty than my brother.\nBut you definitely have better drinking-stamina!"
+  ],
+  
+  "IntroTime": [
+    5.0
+  ],
+  "NoIntelTime": [
+    5.0,
+    5.0,
+    5.0,
+    5.0
+  ],
+  "IntelGatheredTime": [
+    5.0,
+    5.0,
+    5.0,
+    5.0
+  ],
+  "RefuseTime": [
+    5.0
+  ],
+  "SuccessTime": [
+    5.0,
+    5.0,
+    5.0,
+    5.0
+  ],
+  "FailTime": [
+    5.0
+  ],
+  "RetryTime": [
+    5.0
+  ],
+  "MassTime": [
+    5.0
+  ],
+  
+  "IndexFirstInfo": 1,
+  "IndexOtherInfos" : 2
+}

@@ -15,6 +15,7 @@ namespace WiesnKrisn
         private static readonly Dictionary<Witnesses, Games> WitnessGames = new Dictionary<Witnesses, Games>()
         {
             { Witnesses.AutoscooterKid , Games.Autoscooter},
+            { Witnesses.KarussellParents , Games.WireGame},
             { Witnesses.KarussellKid , Games.WireGame},
             { Witnesses.Influenci , Games.FerrisWheel},
             { Witnesses.Achterbahni , Games.RollerCoaster},
