@@ -2,22 +2,18 @@ using UnityEngine;
 
 public class GameOverScript : MonoBehaviour
 {
-    GameObject gameOverPanel;
-    GameObject gameWonPanel;
+    [SerializeField] GameObject gameOverPanel;
+    [SerializeField] GameObject gameWonPanel;
     public static GameOverScript Instance { get; private set; }
 
     public void Awake()
     {
         Instance = this;
-    }
-    public void Start()
-    {
-        gameOverPanel = GameObject.FindGameObjectWithTag("GameOverPanel");
-        gameWonPanel = GameObject.FindGameObjectWithTag("GameWonPanel");
-
+        
         gameOverPanel.SetActive(false);
         gameWonPanel.SetActive(false);
     }
+    
     
     public void GameOver(bool isGameWon)
     {
