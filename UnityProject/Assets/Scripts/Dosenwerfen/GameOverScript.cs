@@ -5,9 +5,8 @@ using WiesnKrisn;
 
 public class GameOverScript : MonoBehaviour
 {
-    private GameObject _gameOverPanel;
-    private GameObject _gameWonPanel;
-    
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject gameWonPanel;
     public static GameOverScript Instance { get; private set; }
 
     [SerializeField] private Button gameOverRetry;
@@ -48,18 +47,16 @@ public class GameOverScript : MonoBehaviour
     }
     public void Start()
     {
-        _gameOverPanel = GameObject.FindGameObjectWithTag("GameOverPanel");
-        _gameWonPanel = GameObject.FindGameObjectWithTag("GameWonPanel");
-
-        _gameOverPanel.SetActive(false);
-        _gameWonPanel.SetActive(false);
+        gameOverPanel.SetActive(false);
+        gameWonPanel.SetActive(false);
     }
+    
     
     public void GameOver(bool isGameWon)
     {
         if (isGameWon)
         {
-            _gameWonPanel.SetActive(true);
+            gameWonPanel.SetActive(true);
             
             if (GameManager.Instance.GetPrizeOfGame(Games.Dosenwerfen) > GameManager.Instance.GetMoney())
                 gameWonRetry.interactable = false;
@@ -68,7 +65,7 @@ public class GameOverScript : MonoBehaviour
         }
         else
         {
-            _gameOverPanel.SetActive(true);
+            gameOverPanel.SetActive(true);
             
             if (GameManager.Instance.GetPrizeOfGame(Games.Dosenwerfen) > GameManager.Instance.GetMoney())
                 gameOverRetry.interactable = false;
