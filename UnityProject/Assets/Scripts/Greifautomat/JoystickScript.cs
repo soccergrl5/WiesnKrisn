@@ -66,10 +66,8 @@ public class JoystickScript: MonoBehaviour, IDragHandler, IPointerUpHandler, IPo
 	/// </summary>
 	public virtual void OnPointerDown(PointerEventData ped)
 	{
-
 		Vector2 initMousePos =ped.pressEventCamera.ScreenToWorldPoint(Input.mousePosition);
 		OnDrag(ped);
-
 	}
 
 	/// <summary>
