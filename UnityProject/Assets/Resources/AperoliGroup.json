@@ -1,0 +1,70 @@
+﻿{
+  "Intro": [
+    "Hiii, what brings you to us?\nAre you thirsty?\nDo you need some company?"
+  ],
+  "NoIntel": [
+    "I've recently started crocheting again.",
+    "It's quite meditative.\nEspecially at night.",
+    "I'm currently working on a hoodie.\nIt's a bit more challenging than a scarf but I'll make it beautiful anyway.",
+    "That I am certain."
+  ],
+  "IntelGathered": [
+    "You want to find a person?\nAre they the one who sabotaged all the rides?",
+    "I think I saw some suspicious looking person entering the tent before.\nThey [].",
+    "If you want me to tell you more, darling, then why don't you share a drink with us ladies?",
+    "Come on, we don't bite."
+  ],
+  "Refuse": [
+    "Awww, what a shame. \nWe would have loved to drink with you."
+  ],
+  "Success": [
+    "They [].",
+    "This is all I can tell you.\nHopefully this helps ^^"
+  ],
+  "Fail": [
+
+  ],
+  "Retry":[
+
+  ],
+  "Mass": [
+    "Yess, hurrayyy!\nSee, drinking with us wasn't so terrible after all - unlike with the boys inside the tent.",
+    "Anyway, that person I saw."
+  ],
+
+  "IntroTime": [
+    5.0
+  ],
+  "NoIntelTime": [
+    5.0,
+    5.0,
+    5.0,
+    5.0
+  ],
+  "IntelGatheredTime": [
+    5.0,
+    5.0,
+    5.0,
+    5.0
+  ],
+  "RefuseTime": [
+    5.0
+  ],
+  "SuccessTime": [
+    5.0,
+    5.0
+  ],
+  "FailTime": [
+
+  ],
+  "RetryTime": [
+
+  ],
+  "MassTime": [
+    5.0,
+    5.0
+  ],
+
+  "IndexFirstInfo": 1,
+  "IndexOtherInfos" : 0
+}

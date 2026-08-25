@@ -8,7 +8,7 @@ namespace WiesnKrisn
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                GameManager.Instance.ChangeLocation("OutdoorAreaScene");
+                GameManager.Instance.ExitMiniGame(true);
             }
         }
     }

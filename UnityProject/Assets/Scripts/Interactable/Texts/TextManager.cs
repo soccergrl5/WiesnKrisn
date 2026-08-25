@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using WiesnKrisn.Roles;
 using WiesnKrisn.UI;
 
@@ -110,7 +111,7 @@ namespace WiesnKrisn.Interactable.Texts
                         
                         if (_currentSelectedOption == 1)
                         {
-                            GameManager.Instance.PlayWithWitness(_currentWitness);
+                            DoGameOption();
                         }
                         else
                         {
@@ -125,7 +126,10 @@ namespace WiesnKrisn.Interactable.Texts
                     {
                         if (_progressInPart == _currentText.IndexFirstInfo)
                         {
-                            string info = RoleDistribution.Instance.GetTestimonyForWitness(_currentWitness, 0);
+                            string info  = RoleDistribution.Instance.GetTestimonyForWitness(_currentWitness, 0);
+                            int category = RoleDistribution.Instance.GetTestimonyTypeForWitness(_currentWitness, 0);
+                            
+                            CluesManager.Instance.AddClue(category, _currentWitness, info);
 
                             _currentText.IntelGathered[_progressInPart] = _currentText.IntelGathered[_progressInPart].Replace("[]", info);
                         }
@@ -154,9 +158,15 @@ namespace WiesnKrisn.Interactable.Texts
                     {
                         if (_progressInPart == _currentText.IndexOtherInfos)
                         {
-                            string info1 = RoleDistribution.Instance.GetTestimonyForWitness(_currentWitness, 1);
-                            string info2 = RoleDistribution.Instance.GetTestimonyForWitness(_currentWitness, 2);
-
+                            string info1  = RoleDistribution.Instance.GetTestimonyForWitness(_currentWitness, 1);
+                            int category1 = RoleDistribution.Instance.GetTestimonyTypeForWitness(_currentWitness, 1);
+                            
+                            string info2  = RoleDistribution.Instance.GetTestimonyForWitness(_currentWitness, 2);
+                            int category2 = RoleDistribution.Instance.GetTestimonyTypeForWitness(_currentWitness, 2);
+                            
+                            CluesManager.Instance.AddClue(category1, _currentWitness, info1);
+                            CluesManager.Instance.AddClue(category2, _currentWitness, info2);
+                            
                             string info = info1 + " and " + info2;
                             
                             _currentText.Success[_progressInPart] = _currentText.Success[_progressInPart].Replace("[]", info);
@@ -218,7 +228,7 @@ namespace WiesnKrisn.Interactable.Texts
                     }
                     else
                     {
-                        DisplayText(_currentText.Refuse, _currentText.RefuseTime);
+                        DisplayText(_currentText.Mass, _currentText.MassTime);
                     }
                     break;
             }
@@ -288,6 +298,35 @@ namespace WiesnKrisn.Interactable.Texts
             Cursor.visible         = false;
             
             ShowNextTextbox();
+        }
+
+        private void DoGameOption()
+        {
+            List<Witnesses> specials =  new List<Witnesses>() { Witnesses.SaufiGroup , Witnesses.SaufiGroup2};
+            if (specials.Contains(_currentWitness))
+            {
+                GameManager.Instance.BuyBeer();
+
+                _currentProgress = "Mass";
+                _progressInPart  = 0;
+                
+                DisplayText(_currentText.Mass, _currentText.MassTime);
+                return;
+            }
+
+            specials = new List<Witnesses>() { Witnesses.AperoliGroup, Witnesses.AperoliGroup2 };
+            if (specials.Contains(_currentWitness))
+            {
+                GameManager.Instance.BuyAperol();
+
+                _currentProgress = "Mass";
+                _progressInPart  = 0;
+                
+                DisplayText(_currentText.Mass, _currentText.MassTime);
+                return;
+            }
+            
+            GameManager.Instance.PlayWithWitness(_currentWitness);
         }
 
         public void MiniGamePlayed(bool success)

@@ -16,12 +16,24 @@ namespace WiesnKrisn.Interactable
                     TextManager.Instance.ShowTextboxFor(Witnesses.SaufiGroup);
                     break;
                 
+                case "SaufiGroup2":
+                    TextManager.Instance.ShowTextboxFor(Witnesses.SaufiGroup2);
+                    break;
+                
                 case "AperoliGroup":
                     TextManager.Instance.ShowTextboxFor(Witnesses.AperoliGroup);
                     break;
                 
+                case "AperoliGroup2":
+                    TextManager.Instance.ShowTextboxFor(Witnesses.AperoliGroup2);
+                    break;
+                
                 case "AutoscooterKid":
                     TextManager.Instance.ShowTextboxFor(Witnesses.AutoscooterKid);
+                    break;
+                
+                case "KarussellParents":
+                    TextManager.Instance.ShowTextboxFor(Witnesses.KarussellParents);
                     break;
                 
                 case "KarussellKid":
