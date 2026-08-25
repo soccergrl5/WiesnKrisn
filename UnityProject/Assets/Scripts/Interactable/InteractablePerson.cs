@@ -24,8 +24,12 @@ namespace WiesnKrisn.Interactable
                     TextManager.Instance.ShowTextboxFor(Witnesses.AutoscooterKid);
                     break;
                 
+                case "KarussellParents":
+                    Debug.Log("KarussellParents");
+                    break;
+                
                 case "KarussellKid":
-                    TextManager.Instance.ShowTextboxFor(Witnesses.KarussellKid);
+                    Debug.Log("KarussellKid");
                     break;
                 
                 case "Influenci":
