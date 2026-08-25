@@ -2,13 +2,13 @@
 
 namespace WiesnKrisn.Interactable
 {
-    public class InteractablePowerPad : InteractableType
+    public class InteractableAttractions : InteractableType
     {
         [SerializeField] private string interactableAttraction;
         
         protected override void Interaction()
         {
-            Debug.Log("Power Pad: " + interactableAttraction);
+            Debug.Log("Attraction: " + interactableAttraction);
         }
     }
 }

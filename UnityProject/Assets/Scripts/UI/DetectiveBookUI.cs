@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using WiesnKrisn.Roles;
 
 namespace WiesnKrisn.UI
 {
@@ -9,6 +10,8 @@ namespace WiesnKrisn.UI
 
         [SerializeField] private GameObject[] pages;
         [SerializeField] private Button[] turnPageButtons;
+        
+        [SerializeField] private CluesUI[] clues;
         
         private int _currentPage;
 
@@ -33,6 +36,8 @@ namespace WiesnKrisn.UI
                 turnPageButtons[0].interactable = false;
             else if (_currentPage == pages.Length - 1)
                 turnPageButtons[1].interactable = false;
+            
+            CluesManager.Instance.FillUpDetectiveBook();
         }
 
         private void NextPage()
@@ -57,6 +62,24 @@ namespace WiesnKrisn.UI
             
             if (_currentPage == 0)
                 turnPageButtons[0].interactable = false;
+        }
+
+        public void AddClue(Witnesses witness, string text, int category, int number)
+        {
+            switch (number)
+            {
+                case 0:
+                    clues[category].SetFirstText(witness, text);
+                    break;
+                
+                case 1:
+                    clues[category].SetSecondText(witness, text);
+                    break;
+                
+                case 2:
+                    clues[category].SetThirdText(witness, text);
+                    break;
+            }
         }
 
         public void ToggleUI()

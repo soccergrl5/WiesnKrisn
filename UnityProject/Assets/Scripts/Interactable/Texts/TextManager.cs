@@ -17,7 +17,7 @@ namespace WiesnKrisn.Interactable.Texts
         private int _currentSelectedOption;
         private bool _waitForOption;
         
-        private int _hintsTheresSomethingWrong = 0;
+        private int _hintsTheresSomethingWrong = 2;
 
         private bool _waitForUI;
         private string[] _waitForUITexts;
@@ -126,7 +126,10 @@ namespace WiesnKrisn.Interactable.Texts
                     {
                         if (_progressInPart == _currentText.IndexFirstInfo)
                         {
-                            string info = RoleDistribution.Instance.GetTestimonyForWitness(_currentWitness, 0);
+                            string info  = RoleDistribution.Instance.GetTestimonyForWitness(_currentWitness, 0);
+                            int category = RoleDistribution.Instance.GetTestimonyTypeForWitness(_currentWitness, 0);
+                            
+                            CluesManager.Instance.AddClue(category, _currentWitness, info);
 
                             _currentText.IntelGathered[_progressInPart] = _currentText.IntelGathered[_progressInPart].Replace("[]", info);
                         }
@@ -155,9 +158,15 @@ namespace WiesnKrisn.Interactable.Texts
                     {
                         if (_progressInPart == _currentText.IndexOtherInfos)
                         {
-                            string info1 = RoleDistribution.Instance.GetTestimonyForWitness(_currentWitness, 1);
-                            string info2 = RoleDistribution.Instance.GetTestimonyForWitness(_currentWitness, 2);
-
+                            string info1  = RoleDistribution.Instance.GetTestimonyForWitness(_currentWitness, 1);
+                            int category1 = RoleDistribution.Instance.GetTestimonyTypeForWitness(_currentWitness, 1);
+                            
+                            string info2  = RoleDistribution.Instance.GetTestimonyForWitness(_currentWitness, 2);
+                            int category2 = RoleDistribution.Instance.GetTestimonyTypeForWitness(_currentWitness, 2);
+                            
+                            CluesManager.Instance.AddClue(category1, _currentWitness, info1);
+                            CluesManager.Instance.AddClue(category2, _currentWitness, info2);
+                            
                             string info = info1 + " and " + info2;
                             
                             _currentText.Success[_progressInPart] = _currentText.Success[_progressInPart].Replace("[]", info);
