@@ -6117,6 +6117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70360ef7206ba60458a2151c9f2beec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 1248488531}
+  gameWonPanel: {fileID: 595347011}
   gameOverRetry: {fileID: 1201416673}
   gameOverExit: {fileID: 1684938799}
   gameWonRetry: {fileID: 482671306}
