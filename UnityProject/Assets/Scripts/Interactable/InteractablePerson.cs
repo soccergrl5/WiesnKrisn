@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using WiesnKrisn.Interactable.Texts;
+using WiesnKrisn.Roles;
 
 namespace WiesnKrisn.Interactable
 {
@@ -8,7 +10,48 @@ namespace WiesnKrisn.Interactable
         
         protected override void Interaction()
         {
-            Debug.Log(interactableName);
+            switch (interactableName)
+            {
+                case "SaufiGroup":
+                    TextManager.Instance.ShowTextboxFor(Witnesses.SaufiGroup);
+                    break;
+                
+                case "AperoliGroup":
+                    TextManager.Instance.ShowTextboxFor(Witnesses.AperoliGroup);
+                    break;
+                
+                case "AutoscooterKid":
+                    TextManager.Instance.ShowTextboxFor(Witnesses.AutoscooterKid);
+                    break;
+                
+                case "KarussellKid":
+                    TextManager.Instance.ShowTextboxFor(Witnesses.KarussellKid);
+                    break;
+                
+                case "Influenci":
+                    TextManager.Instance.ShowTextboxFor(Witnesses.Influenci);
+                    break;
+                
+                case "SuessigkeitenFan":
+                    TextManager.Instance.ShowTextboxFor(Witnesses.SuessigkeitenFan);
+                    break;
+                
+                case "Achterbahni":
+                    TextManager.Instance.ShowTextboxFor(Witnesses.Achterbahni);
+                    break;
+                
+                case "Geisterbahni":
+                    TextManager.Instance.ShowTextboxFor(Witnesses.Geisterbahni);
+                    break;
+                
+                case "DosiWerfi":
+                    TextManager.Instance.ShowTextboxFor(Witnesses.DosiWerfi);
+                    break;
+                
+                case "GreifiTypi":
+                    TextManager.Instance.ShowTextboxFor(Witnesses.GreifiTypi);
+                    break;
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using WiesnKrisn.Interactable.Texts;
 
 namespace WiesnKrisn.UI
 {
@@ -36,7 +37,7 @@ namespace WiesnKrisn.UI
             gameObject.SetActive(false);
             InputBlock.Instance.OnResume();
             
-            if (InputBlock.Instance.IsBlocked()) return;
+            if (InputBlock.Instance.IsBlocked() || TextManager.Instance.WaitForOption()) return;
             Cursor.visible = false;
         }
 

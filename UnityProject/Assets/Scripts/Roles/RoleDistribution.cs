@@ -531,5 +531,10 @@ namespace WiesnKrisn.Roles
             
             return testimonies;
         }
+
+        public string GetTestimonyForWitness(Witnesses witnesses, int index)
+        {
+            return _testimonies[witnesses].GetTestimonies()[index];
+        }
     }
 }

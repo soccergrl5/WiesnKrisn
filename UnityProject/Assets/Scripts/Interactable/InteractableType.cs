@@ -13,18 +13,22 @@ namespace WiesnKrisn.Interactable
 
         private void Update()
         {
-            if (InputBlock.Instance.IsBlocked() || InputBlock.Instance.IsPaused() || !_interactable) return;
+            if (Input.GetKeyUp(KeyCode.F))
+            {
+                _interacted = false;
+            }
+            
+            if (InputBlock.Instance.IsBlocked()
+                || InputBlock.Instance.IsPaused()
+                || InputBlock.Instance.IsTextbox()
+                || !_interactable)
+                return;
 
             if (Input.GetKey(KeyCode.F) && !_interacted)
             {
                 _interacted = true;
                 
                 Interaction();
-            }
-
-            if (Input.GetKeyUp(KeyCode.F))
-            {
-                _interacted = false;
             }
         }
 

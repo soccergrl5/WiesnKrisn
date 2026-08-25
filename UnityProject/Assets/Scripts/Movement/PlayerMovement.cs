@@ -23,7 +23,10 @@ namespace WiesnKrisn.Movement
         
         private void Update()
         {
-            if (InputBlock.Instance.IsBlocked() || InputBlock.Instance.IsPaused()) return;
+            if (InputBlock.Instance.IsBlocked()
+                || InputBlock.Instance.IsPaused()
+                || InputBlock.Instance.IsTextbox())
+                return;
             
             // Move Camera
             float movement = 0f;

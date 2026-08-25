@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using WiesnKrisn.Interactable.Texts;
 using WiesnKrisn.Movement;
 using WiesnKrisn.Roles;
 using WiesnKrisn.UI;
@@ -11,6 +12,17 @@ namespace WiesnKrisn
     {
         public static GameManager Instance {get; private set;}
 
+        private static readonly Dictionary<Witnesses, Games> WitnessGames = new Dictionary<Witnesses, Games>()
+        {
+            { Witnesses.AutoscooterKid , Games.Autoscooter},
+            { Witnesses.KarussellKid , Games.WireGame},
+            { Witnesses.Influenci , Games.FerrisWheel},
+            { Witnesses.Achterbahni , Games.RollerCoaster},
+            { Witnesses.Geisterbahni , Games.GhostTrain},
+            { Witnesses.DosiWerfi , Games.Dosenwerfen},
+            { Witnesses.GreifiTypi , Games.Greifautomat}
+        };
+        
         private static readonly Dictionary<Games, float> AttractionPrizes = new Dictionary<Games, float>()
         {
             { Games.Dosenwerfen , 6f},
@@ -32,6 +44,8 @@ namespace WiesnKrisn
         private bool _easyMode;
         private const float EasyDrunkTime = 3f;
         private const float HardDrunkTime = 9f;
+        
+        private bool _playWithWitness;
         
         private void Awake()
         {
@@ -78,10 +92,19 @@ namespace WiesnKrisn
             SceneManager.LoadScene(scene);
         }
 
+        public void PlayWithWitness(Witnesses witness)
+        {
+            _playWithWitness = true;
+            
+            StartMiniGame(WitnessGames[witness]);
+        }
+
         public void StartMiniGame(Games game)
         {
             SaveCamPosition();
             SaveCurrentBookPage();
+
+            Cursor.visible   = true;
 
             switch (game)
             {
@@ -122,6 +145,14 @@ namespace WiesnKrisn
         }
 
         public void ReplayMiniGame(Games game) => _money -= AttractionPrizes[game];
+
+        public void ExitMiniGame(bool success)
+        {
+            ChangeLocation("OutdoorAreaScene");
+            
+            if (_playWithWitness)
+                TextManager.Instance.MiniGamePlayed(success);
+        }
 
         private void SaveCamPosition()
         {
