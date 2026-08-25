@@ -2,20 +2,32 @@ using UnityEngine;
 
 public class GameOverScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    GameObject gameOverPanel;
+    GameObject gameWonPanel;
+    public static GameOverScript Instance { get; private set; }
 
-    // Update is called once per frame
-    void Update()
+    public void Awake()
     {
-        
+        Instance = this;
     }
-
-    public static void GameOver()
+    public void Start()
     {
-        print("Game Over!");
+        gameOverPanel = GameObject.FindGameObjectWithTag("GameOverPanel");
+        gameWonPanel = GameObject.FindGameObjectWithTag("GameWonPanel");
+
+        gameOverPanel.SetActive(false);
+        gameWonPanel.SetActive(false);
+    }
+    
+    public void GameOver(bool isGameWon)
+    {
+        if (isGameWon)
+        {
+            gameWonPanel.SetActive(true);
+        }
+        else
+        {
+            gameOverPanel.SetActive(true);
+        }
     }
 }

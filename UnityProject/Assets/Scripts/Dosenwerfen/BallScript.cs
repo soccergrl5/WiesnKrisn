@@ -19,6 +19,8 @@ public class BallScript : MonoBehaviour
     
       private LineRenderer _lineRenderer;
       private Rigidbody _rigidbody;
+
+      public static int AmountOfBallsThrown = 5;
     
     // Pfad von Mauspunkt startet bis Mauspunkt endet ist Velocity
     void Start()
@@ -47,6 +49,7 @@ public class BallScript : MonoBehaviour
           {
                 gameObject.SetActive(false);
                 BowlScript.SetIsBallAlreadyThere(false);
+                AmountOfBallsThrown--;
           }
     }
     

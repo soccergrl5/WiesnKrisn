@@ -5,7 +5,6 @@ public class CanScript : MonoBehaviour
 {
     public static int Counter = 0;
     private bool _hit = false;
-
     private void Update()
     {
         if (gameObject.transform.position.y < -2)
@@ -19,7 +18,7 @@ public class CanScript : MonoBehaviour
 
         if (Counter == 18)
         {
-            GameOverScript.GameOver();
+            GameOverScript.Instance.GameOver(true);
         }
     }
 
