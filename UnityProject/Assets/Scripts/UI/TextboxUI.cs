@@ -67,17 +67,28 @@ namespace WiesnKrisn.UI
             textField.maxVisibleCharacters = _maxLength;
         }
 
-        public void ShowTwoOptions()
+        public void ShowTwoOptions(string option1, bool option1Available, string option2)
         {
             optionButtons[0].gameObject.SetActive(true);
+            optionButtons[0].GetComponentInChildren<TMP_Text>().text = option1;
+            optionButtons[0].interactable = option1Available;
+            
             optionButtons[2].gameObject.SetActive(true);
+            optionButtons[2].GetComponentInChildren<TMP_Text>().text = option2;
         }
 
-        public void ShowThreeOptions()
+        public void ShowThreeOptions(string option1, bool option1Available, string option2, bool option2Available, string option3)
         {
             optionButtons[0].gameObject.SetActive(true);
+            optionButtons[0].GetComponentInChildren<TMP_Text>().text = option1;
+            optionButtons[0].interactable = option1Available;
+            
             optionButtons[1].gameObject.SetActive(true);
+            optionButtons[1].GetComponentInChildren<TMP_Text>().text = option2;
+            optionButtons[1].interactable = option2Available;
+            
             optionButtons[2].gameObject.SetActive(true);
+            optionButtons[2].GetComponentInChildren<TMP_Text>().text = option3;
         }
 
         private void HideOptionButtons()

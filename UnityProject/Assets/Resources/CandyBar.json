@@ -1,0 +1,21 @@
+﻿{
+  "Intro": [
+    "Oh hello, you're here for some sweet bites?\nI've got a few luscious treats. Want some?"
+  ],
+  "Accept": [
+    "Alright, what would you like, sweetheart?"
+  ],
+  "Refuse": [
+    "Perhaps you want to come back later?"
+  ],
+
+  "IntroTime": [
+    5.0
+  ],
+  "AcceptTime": [
+    5.0
+  ],
+  "RefuseTime": [
+    5.0
+  ]
+}

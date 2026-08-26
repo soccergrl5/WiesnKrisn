@@ -8,6 +8,7 @@
         GhostTrain,
         WireGame,
         FerrisWheel,
-        Greifautomat
+        Greifautomat,
+        CandyShop
     }
 }

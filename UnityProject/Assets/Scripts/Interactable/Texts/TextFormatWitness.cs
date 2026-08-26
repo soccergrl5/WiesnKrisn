@@ -1,6 +1,6 @@
 ﻿namespace WiesnKrisn.Interactable.Texts
 {
-    public class TextFormat
+    public class TextFormatWitness
     {
         public string[] Intro;
         public string[] NoIntel;

@@ -248,11 +248,9 @@ namespace WiesnKrisn.Roles
 
             }
 
-            int usedWitnesses = 0;
+            int usedWitnesses = 4;
             foreach (Witnesses witnesses in Enum.GetValues(typeof(Witnesses)))
             {
-                usedWitnesses++;
-                
                 testimonies = new int[] { -1, -1, -1 };
                 
                 if (witnesses == Witnesses.SaufiGroup
@@ -262,9 +260,15 @@ namespace WiesnKrisn.Roles
                     || _extraWitnesses.Contains(witnesses))
                     continue;
                 
+                usedWitnesses++;
+                
+                Debug.Log(witnesses.ToString());
+                
                 // Special Cases for End of List
                 if (usedWitnesses == SuspectAmount - 2)
                 {
+                    Debug.Log(usedWitnesses);
+                    
                     List<int> missingNumbers = new List<int>();
                     for (int i = 0; i < SuspectAmount; i++)
                     {
@@ -329,6 +333,8 @@ namespace WiesnKrisn.Roles
 
                 if (usedWitnesses == SuspectAmount - 1)
                 {
+                    Debug.Log(usedWitnesses);
+                    
                     List<int> twoTimes = new List<int>();
                     foreach (int truthIndex in truthIndexes)
                     {

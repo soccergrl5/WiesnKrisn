@@ -59,5 +59,13 @@ namespace WiesnKrisn.Roles
                 }
             }
         }
+
+        public void ResetManager()
+        {
+            foreach (List<Clue> clue in _clues)
+            {
+                clue.Clear();
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using WiesnKrisn.Interactable.Texts;
 
 namespace WiesnKrisn.Interactable
 {
@@ -8,7 +9,28 @@ namespace WiesnKrisn.Interactable
         
         protected override void Interaction()
         {
-            Debug.Log("Attraction: " + interactableAttraction);
+            switch (interactableAttraction)
+            {
+                case "RollerCoaster":
+                    TextManager.Instance.ShowTextboxFor(Attractions.RollerCoaster);
+                    break;
+                
+                case "Karussell":
+                    TextManager.Instance.ShowTextboxFor(Attractions.Karussell);
+                    break;
+                
+                case "FerrisWheel":
+                    TextManager.Instance.ShowTextboxFor(Attractions.FerrisWheel);
+                    break;
+                
+                case "CandyBar":
+                    TextManager.Instance.ShowTextboxFor(Attractions.CandyBar);
+                    break;
+                
+                default:
+                    Debug.Log("Unknown Attraction: " + interactableAttraction);
+                    break;
+            }
         }
     }
 }

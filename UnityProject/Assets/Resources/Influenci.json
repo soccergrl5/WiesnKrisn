@@ -1,0 +1,70 @@
+﻿{
+  "Intro": [
+    "What's up guys, welcome to my live stream here at the Oktoberfest!\nLet's greet this lowkey creepy looking chud."
+  ],
+  "NoIntel": [
+    "Thank you for the donation, IamRandomButAwesome67!",
+    "We are standing right before the big ferris wheel.\nSadly I have no one to go with.",
+    "It's actually a surprise no one has recognized me yet.\nWhat an L.",
+    "I have 300k followers on Instagram, and even 500k on TikTok.\nI guess they just don't deserve my attention."
+  ],
+  "IntelGathered": [
+    "So you're trying to get some followers too, huh?\nI can help you find someone.",
+    "There was this a person, a total weird-champ.\nThey [].",
+    "If you wanna learn more about them then how about we two take a ride in the ferris wheel?"
+  ],
+  "Refuse": [
+    "I guess you don't like being alone with a girl."
+  ],
+  "Success": [
+    "Wasn't that lovely? Huge W for that random stranger, chat!\nYou think that's rizz? That's rizz, chat?",
+    "Chat, you're right. I gotta answer now.",
+    "That person I saw, they [].",
+    "That's it for now, thx for being here, cyaaa!"
+  ],
+  "Fail": [
+
+  ],
+  "Retry":[
+
+  ],
+  "Mass": [
+
+  ],
+
+  "IntroTime": [
+    5.0
+  ],
+  "NoIntelTime": [
+    5.0,
+    5.0,
+    5.0,
+    5.0
+  ],
+  "IntelGatheredTime": [
+    5.0,
+    5.0,
+    5.0
+  ],
+  "RefuseTime": [
+    5.0
+  ],
+  "SuccessTime": [
+    5.0,
+    5.0,
+    5.0,
+    5.0
+  ],
+  "FailTime": [
+
+  ],
+  "RetryTime": [
+
+  ],
+  "MassTime": [
+
+  ],
+
+  "IndexFirstInfo": 1,
+  "IndexOtherInfos" : 2
+}

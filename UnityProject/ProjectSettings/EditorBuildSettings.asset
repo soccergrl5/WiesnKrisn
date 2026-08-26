@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/DosenwerfenScene.unity
     guid: 12c09a28a9bcb59499fe8b3c067fcabd
   - enabled: 1
+    path: Assets/Scenes/GreifautomatScene.unity
+    guid: f4a5cc03e02c47a4cb94e2fed569c37d
+  - enabled: 1
     path: Assets/Scenes/GameOverDrunk.unity
     guid: 4aeb7f81fd50cfe49ae6ccedad3b01ae
   - enabled: 1
