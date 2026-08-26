@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using WiesnKrisn.CandyShop;
 using WiesnKrisn.Interactable.Texts;
 using WiesnKrisn.Movement;
 using WiesnKrisn.Roles;
@@ -46,6 +47,13 @@ namespace WiesnKrisn
         };
         private const float BeerPrize   = 18f;
         private const float AperolPrize = 12f;
+
+        private static readonly Dictionary<Candy, float> CandyPrizes = new Dictionary<Candy, float>()
+        {
+            { Candy.ChocolateStrawberry, 5.5f },
+            { Candy.CandiedAlmonds, 7f },
+            { Candy.CottonCandy, 8f }
+        };
 
         private float _camPosition = -75f;
         private int _bookPage      = 0;
@@ -162,7 +170,7 @@ namespace WiesnKrisn
                     break;
                 
                 case Games.CandyShop:
-                    SceneManager.LoadScene("SampleScene");
+                    SceneManager.LoadScene("CandyShopScene");
                     break;
             }
         }
@@ -201,6 +209,13 @@ namespace WiesnKrisn
             
             UpdateMoney();
             UpdateDrunkOMeter(0.2f);
+        }
+
+        public void BuyCandy(Candy candy)
+        {
+            _money -= CandyPrizes[candy];
+            
+            UpdateMoney();
         }
 
         private void UpdateDrunkOMeter(float addition)
@@ -264,10 +279,14 @@ namespace WiesnKrisn
         public float GetBeerPrize() => BeerPrize;
         
         public float GetAperolPrize() => AperolPrize;
+        
+        public float GetCandyPrize(Candy candy) => CandyPrizes[candy];
 
         public float GetDrunkOMeter() => _drunkOMeter;
 
         public Games GetGameForWitness(Witnesses witness) => WitnessGames[witness];
+        
+        public Games GetGameForAttraction(Attractions attraction) => AttractionGames[attraction];
         
         public void BackToMainMenu()
         {

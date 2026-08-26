@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GreifautomatScene.unity
     guid: f4a5cc03e02c47a4cb94e2fed569c37d
   - enabled: 1
+    path: Assets/Scenes/CandyShopScene.unity
+    guid: 3f52e7ee237d4f045b74573073543ff5
+  - enabled: 1
     path: Assets/Scenes/GameOverDrunk.unity
     guid: 4aeb7f81fd50cfe49ae6ccedad3b01ae
   - enabled: 1

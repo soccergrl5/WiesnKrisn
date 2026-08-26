@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using WiesnKrisn.CandyShop;
 using WiesnKrisn.Roles;
 using WiesnKrisn.UI;
 
@@ -227,7 +228,10 @@ namespace WiesnKrisn.Interactable.Texts
                         }
                         else if (_currentSelectedOption == 2)
                         {
-                            GameManager.Instance.BuyBeer();
+                            if (_currentWitness == Witnesses.AutoscooterKid)
+                                GameManager.Instance.BuyCandy(Candy.CottonCandy);
+                            else
+                                GameManager.Instance.BuyBeer();
                             
                             _currentProgress = "Mass";
                             
@@ -385,31 +389,8 @@ namespace WiesnKrisn.Interactable.Texts
                 case "IntelGathered":
                     if (_progressInPart == _currentTextWitness.IntelGathered.Length - 1)
                     {
-                        string option1;
-                        bool option1Available;
-                        if (_currentWitness == Witnesses.SaufiGroup || _currentWitness == Witnesses.SaufiGroup2)
-                        {
-                            float prize = GameManager.Instance.GetBeerPrize();
-                            option1 = "Drink a Beer - " + prize + "€";
-                            option1Available = prize <= GameManager.Instance.GetMoney();
-                        }
-                        else if (_currentWitness == Witnesses.AperoliGroup ||
-                                 _currentWitness == Witnesses.AperoliGroup2)
-                        {
-                            float prize = GameManager.Instance.GetAperolPrize();
-                            option1 = "Drink an Aperol - " + prize + "€";
-                            option1Available = prize <= GameManager.Instance.GetMoney();
-                        }
-                        else
-                        {
-                            float prize =
-                                GameManager.Instance.GetPrizeOfGame(
-                                    GameManager.Instance.GetGameForWitness(_currentWitness));
-                            option1 = "Play the Game - " + prize + "€";
-                            option1Available = prize <= GameManager.Instance.GetMoney();
-                        }
-                        
-                        TextboxUI.Instance.ShowTwoOptions(option1, option1Available, "No Thanks!");
+                        TextboxUI.Instance.TextsForTwoOptions(_currentWitness);
+                        TextboxUI.Instance.ShowTwoOptions();
                         _waitForOption = true;
                         Cursor.visible = true;
                     }
@@ -418,13 +399,9 @@ namespace WiesnKrisn.Interactable.Texts
                 case "Fail":
                     if (_progressInPart == _currentTextWitness.Fail.Length - 1)
                     {
-                        string option1 = "Replay the Game - " + GameManager.Instance.GetPrizeOfGame(GameManager.Instance.GetGameForWitness(_currentWitness)) + "€";
-                        string option2 = "Drink a Beer - " + GameManager.Instance.GetBeerPrize() + "€";
-                        
-                        bool option1Available = GameManager.Instance.GetPrizeOfGame(GameManager.Instance.GetGameForWitness(_currentWitness)) <= GameManager.Instance.GetMoney();
-                        bool option2Available = GameManager.Instance.GetBeerPrize() <= GameManager.Instance.GetMoney();
-                        
-                        TextboxUI.Instance.ShowThreeOptions(option1, option1Available, option2, option2Available, "No Thanks!");
+                        TextboxUI.Instance.TextsForTwoOptions(_currentWitness);
+                        TextboxUI.Instance.TextsForThreeOptions(_currentWitness);
+                        TextboxUI.Instance.ShowThreeOptions();
                         _waitForOption = true;
                         Cursor.visible = true;
                     }
@@ -439,10 +416,8 @@ namespace WiesnKrisn.Interactable.Texts
                 case "Intro":
                     if (_progressInPart == _currentTextAttraction.Intro.Length - 1)
                     {
-                        string option1 = "Accept";
-                        bool option1Available = true;
-                        
-                        TextboxUI.Instance.ShowTwoOptions(option1, option1Available, "No Thanks!");
+                        TextboxUI.Instance.TextsForTwoOptions(_currentAttraction);
+                        TextboxUI.Instance.ShowTwoOptions();
                         _waitForOption = true;
                         Cursor.visible = true;
                     }
