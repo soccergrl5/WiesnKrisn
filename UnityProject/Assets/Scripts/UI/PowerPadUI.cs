@@ -24,7 +24,7 @@ namespace WiesnKrisn.UI
 
         private void Start()
         {
-            Hide();
+            gameObject.SetActive(false);
         }
 
         public void ShowPad(Attractions attractions)

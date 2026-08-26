@@ -43,8 +43,9 @@ namespace WiesnKrisn.UI
             
             if (InputBlock.Instance.IsBlocked()
                 || TextManager.Instance.WaitForOption()
-                || PowerPadUI.Instance.gameObject.activeSelf) 
+                || (PowerPadUI.Instance != null && PowerPadUI.Instance.gameObject.activeSelf)) 
                 return;
+            
             Cursor.visible = false;
         }
 

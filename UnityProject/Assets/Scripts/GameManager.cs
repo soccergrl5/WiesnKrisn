@@ -33,7 +33,7 @@ namespace WiesnKrisn
             { Attractions.Karussell , Games.WireGame},
             { Attractions.Autoscooter, Games.Autoscooter},
             { Attractions.Dosenwerfen , Games.Dosenwerfen},
-            {Attractions.Greifautomat, Games.Greifautomat},
+            { Attractions.Greifautomat, Games.Greifautomat},
             { Attractions.CandyBar , Games.CandyShop}
         };
         
@@ -100,6 +100,12 @@ namespace WiesnKrisn
             CluesManager.Instance.ResetManager();
             
             StartGame(_easyMode);
+        }
+
+        public void RestartGame(bool easyMode)
+        {
+            _easyMode = easyMode;
+            RestartGame();
         }
 
         public void ChangeLocation(string scene)
@@ -261,6 +267,12 @@ namespace WiesnKrisn
                 MoneyUI.Instance.UpdateAmount(_money);
         }
 
+        public void GameOverWrongGuy()
+        {
+            GameOver();
+            SceneManager.LoadScene("GameOverWrongGuy");
+        }
+
         private void GameOver()
         {
             TextManager.Instance.SetGameOver();
@@ -268,6 +280,11 @@ namespace WiesnKrisn
             InputBlock.Instance.OnResume();
             InputBlock.Instance.TextboxHidden();
             Cursor.visible = true;
+        }
+
+        public void GameWon()
+        {
+            SceneManager.LoadScene("GameWonDecision");
         }
         
         public float GetCamPosition() => _camPosition;
@@ -295,5 +312,7 @@ namespace WiesnKrisn
             SceneManager.LoadScene("MainMenu");
             Destroy(gameObject);
         }
+
+        public bool InEasyMode() => _easyMode;
     }
 }

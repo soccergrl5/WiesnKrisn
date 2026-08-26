@@ -47,7 +47,6 @@ namespace WiesnKrisn.Interactable.Texts
                     CancelInvoke();
                     _inProgress = false;
                     TextboxUI.Instance.SkipToEndOfTextbox();
-                    Debug.Log("SKIP");
                     
                     CheckIfOptionsDisplay();
                 }
@@ -196,8 +195,6 @@ namespace WiesnKrisn.Interactable.Texts
                     {
                         if (_progressInPart == _currentTextWitness.IndexOtherInfos)
                         {
-                            Debug.Log("TEST");
-                            
                             string info1  = RoleDistribution.Instance.GetTestimonyForWitness(_currentWitness, 1);
                             int category1 = RoleDistribution.Instance.GetTestimonyTypeForWitness(_currentWitness, 1);
                             
@@ -338,7 +335,6 @@ namespace WiesnKrisn.Interactable.Texts
         private void ProgressOver()
         {
             _inProgress = false;
-            Debug.Log("DONE");
             
             CheckIfOptionsDisplay();
         }
