@@ -1,0 +1,68 @@
+﻿{
+  "Intro": [
+    "Hi, what's up?\nEnjoying your time here?"
+  ],
+  "NoIntel": [
+    "I'm just a chill girl who wants to have fun at the Oktoberfest.",
+    "And you're a tourist, right?\nI can tell since your attire looks a bit out of place.",
+    "And you're also an electrician, no?\nYou certainly got the hands of one."
+  ],
+  "IntelGathered": [
+    "Chasing a person?\nI've seen someone who looked target-worthy.",
+    "They [].\nIf you want to know more about that someone I suggest we make a deal.",
+    "You get me this nice plushie from the Crane Game Machine over there.",
+    "In return, I tell you more about your target. Sound good?"
+  ],
+  "Refuse": [
+    "It's your choice after all.."
+  ],
+  "Success": [
+    "I knew you could do it.\nThank you.",
+    "My turn now.\nYour mysterious target, they [].",
+    "This is all I remember.\nGood luck finding them."
+  ],
+  "Fail": [
+    "Catching the right one might be a bit tricky.\nYou wanna try again?"
+  ],
+  "Retry":[
+    "Alright, next try!"
+  ],
+  "Mass": [
+    "Oh, that should do too, I guess."
+  ],
+
+  "IntroTime": [
+    5.0
+  ],
+  "NoIntelTime": [
+    5.0,
+    5.0,
+    5.0
+  ],
+  "IntelGatheredTime": [
+    5.0,
+    5.0,
+    5.0,
+    5.0
+  ],
+  "RefuseTime": [
+    5.0
+  ],
+  "SuccessTime": [
+    5.0,
+    5.0,
+    5.0
+  ],
+  "FailTime": [
+    5.0
+  ],
+  "RetryTime": [
+    5.0
+  ],
+  "MassTime": [
+    5.0
+  ],
+
+  "IndexFirstInfo": 1,
+  "IndexOtherInfos" : 1
+}

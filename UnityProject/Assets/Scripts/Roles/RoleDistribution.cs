@@ -13,7 +13,7 @@ namespace WiesnKrisn.Roles
 
         private const int SuspectAmount = 10;
         
-        private Dictionary<Suspects, Trait> _suspectDescriptions = new Dictionary<Suspects, Trait>()
+        private readonly Dictionary<Suspects, Trait> _suspectDescriptions = new Dictionary<Suspects, Trait>()
         {
             { Suspects.Saufi1, new Trait(Clothes.Casual, HairColor.Dark, ClotheColor.Green, Shoes.Sneaker, Hairstyle.Kurz, EyeColor.Brown, Headpiece.Cap, Rose.Nothing, Lebkuchenherz.Nothing, Glasses.Sun)},
             { Suspects.Saufi2, new Trait(Clothes.Lederhosn, HairColor.Colorful, ClotheColor.Red, Shoes.Haferl, Hairstyle.Open, EyeColor.Brown, Headpiece.Hendl, Rose.Yellow, Lebkuchenherz.Small, Glasses.Nothing)},
@@ -27,7 +27,7 @@ namespace WiesnKrisn.Roles
             { Suspects.DosiWerfi, new Trait(Clothes.Casual, HairColor.Light, ClotheColor.Green, Shoes.Haferl, Hairstyle.Kurz, EyeColor.Brown, Headpiece.Nothing, Rose.Yellow, Lebkuchenherz.Small, Glasses.Normal)}
         };
 
-        private Dictionary<Suspects, Trait>[] _liesHardMode = new Dictionary<Suspects, Trait>[2]
+        private readonly Dictionary<Suspects, Trait>[] _liesHardMode = new Dictionary<Suspects, Trait>[2]
         {
             new Dictionary<Suspects, Trait>()
             {
@@ -135,8 +135,6 @@ namespace WiesnKrisn.Roles
                 
                 testimony.ShuffleTestimonies();
                 _testimonies.Add(witness, testimony);
-                
-                Debug.Log(witness + " " + testimony.GetTestimonies()[0] + " " + testimony.GetTestimonies()[1] + " " + testimony.GetTestimonies()[2]);
             }
         }
 
@@ -167,20 +165,35 @@ namespace WiesnKrisn.Roles
                 if (witness == Witnesses.SaufiGroup || witness == Witnesses.AperoliGroup)
                 {
                     testimony.AddToTestimonies(_liesHardMode[0][_mainSuspect].CreateTraitDescription(distribution[witness][0]), 0);
+                    testimony.AddToTestimonyTypes(distribution[witness][0], 0);
+                    
                     testimony.AddToTestimonies(_liesHardMode[1][_mainSuspect].CreateTraitDescription(distribution[witness][1]), 1);
+                    testimony.AddToTestimonyTypes(distribution[witness][1], 1);
+                    
                     testimony.AddToTestimonies(_liesHardMode[1][_mainSuspect].CreateTraitDescription(distribution[witness][2]), 2);
+                    testimony.AddToTestimonyTypes(distribution[witness][2], 2);
                 }
                 else if (witness == twoTruths1 || witness == twoTruths2)
                 {
                     testimony.AddToTestimonies(_suspectDescriptions[_mainSuspect].CreateTraitDescription(distribution[witness][0]), 0);
+                    testimony.AddToTestimonyTypes(distribution[witness][0], 0);
+                    
                     testimony.AddToTestimonies(_suspectDescriptions[_mainSuspect].CreateTraitDescription(distribution[witness][1]), 1);
+                    testimony.AddToTestimonyTypes(distribution[witness][1], 1);
+                    
                     testimony.AddToTestimonies(_liesHardMode[0][_mainSuspect].CreateTraitDescription(distribution[witness][2]), 2);
+                    testimony.AddToTestimonyTypes(distribution[witness][2], 2);
                 }
                 else
                 {
                     testimony.AddToTestimonies(_suspectDescriptions[_mainSuspect].CreateTraitDescription(distribution[witness][0]), 0);
+                    testimony.AddToTestimonyTypes(distribution[witness][0], 0);
+                    
                     testimony.AddToTestimonies(_liesHardMode[0][_mainSuspect].CreateTraitDescription(distribution[witness][1]), 1);
+                    testimony.AddToTestimonyTypes(distribution[witness][1], 1);
+                    
                     testimony.AddToTestimonies(_liesHardMode[1][_mainSuspect].CreateTraitDescription(distribution[witness][2]), 2);
+                    testimony.AddToTestimonyTypes(distribution[witness][2], 2);
                 }
                 
                 testimony.ShuffleTestimonies();
@@ -225,7 +238,6 @@ namespace WiesnKrisn.Roles
                 numberCalled.Add(testimonies[2]);
 
                 distribution.Add(witnesses, testimonies);
-                //Debug.Log(witnesses + ": Lie 1: " + testimonies[0] + ", Lie 2: " + testimonies[1] + ", Lie 3: " + testimonies[2]);
             }
 
             // Persons with 2 Truths
@@ -244,15 +256,12 @@ namespace WiesnKrisn.Roles
                 numberCalled.Add(testimonies[2]);
 
                 distribution.Add(witnesses, testimonies);
-                //Debug.Log(witnesses + ": Truth 1: " + testimonies[0] + ", Truth 2: " + testimonies[1] + ", Lie: " + testimonies[2]);
 
             }
 
-            int usedWitnesses = 0;
+            int usedWitnesses = 4;
             foreach (Witnesses witnesses in Enum.GetValues(typeof(Witnesses)))
             {
-                usedWitnesses++;
-                
                 testimonies = new int[] { -1, -1, -1 };
                 
                 if (witnesses == Witnesses.SaufiGroup
@@ -261,6 +270,8 @@ namespace WiesnKrisn.Roles
                     || witnesses == twoTruths2
                     || _extraWitnesses.Contains(witnesses))
                     continue;
+                
+                usedWitnesses++;
                 
                 // Special Cases for End of List
                 if (usedWitnesses == SuspectAmount - 2)
@@ -517,7 +528,6 @@ namespace WiesnKrisn.Roles
                 numberCalled.Add(testimonies[2]);
 
                 distribution.Add(witnesses, testimonies);
-                //Debug.Log(witnesses + ": Truth: " + testimonies[0] + ", Lie 1: " + testimonies[1] + ", Lie 2: " + testimonies[2]);
             }
 
             return distribution;
@@ -547,9 +557,7 @@ namespace WiesnKrisn.Roles
                     tmp.Add(testimonies[0]);
                     list1.Remove(testimonies[0]);
                     
-                    int random1 = random.Next(list1.Count);
-                    Debug.Log(random1 + " " +  list1.Count);
-                    
+                    int random1    = random.Next(list1.Count);
                     testimonies[0] = list1[random1];
                 }
 
@@ -568,9 +576,7 @@ namespace WiesnKrisn.Roles
                     tmp.Add(testimonies[1]);
                     list2.Remove(testimonies[1]);
 
-                    int random2 = random.Next(list2.Count);
-                    Debug.Log(random2 + " " +  list2.Count);
-                    
+                    int random2    = random.Next(list2.Count);
                     testimonies[1] = list2[random2];
                 }
 
@@ -589,9 +595,7 @@ namespace WiesnKrisn.Roles
                     tmp.Add(testimonies[2]);
                     list3.Remove(testimonies[2]);
                     
-                    int random3 = random.Next(list3.Count);
-                    Debug.Log(random3 + " " +  list3.Count);
-
+                    int random3    = random.Next(list3.Count);
                     testimonies[2] = list3[random3];
                 }
 
@@ -629,5 +633,7 @@ namespace WiesnKrisn.Roles
             
             return _testimonies[witnesses].GetTestimonyType(index);
         }
+        
+        public Suspects GetMainSuspect() => _mainSuspect;
     }
 }

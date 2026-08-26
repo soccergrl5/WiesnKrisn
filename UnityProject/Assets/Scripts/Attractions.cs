@@ -1,14 +1,14 @@
 ﻿namespace WiesnKrisn
 {
-    public enum Games
+    public enum Attractions
     {
-        Dosenwerfen,
-        Autoscooter,
         RollerCoaster,
         GhostTrain,
-        WireGame,
         FerrisWheel,
+        CandyBar,
+        Karussell,
+        Autoscooter,
+        Dosenwerfen,
         Greifautomat,
-        CandyShop
     }
 }

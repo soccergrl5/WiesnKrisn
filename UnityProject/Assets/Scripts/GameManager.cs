@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using WiesnKrisn.CandyShop;
 using WiesnKrisn.Interactable.Texts;
 using WiesnKrisn.Movement;
 using WiesnKrisn.Roles;
@@ -23,6 +24,18 @@ namespace WiesnKrisn
             { Witnesses.DosiWerfi , Games.Dosenwerfen},
             { Witnesses.GreifiTypi , Games.Greifautomat}
         };
+
+        private static readonly Dictionary<Attractions, Games> AttractionGames = new Dictionary<Attractions, Games>()
+        {
+            { Attractions.RollerCoaster , Games.RollerCoaster},
+            { Attractions.GhostTrain , Games.GhostTrain},
+            { Attractions.FerrisWheel , Games.FerrisWheel},
+            { Attractions.Karussell , Games.WireGame},
+            { Attractions.Autoscooter, Games.Autoscooter},
+            { Attractions.Dosenwerfen , Games.Dosenwerfen},
+            { Attractions.Greifautomat, Games.Greifautomat},
+            { Attractions.CandyBar , Games.CandyShop}
+        };
         
         private static readonly Dictionary<Games, float> AttractionPrizes = new Dictionary<Games, float>()
         {
@@ -36,6 +49,13 @@ namespace WiesnKrisn
         };
         private const float BeerPrize   = 18f;
         private const float AperolPrize = 12f;
+
+        private static readonly Dictionary<Candy, float> CandyPrizes = new Dictionary<Candy, float>()
+        {
+            { Candy.ChocolateStrawberry, 5.5f },
+            { Candy.CandiedAlmonds, 7f },
+            { Candy.CottonCandy, 8f }
+        };
 
         private float _camPosition = -75f;
         private int _bookPage      = 0;
@@ -76,7 +96,16 @@ namespace WiesnKrisn
             _money       = 120f;
             _drunkOMeter = 0f;
             
+            TextManager.Instance.ResetManager();
+            CluesManager.Instance.ResetManager();
+            
             StartGame(_easyMode);
+        }
+
+        public void RestartGame(bool easyMode)
+        {
+            _easyMode = easyMode;
+            RestartGame();
         }
 
         public void ChangeLocation(string scene)
@@ -100,7 +129,12 @@ namespace WiesnKrisn
             StartMiniGame(WitnessGames[witness]);
         }
 
-        public void StartMiniGame(Games game)
+        public void PlayAttraction(Attractions attraction)
+        {
+            StartMiniGame(AttractionGames[attraction]);
+        }
+
+        private void StartMiniGame(Games game)
         {
             SaveCamPosition();
             SaveCurrentBookPage();
@@ -140,7 +174,11 @@ namespace WiesnKrisn
                 
                 case Games.Greifautomat:
                     _money -= AttractionPrizes[Games.Greifautomat];
-                    SceneManager.LoadScene("SampleScene");
+                    SceneManager.LoadScene("GreifautomatScene");
+                    break;
+                
+                case Games.CandyShop:
+                    SceneManager.LoadScene("CandyShopScene");
                     break;
             }
         }
@@ -181,6 +219,13 @@ namespace WiesnKrisn
             UpdateDrunkOMeter(0.2f);
         }
 
+        public void BuyCandy(Candy candy)
+        {
+            _money -= CandyPrizes[candy];
+            
+            UpdateMoney();
+        }
+
         private void UpdateDrunkOMeter(float addition)
         {
             _drunkOMeter += addition;
@@ -188,6 +233,7 @@ namespace WiesnKrisn
 
             if (_drunkOMeter >= 1f)
             {
+                GameOver();
                 SceneManager.LoadScene("GameOverDrunk");
                 return;
             }
@@ -220,6 +266,26 @@ namespace WiesnKrisn
             if (MoneyUI.Instance != null)
                 MoneyUI.Instance.UpdateAmount(_money);
         }
+
+        public void GameOverWrongGuy()
+        {
+            GameOver();
+            SceneManager.LoadScene("GameOverWrongGuy");
+        }
+
+        private void GameOver()
+        {
+            TextManager.Instance.SetGameOver();
+            InputBlock.Instance.UnBlockInput();
+            InputBlock.Instance.OnResume();
+            InputBlock.Instance.TextboxHidden();
+            Cursor.visible = true;
+        }
+
+        public void GameWon()
+        {
+            SceneManager.LoadScene("GameWonDecision");
+        }
         
         public float GetCamPosition() => _camPosition;
         
@@ -232,13 +298,21 @@ namespace WiesnKrisn
         public float GetBeerPrize() => BeerPrize;
         
         public float GetAperolPrize() => AperolPrize;
+        
+        public float GetCandyPrize(Candy candy) => CandyPrizes[candy];
 
         public float GetDrunkOMeter() => _drunkOMeter;
+
+        public Games GetGameForWitness(Witnesses witness) => WitnessGames[witness];
+        
+        public Games GetGameForAttraction(Attractions attraction) => AttractionGames[attraction];
         
         public void BackToMainMenu()
         {
             SceneManager.LoadScene("MainMenu");
             Destroy(gameObject);
         }
+
+        public bool InEasyMode() => _easyMode;
     }
 }

@@ -1,0 +1,21 @@
+﻿{
+  "Intro": [
+    "Wanna Try to Grab a Plushie?"
+  ],
+  "Accept": [
+    "Let's go!"
+  ],
+  "Refuse": [
+    "Some other time perhaps?"
+  ],
+
+  "IntroTime": [
+    5.0
+  ],
+  "AcceptTime": [
+    5.0
+  ],
+  "RefuseTime": [
+    5.0
+  ]
+}

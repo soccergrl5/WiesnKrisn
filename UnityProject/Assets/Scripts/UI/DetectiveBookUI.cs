@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 using WiesnKrisn.Roles;
 
@@ -12,22 +13,61 @@ namespace WiesnKrisn.UI
         [SerializeField] private Button[] turnPageButtons;
         
         [SerializeField] private CluesUI[] clues;
+
+        [SerializeField] private Button selectSuspect;
+        [SerializeField] private Button interrogateSuspect;
+        [SerializeField] private Sprite[] suspectImages;
+        [SerializeField] private Image suspectDisplay;
         
         private int _currentPage;
+        private Suspects _currentSuspect;
+
+        private int _cluesAmount;
+        private bool _suspectSelected;
+
+        private const int MinClueAmount = 10;
 
         private void Awake()
         {
             Instance = this;
-            Hide();
             
             _currentPage = 0;
             
             turnPageButtons[0].onClick.AddListener(PreviousPage);
             turnPageButtons[1].onClick.AddListener(NextPage);
+            
+            selectSuspect.onClick.AddListener(() =>
+            {
+                SelectSuspectUI.Instance.Show();
+
+                selectSuspect.GetComponentInChildren<TMP_Text>().text = "Change Suspect";
+
+                if (!_suspectSelected)
+                {
+                    _suspectSelected = true;
+                    
+                    if (_cluesAmount >= MinClueAmount)
+                        interrogateSuspect.interactable = true;
+                }
+            });
+            
+            interrogateSuspect.onClick.AddListener(() =>
+            {
+                if (_currentSuspect == RoleDistribution.Instance.GetMainSuspect())
+                {
+                    GameManager.Instance.GameWon();
+                }
+                else
+                {
+                    GameManager.Instance.GameOverWrongGuy();
+                }
+            });
         }
 
         private void Start()
         {
+            Hide();
+            
             _currentPage = GameManager.Instance.GetBookPage();
             
             pages[_currentPage].SetActive(true);
@@ -38,6 +78,9 @@ namespace WiesnKrisn.UI
                 turnPageButtons[1].interactable = false;
             
             CluesManager.Instance.FillUpDetectiveBook();
+
+            suspectDisplay.sprite           = null;
+            interrogateSuspect.interactable = false;
         }
 
         private void NextPage()
@@ -80,6 +123,17 @@ namespace WiesnKrisn.UI
                     clues[category].SetThirdText(witness, text);
                     break;
             }
+            
+            _cluesAmount++;
+            
+            if (_suspectSelected && _cluesAmount >= MinClueAmount)
+                interrogateSuspect.interactable = true;
+        }
+
+        public void DisplaySuspect(Suspects suspect)
+        {
+            suspectDisplay.sprite = suspectImages[(int) suspect];
+            _currentSuspect       = suspect;
         }
 
         public void ToggleUI()
