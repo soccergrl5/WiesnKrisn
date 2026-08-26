@@ -20,8 +20,9 @@ public class JoystickReader : MonoBehaviour
         //should adapt the position of the grabber
         //We need to make sure the z-coordinate sets it only to values -1, -2, -3
         _zCor = CalculateZCoordinate();
+        GrabberScript.GetInstance().ChangeColorAccordingToDimension();
         
-        _xCor = touchDirection.x * CameraCornersScript.MaxX;
+        _xCor = touchDirection.x * CameraCornersScript.Instance.GetMaxX();
         grabber.transform.position = new Vector3(_xCor, grabber.transform.position.y, _zCor);
     }
 

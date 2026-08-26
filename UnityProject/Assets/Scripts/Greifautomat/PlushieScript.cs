@@ -1,47 +1,62 @@
+using System;
 using UnityEngine;
 
-public class PlushieSkript : MonoBehaviour
+public class PlushieScript : MonoBehaviour
 {
-    [SerializeField] private GameObject plushie;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Sprite bearSprite;
+    [SerializeField] private Sprite duckSprite;
+    [SerializeField] private Sprite unicornSprite;
+    private PlushieTypes TypeForThisPlushie;
+
+    private GameObject _grabber;
+    private bool IsHit{ set;get; }
+    
+    void Awake()
     {
-        DividePlushiesEvenly();
-        
+        IsHit = false;
     }
 
-    private void DividePlushiesEvenly()
+    void Start()
     {
-        //We want 9 plushies on 3 z layers
-        for (int x = 0; x < 3; x++)
+        //This needs to be put in start and not awake since you get a nullpointer otherwise
+        switch (TypeForThisPlushie)
         {
-            for (int z = -3; z < 0; z++)
-            {
-                //We need to make sure to stay within the borders of the camera
-                var minX = CameraCornersScript.MinX;
-                var maxX = CameraCornersScript.MaxX;
-                
-                var steps = (maxX - minX) / 3; //The 3 is not variable, since we want 3*3 plushies
-                
-                float tempX = 0;
-                switch (x)
-                {
-                    //To add some variability, we add a random number to x
-                    case 0:
-                        tempX = -steps + Random.Range(-steps/2, steps/2);
-                        break;
-                    case 1:
-                        tempX = 0 + Random.Range(-steps/2, steps/2);
-                        break;
-                    case 2:
-                        tempX = steps + Random.Range(-steps/2, steps/2);
-                        break;
-                    default: 
-                        tempX = 0;
-                        break;
-                }
-                Instantiate(plushie, new Vector3(tempX, 0.2f, z), Quaternion.identity);
-            }
+            case PlushieTypes.Bear: gameObject.GetComponentInChildren<SpriteRenderer>().sprite = bearSprite; break;
+            case PlushieTypes.Duck: gameObject.GetComponentInChildren<SpriteRenderer>().sprite = duckSprite; break;
+            case PlushieTypes.Unicorn: gameObject.GetComponentInChildren<SpriteRenderer>().sprite = unicornSprite; break;
+        }
+    }
+    public void Update()
+    {
+        if (IsHit)
+        {
+            _grabber = GameObject.FindGameObjectWithTag("Grabber");
+            gameObject.transform.position = _grabber.transform.position;
+        }
+    }
+
+    public void SetIsHit(bool isHit)
+    {
+        IsHit = isHit;
+    }
+
+    public void SetPlushieType(PlushieTypes type)
+    {
+        TypeForThisPlushie = type;
+    }
+
+    public PlushieTypes GetPlushieType()
+    {
+        return TypeForThisPlushie;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag.Equals("DropBox"))
+        {
+            print("Plushie in Box!");
+            GetComponent<Rigidbody>().useGravity = true;
+            IsHit = false;
         }
     }
 }

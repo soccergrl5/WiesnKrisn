@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 40722476}
   - component: {fileID: 40722475}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: GameOverCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3436,7 +3436,7 @@ GameObject:
   - component: {fileID: 1143761160}
   - component: {fileID: 1143761159}
   m_Layer: 5
-  m_Name: EveryonesTmpButton
+  m_Name: "K\xFCkensTmpButton"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6388,6 +6388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70360ef7206ba60458a2151c9f2beec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  game: 0
   gameOverPanel: {fileID: 1248488531}
   gameWonPanel: {fileID: 595347011}
   gameOverRetry: {fileID: 1201416673}

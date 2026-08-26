@@ -5,6 +5,7 @@ using WiesnKrisn;
 
 public class GameOverScript : MonoBehaviour
 {
+    [SerializeField] private Games game;
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject gameWonPanel;
     public static GameOverScript Instance { get; private set; }
@@ -23,8 +24,8 @@ public class GameOverScript : MonoBehaviour
         
         gameOverRetry.onClick.AddListener(() =>
         {
-            GameManager.Instance.ReplayMiniGame(Games.Dosenwerfen);
-            SceneManager.LoadScene("DosenwerfenScene");
+            GameManager.Instance.ReplayMiniGame(game);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         });
         gameOverExit.onClick.AddListener(() =>
         {
@@ -34,8 +35,8 @@ public class GameOverScript : MonoBehaviour
         
         gameWonRetry.onClick.AddListener(() =>
         {
-            GameManager.Instance.ReplayMiniGame(Games.Dosenwerfen);
-            SceneManager.LoadScene("DosenwerfenScene");
+            GameManager.Instance.ReplayMiniGame(game);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         });
         gameWonExit.onClick.AddListener(() =>
         {
