@@ -14,7 +14,6 @@ namespace WiesnKrisn.UI
         private void Awake()
         {
             Instance = this;
-            Hide();
             
             resumeButton.onClick.AddListener(Hide);
             
@@ -22,6 +21,11 @@ namespace WiesnKrisn.UI
             {
                 GameManager.Instance.BackToMainMenu();
             });
+        }
+
+        private void Start()
+        {
+            Hide();
         }
 
         public void ToggleUI()
@@ -37,7 +41,10 @@ namespace WiesnKrisn.UI
             gameObject.SetActive(false);
             InputBlock.Instance.OnResume();
             
-            if (InputBlock.Instance.IsBlocked() || TextManager.Instance.WaitForOption()) return;
+            if (InputBlock.Instance.IsBlocked()
+                || TextManager.Instance.WaitForOption()
+                || PowerPadUI.Instance.gameObject.activeSelf) 
+                return;
             Cursor.visible = false;
         }
 

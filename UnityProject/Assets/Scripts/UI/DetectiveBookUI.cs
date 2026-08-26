@@ -18,7 +18,6 @@ namespace WiesnKrisn.UI
         private void Awake()
         {
             Instance = this;
-            Hide();
             
             _currentPage = 0;
             
@@ -28,6 +27,8 @@ namespace WiesnKrisn.UI
 
         private void Start()
         {
+            Hide();
+            
             _currentPage = GameManager.Instance.GetBookPage();
             
             pages[_currentPage].SetActive(true);
