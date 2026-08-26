@@ -195,6 +195,8 @@ namespace WiesnKrisn.Interactable.Texts
                     {
                         if (_progressInPart == _currentTextWitness.IndexOtherInfos)
                         {
+                            Debug.Log("TEST");
+                            
                             string info1  = RoleDistribution.Instance.GetTestimonyForWitness(_currentWitness, 1);
                             int category1 = RoleDistribution.Instance.GetTestimonyTypeForWitness(_currentWitness, 1);
                             
@@ -259,9 +261,10 @@ namespace WiesnKrisn.Interactable.Texts
                     if (_currentTextWitness.Mass.Length == _progressInPart)
                     {
                         _currentProgress = "Success";
-                        _progressInPart  = _currentTextWitness.IndexOtherInfos;
+                        _progressInPart  = _currentTextWitness.IndexOtherInfos - 1;
                         
-                        DisplayText(_currentTextWitness.Success, _currentTextWitness.SuccessTime);
+                        // Don't Change this, I'm fucking stupid
+                        ShowNextTextbox();
                     }
                     else
                     {
