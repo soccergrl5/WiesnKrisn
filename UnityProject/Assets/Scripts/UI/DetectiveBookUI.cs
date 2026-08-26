@@ -67,6 +67,11 @@ namespace WiesnKrisn.UI
         private void Start()
         {
             Hide();
+
+            foreach (GameObject page in pages)
+            {
+                page.SetActive(false);
+            }
             
             _currentPage = GameManager.Instance.GetBookPage();
             
@@ -161,5 +166,11 @@ namespace WiesnKrisn.UI
         }
 
         public int GetCurrentPage() => _currentPage;
+
+        public void ResetColors()
+        {
+            foreach (CluesUI clue in clues)
+                clue.ResetColors();
+        }
     }
 }

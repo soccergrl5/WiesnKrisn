@@ -22,6 +22,8 @@ namespace WiesnKrisn.Roles
             new List<Clue>()
         };
 
+        private bool _resetBook;
+
         private void Awake()
         {
             Instance = this;
@@ -48,6 +50,12 @@ namespace WiesnKrisn.Roles
 
         public void FillUpDetectiveBook()
         {
+            if (_resetBook)
+            {
+                _resetBook = false;
+                DetectiveBookUI.Instance.ResetColors();
+            }
+            
             for (int i = 0; i < _clues.Length; i++)
             {
                 for (int j = 0; j < _clues[i].Count; j++)
@@ -67,5 +75,7 @@ namespace WiesnKrisn.Roles
                 clue.Clear();
             }
         }
+        
+        public void ResetBook() => _resetBook = true;
     }
 }

@@ -87,6 +87,8 @@ namespace WiesnKrisn
                 RoleDistribution.Instance.DistributionEasyMode();
             else
                 RoleDistribution.Instance.DistributionHardMode();
+            
+            CluesManager.Instance.ResetBook();
         }
 
         public void RestartGame()
