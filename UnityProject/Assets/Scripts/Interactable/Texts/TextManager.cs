@@ -21,7 +21,7 @@ namespace WiesnKrisn.Interactable.Texts
         private bool _waitForOption;
         private string _type;
         
-        private int _hintsTheresSomethingWrong;
+        private List<Attractions> _hintsTheresSomethingWrong = new List<Attractions>();
 
         private bool _waitForUI;
         private string[] _waitForUITexts;
@@ -62,7 +62,7 @@ namespace WiesnKrisn.Interactable.Texts
         {
             InputBlock.Instance.TextboxShown();
             
-            TextAsset savedJson    = Resources.Load<TextAsset>(witness.ToString());
+            TextAsset savedJson    = Resources.Load<TextAsset>("Witnesses/" + witness);
             _currentTextWitness    = JsonUtility.FromJson<TextFormatWitness>(savedJson.text);
             _currentWitness        = witness;
             _currentProgress       = "Intro";
@@ -77,7 +77,7 @@ namespace WiesnKrisn.Interactable.Texts
         {
             InputBlock.Instance.TextboxShown();
             
-            TextAsset savedJson    = Resources.Load<TextAsset>(attraction.ToString());
+            TextAsset savedJson    = Resources.Load<TextAsset>("Attractions/" + attraction);
             _currentTextAttraction = JsonUtility.FromJson<TextFormatAttraction>(savedJson.text);
             _currentAttraction     = attraction;
             _currentProgress       = "Intro";
@@ -112,7 +112,7 @@ namespace WiesnKrisn.Interactable.Texts
                     if (_currentTextWitness.Intro.Length == _progressInPart)
                     {
                         _progressInPart = 0;
-                        if (_hintsTheresSomethingWrong >= 2)
+                        if (_hintsTheresSomethingWrong.Count >= 2)
                         {
                             _currentProgress = "IntelGathered";
                             
@@ -508,6 +508,13 @@ namespace WiesnKrisn.Interactable.Texts
             _waitForUITimes = null;
         }
 
+        public void AddHintForSituation(Attractions attraction)
+        {
+            if (_hintsTheresSomethingWrong.Contains(attraction)) return;
+            
+            _hintsTheresSomethingWrong.Add(attraction);
+        }
+
         public void ResetManager()
         {
             _currentProgress       = "Intro";
@@ -521,7 +528,7 @@ namespace WiesnKrisn.Interactable.Texts
 
             _gameOver = false;
 
-            _hintsTheresSomethingWrong = 2;
+            _hintsTheresSomethingWrong.Clear();
         }
         
         public bool WaitForOption() => _waitForOption;

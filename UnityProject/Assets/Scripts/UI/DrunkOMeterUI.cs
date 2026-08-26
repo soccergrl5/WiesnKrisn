@@ -16,12 +16,12 @@ namespace WiesnKrisn.UI
 
         private void Start()
         {
-            slider.value = GameManager.Instance.GetDrunkOMeter();
+            slider.value = 1 - GameManager.Instance.GetDrunkOMeter();
         }
 
         public void UpdateValue(float amount)
         {
-            slider.value = amount;
+            slider.value = 1 - amount;
         }
     }
 }

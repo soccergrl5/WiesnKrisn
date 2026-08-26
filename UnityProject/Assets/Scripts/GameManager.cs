@@ -30,8 +30,10 @@ namespace WiesnKrisn
             { Attractions.RollerCoaster , Games.RollerCoaster},
             { Attractions.GhostTrain , Games.GhostTrain},
             { Attractions.FerrisWheel , Games.FerrisWheel},
+            { Attractions.Karussell , Games.WireGame},
             { Attractions.Autoscooter, Games.Autoscooter},
             { Attractions.Dosenwerfen , Games.Dosenwerfen},
+            {Attractions.Greifautomat, Games.Greifautomat},
             { Attractions.CandyBar , Games.CandyShop}
         };
         

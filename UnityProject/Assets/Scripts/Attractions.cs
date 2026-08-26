@@ -9,5 +9,6 @@
         Karussell,
         Autoscooter,
         Dosenwerfen,
+        Greifautomat,
     }
 }

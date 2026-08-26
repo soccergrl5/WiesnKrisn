@@ -140,6 +140,11 @@ namespace WiesnKrisn.UI
                 option1          = "Open Candy Shop";
                 option1Available = true;
             }
+            else if (attraction == Attractions.Karussell)
+            {
+                option1          = "Fix Karussell";
+                option1Available = true;
+            }
             else
             {
                 float prize           = GameManager.Instance.GetPrizeOfGame(GameManager.Instance.GetGameForAttraction(attraction));

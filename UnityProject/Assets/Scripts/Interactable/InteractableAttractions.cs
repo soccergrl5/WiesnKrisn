@@ -12,15 +12,36 @@ namespace WiesnKrisn.Interactable
             switch (interactableAttraction)
             {
                 case "RollerCoaster":
+                    TextManager.Instance.AddHintForSituation(Attractions.RollerCoaster);
                     TextManager.Instance.ShowTextboxFor(Attractions.RollerCoaster);
                     break;
                 
                 case "Karussell":
+                    TextManager.Instance.AddHintForSituation(Attractions.Karussell);
                     TextManager.Instance.ShowTextboxFor(Attractions.Karussell);
                     break;
                 
                 case "FerrisWheel":
+                    TextManager.Instance.AddHintForSituation(Attractions.FerrisWheel);
                     TextManager.Instance.ShowTextboxFor(Attractions.FerrisWheel);
+                    break;
+                
+                case "Autoscooter":
+                    TextManager.Instance.AddHintForSituation(Attractions.Autoscooter);
+                    TextManager.Instance.ShowTextboxFor(Attractions.Autoscooter);
+                    break;
+                
+                case "GhostTrain":
+                    TextManager.Instance.AddHintForSituation(Attractions.GhostTrain);
+                    TextManager.Instance.ShowTextboxFor(Attractions.GhostTrain);
+                    break;
+                
+                case "Dosenwerfen":
+                    TextManager.Instance.ShowTextboxFor(Attractions.Dosenwerfen);
+                    break;
+                
+                case "Greifautomat":
+                    TextManager.Instance.ShowTextboxFor(Attractions.Greifautomat);
                     break;
                 
                 case "CandyBar":
