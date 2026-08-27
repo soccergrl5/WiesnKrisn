@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using WiesnKrisn.Audio;
 using WiesnKrisn.CandyShop;
 using WiesnKrisn.Interactable.Texts;
 using WiesnKrisn.Movement;
@@ -282,6 +283,8 @@ namespace WiesnKrisn
             InputBlock.Instance.OnResume();
             InputBlock.Instance.TextboxHidden();
             Cursor.visible = true;
+            
+            VoiceLineManager.Instance.Stop();
         }
 
         public void GameWon()

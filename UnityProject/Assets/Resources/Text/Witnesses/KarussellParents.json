@@ -1,0 +1,64 @@
+﻿{
+  "Intro": [
+    "Oh nooo, little Timmy is stuck in the carousel.\nHelp! Help!"
+  ],
+  "NoIntel": [
+    "It won't stop spinning. Can nobody help?"
+  ],
+  "IntelGathered": [
+    "Listen, I don't know who you're looking for but could you please help our little Timmy first?",
+    "I'll tell you everything you want to know afterwards.\nJust help him get out of that carousel, please!"
+  ],
+  "Refuse": [
+    "You'll be a terrible parent in the future."
+  ],
+  "Success": [
+    "Thank you so much!\nYou're a hero!",
+    "Now, what do you want to know?\nIt's a person?",
+    "I can't say I've seen someone odd walking aroun-\nwait yes, I have!",
+    "There was this person. They [].",
+    "That's all I can remember.\nI hope you can quickly find them.\nGood luck!"
+  ],
+  "Fail": [
+
+  ],
+  "Retry":[
+
+  ],
+  "Mass": [
+
+  ],
+
+  "IntroTime": [
+    5.0
+  ],
+  "NoIntelTime": [
+    5.0
+  ],
+  "IntelGatheredTime": [
+    5.0,
+    5.0
+  ],
+  "RefuseTime": [
+    5.0
+  ],
+  "SuccessTime": [
+    5.0,
+    5.0,
+    5.0,
+    5.0,
+    5.0
+  ],
+  "FailTime": [
+
+  ],
+  "RetryTime": [
+
+  ],
+  "MassTime": [
+
+  ],
+
+  "IndexFirstInfo": 0,
+  "IndexOtherInfos" : 0
+}

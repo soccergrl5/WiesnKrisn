@@ -1,0 +1,58 @@
+﻿{
+  "Intro": [
+    "You saved me! Thank you so much!"
+  ],
+  "NoIntel": [
+
+  ],
+  "IntelGathered": [
+
+  ],
+  "Refuse": [
+
+  ],
+  "Success": [
+    "Before that carousel went rogue,\nI saw this weird person walking into a dark corner.",
+    "They [].",
+    "Were they making that carousel go weird?"
+  ],
+  "Fail": [
+
+  ],
+  "Retry":[
+
+  ],
+  "Mass": [
+
+  ],
+
+  "IntroTime": [
+    5.0
+  ],
+  "NoIntelTime": [
+
+  ],
+  "IntelGatheredTime": [
+
+  ],
+  "RefuseTime": [
+
+  ],
+  "SuccessTime": [
+    5.0,
+    5.0,
+    5.0
+  ],
+  "FailTime": [
+
+  ],
+  "RetryTime": [
+
+  ],
+  "MassTime": [
+
+  ],
+
+  "IndexFirstInfo": -1,
+  "IndexOtherInfos" : 1
+}

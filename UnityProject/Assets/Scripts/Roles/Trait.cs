@@ -66,7 +66,7 @@ namespace WiesnKrisn.Roles
                     switch (_clotheColor)
                     {
                         case ClotheColor.Red:
-                            return "had blue clothing";
+                            return "had red clothing";
                         
                         case ClotheColor.Green:
                             return "had green clothing";

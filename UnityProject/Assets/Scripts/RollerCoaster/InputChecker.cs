@@ -12,7 +12,6 @@ namespace WiesnKrisn.RollerCoaster
                 if (!KeySelector.Instance.GetAvailableKeys().Contains(e.keyCode) || !KeySelector.Instance.GetUsedKeys().Contains(e.keyCode))
                 {
                     WrongKeyCounter.Instance.IncreaseCounter();
-                    Debug.Log(":-(");
                     return;
                 }
                 
