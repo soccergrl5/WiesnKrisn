@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/DosenwerfenScene.unity
     guid: 12c09a28a9bcb59499fe8b3c067fcabd
   - enabled: 1
-    path: Assets/Scenes/GreifautomatScene.unity
+    path: Assets/Scenes/MiniGames/GreifautomatScene.unity
     guid: f4a5cc03e02c47a4cb94e2fed569c37d
   - enabled: 1
     path: Assets/Scenes/CandyShopScene.unity
