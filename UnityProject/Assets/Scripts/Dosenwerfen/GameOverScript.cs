@@ -59,7 +59,7 @@ public class GameOverScript : MonoBehaviour
         {
             gameWonPanel.SetActive(true);
             
-            if (GameManager.Instance.GetPrizeOfGame(Games.Dosenwerfen) > GameManager.Instance.GetMoney())
+            if (GameManager.Instance.GetPrizeOfGame(game) > GameManager.Instance.GetMoney())
                 gameWonRetry.interactable = false;
             
             _wonOnce = true;
@@ -68,7 +68,7 @@ public class GameOverScript : MonoBehaviour
         {
             gameOverPanel.SetActive(true);
             
-            if (GameManager.Instance.GetPrizeOfGame(Games.Dosenwerfen) > GameManager.Instance.GetMoney())
+            if (GameManager.Instance.GetPrizeOfGame(game) > GameManager.Instance.GetMoney())
                 gameOverRetry.interactable = false;
         }
     }

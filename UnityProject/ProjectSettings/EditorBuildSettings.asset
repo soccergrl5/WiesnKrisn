@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BierzeltScene.unity
     guid: 9a5a2aa019410d24db1f3f963562d0af
   - enabled: 1
-    path: Assets/Scenes/DosenwerfenScene.unity
+    path: Assets/Scenes/MiniGames/DosenwerfenScene.unity
     guid: 12c09a28a9bcb59499fe8b3c067fcabd
   - enabled: 1
     path: Assets/Scenes/MiniGames/GreifautomatScene.unity
@@ -24,19 +24,19 @@ EditorBuildSettings:
     path: Assets/Scenes/CandyShopScene.unity
     guid: 3f52e7ee237d4f045b74573073543ff5
   - enabled: 1
-    path: Assets/Scenes/GameOverDrunk.unity
+    path: Assets/Scenes/GameEndings/GameOverDrunk.unity
     guid: 4aeb7f81fd50cfe49ae6ccedad3b01ae
   - enabled: 1
-    path: Assets/Scenes/GameOverWrongGuy.unity
+    path: Assets/Scenes/GameEndings/GameOverWrongGuy.unity
     guid: 8943d7aa7d2f13f4987f147f6e125499
   - enabled: 1
-    path: Assets/Scenes/GameWonDecision.unity
+    path: Assets/Scenes/GameEndings/GameWonDecision.unity
     guid: d16203680329781489921498e3062f43
   - enabled: 1
-    path: Assets/Scenes/GameWonArrested.unity
+    path: Assets/Scenes/GameEndings/GameWonArrested.unity
     guid: 5ccbcd6d56f654c408e8270e2032953e
   - enabled: 1
-    path: Assets/Scenes/GameWonLove.unity
+    path: Assets/Scenes/GameEndings/GameWonLove.unity
     guid: 2da38587803c9454e9c7effbc727d58f
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
