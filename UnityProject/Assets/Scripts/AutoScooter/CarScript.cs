@@ -55,28 +55,38 @@ public class CarScript : MonoBehaviour
 
     private void AddSpeedWhenPressingW()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        while (Input.GetKeyDown(KeyCode.W) && _speed < 1.0f)
         {
-            if (_speed < 10f)
-            {
-                _speed += 0.1f;
-                print(_speed);
-            }
+            _speed += 0.1f;
+            print(_speed);
         }
 
-        if (Input.GetKeyUp(KeyCode.W))
+        while (Input.GetKeyUp(KeyCode.W) && _speed > 0.6f)
         {
-            if (_speed > 0.5f)
-            {
-                _speed -= 0.5f;
-                print(_speed);
-            } else if (_speed > 0)
-            {
-                _speed -= 0.1f;
-                print(_speed);
-            }
+            _speed -= 0.5f;
+            print(_speed);
+        }
+
+        while (Input.GetKeyUp(KeyCode.W) && _speed < 0.6f)
+        {
+            _speed -= 0.2f;
+            print(_speed);
+        }
+        if(Input.GetKey(KeyCode.W) && _speed < 1.0f)
+        {
+            _speed = 0;
         }
         _rigidBodyCar.AddForce(transform.up * _speed);
+
+        if (_speed == 0)
+        {
+            _rigidBodyCar.linearVelocity = Vector2.zero;
+        }
+        
+        else
+        {
+            _rigidBodyCar.linearVelocity = transform.forward;
+        }
     }
 
     private void TurnWhenPressingAOrD()

@@ -3,6 +3,12 @@ using UnityEngine;
 public class OpponentCarScript : MonoBehaviour
 {
     private bool _justCrashed = false;
+    [SerializeField] private GameObject playerCar;
+
+    public void Update()
+    {
+        GetComponent<Rigidbody2D>().AddForce((playerCar.transform.position - transform.position).normalized);
+    }
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag.Equals("PlayerCar"))
