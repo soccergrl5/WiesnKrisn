@@ -30,6 +30,9 @@
   "Mass": [
     "Oh, that should do too, I guess."
   ],
+  "Afterwards": [
+    
+  ],
 
   "IntroTime": [
     5.0
@@ -61,6 +64,9 @@
   ],
   "MassTime": [
     5.0
+  ],
+  "AfterwardsTime": [
+    
   ],
 
   "IndexFirstInfo": 1,

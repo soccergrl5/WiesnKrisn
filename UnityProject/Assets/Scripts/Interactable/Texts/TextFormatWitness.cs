@@ -10,6 +10,7 @@
         public string[] Fail;
         public string[] Retry;
         public string[] Mass;
+        public string[] Afterwards;
 
         public float[] IntroTime;
         public float[] NoIntelTime;
@@ -19,6 +20,7 @@
         public float[] FailTime;
         public float[] RetryTime;
         public float[] MassTime;
+        public float[] AfterwardsTime;
 
         public int IndexFirstInfo;
         public int IndexOtherInfos;

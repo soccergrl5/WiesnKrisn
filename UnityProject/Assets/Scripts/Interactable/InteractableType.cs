@@ -5,11 +5,22 @@ namespace WiesnKrisn.Interactable
     [RequireComponent(typeof(Collider2D))]
     public abstract class InteractableType : MonoBehaviour
     {
+        [SerializeField] private SpriteRenderer marker;
+        
         private bool _interactable = false;
         private bool _interacted   = false;
         
-        private void OnTriggerEnter2D(Collider2D other) => _interactable = true;
-        private void OnTriggerExit2D(Collider2D other) => _interactable = false;
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            _interactable  = true;
+            marker.enabled = true;
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            _interactable  = false;
+            marker.enabled = false;
+        }
 
         private void Update()
         {

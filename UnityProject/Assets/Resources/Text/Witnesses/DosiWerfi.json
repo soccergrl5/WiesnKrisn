@@ -30,6 +30,9 @@
   "Mass": [
     "You think alcohol solves that problem?\nApparently, it does."
   ],
+  "Afterwards":[
+    
+  ],
   
   "IntroTime": [
     5.0
@@ -61,6 +64,9 @@
   ],
   "MassTime": [
     5.0
+  ],
+  "AfterwardsTime": [
+    
   ],
   
   "IndexFirstInfo": 1,

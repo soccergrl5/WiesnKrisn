@@ -31,6 +31,9 @@
     "Yess, hurrayyy!\nSee, drinking with us wasn't so terrible after all - unlike with the boys inside the tent.",
     "Anyway, that person I saw."
   ],
+  "Afterwards": [
+    "You're back :D\nReady for another drink?"
+  ],
 
   "IntroTime": [
     5.0
@@ -62,6 +65,9 @@
   ],
   "MassTime": [
     5.0,
+    5.0
+  ],
+  "AfterwardsTime": [
     5.0
   ],
 

@@ -25,6 +25,9 @@
   "Mass": [
 
   ],
+  "Afterwards": [
+    
+  ],
 
   "IntroTime": [
     5.0
@@ -51,6 +54,9 @@
   ],
   "MassTime": [
 
+  ],
+  "AfterwardsTime": [
+    
   ],
 
   "IndexFirstInfo": -1,

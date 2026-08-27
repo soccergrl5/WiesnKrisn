@@ -1,6 +1,6 @@
 ﻿{
   "Intro": [
-    "I'm at my 4th Maß now.\nWhat's your count?"
+    "I'm at my 4th Beer now.\nWhat's your count?"
   ],
   "NoIntel": [
     "When I was your age, I was already in my 40s.\nI may be old but my love for drinking will never age.",
@@ -30,6 +30,9 @@
   ],
   "Mass": [
     "That's my boy!\nNow to that person I saw."
+  ],
+  "Afterwards": [
+    "Back for another round, mate?"
   ],
 
   "IntroTime": [
@@ -63,6 +66,9 @@
   ],
   "MassTime": [
     3.0
+  ],
+  "AfterwardsTime": [
+    5.0
   ],
 
   "IndexFirstInfo": 2,

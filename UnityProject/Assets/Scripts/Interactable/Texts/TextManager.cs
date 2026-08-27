@@ -23,6 +23,7 @@ namespace WiesnKrisn.Interactable.Texts
         private string _type;
         
         private List<Attractions> _hintsTheresSomethingWrong = new List<Attractions>();
+        private List<Witnesses> _receivedAllHints = new List<Witnesses>();
 
         private bool _waitForUI;
         private string[] _waitForUITexts;
@@ -69,8 +70,14 @@ namespace WiesnKrisn.Interactable.Texts
             _progressInPart        = 0;
             _currentSelectedOption = 0;
             _type                  = "Witness";
-            
-            DisplayText(_currentTextWitness.Intro, _currentTextWitness.IntroTime);
+
+            if (_receivedAllHints.Contains(witness))
+            {
+                _currentProgress = "Afterwards";
+                DisplayText(_currentTextWitness.Afterwards, _currentTextWitness.AfterwardsTime);
+            }
+            else
+                DisplayText(_currentTextWitness.Intro, _currentTextWitness.IntroTime);
         }
 
         public void ShowTextboxFor(Attractions attraction)
@@ -217,6 +224,8 @@ namespace WiesnKrisn.Interactable.Texts
                             
                             VoiceLineManager.Instance.SelectOtherTraits(category1, info1, category2, info2);
                             
+                            _receivedAllHints.Add(_currentWitness);
+                            
                             string info = info1 + " and " + info2;
                             
                             _currentTextWitness.Success[_progressInPart] = _currentTextWitness.Success[_progressInPart].Replace("[]", info);
@@ -283,6 +292,30 @@ namespace WiesnKrisn.Interactable.Texts
                     else
                     {
                         DisplayText(_currentTextWitness.Mass, _currentTextWitness.MassTime);
+                    }
+                    break;
+                
+                case "Afterwards":
+                    if (_currentTextWitness.Afterwards.Length == _progressInPart)
+                    {
+                        _progressInPart = 0;
+                        
+                        if (_currentSelectedOption == 1)
+                        {
+                            DoGameOption();
+                        }
+                        else
+                        {
+                            _currentProgress = "Refuse";
+                            
+                            DisplayText(_currentTextWitness.Refuse, _currentTextWitness.RefuseTime);
+                        }
+                        
+                        _currentSelectedOption = 0;
+                    }
+                    else
+                    {
+                        DisplayText(_currentTextWitness.Afterwards, _currentTextWitness.AfterwardsTime);
                     }
                     break;
             }
@@ -420,6 +453,16 @@ namespace WiesnKrisn.Interactable.Texts
                         Cursor.visible = true;
                     }
                     break;
+                
+                case "Afterwards":
+                    if (_progressInPart == _currentTextWitness.Afterwards.Length - 1)
+                    {
+                        TextboxUI.Instance.TextsForTwoOptions(_currentWitness);
+                        TextboxUI.Instance.ShowTwoOptions();
+                        _waitForOption = true;
+                        Cursor.visible = true;
+                    }
+                    break;
             }
         }
 
@@ -504,6 +547,12 @@ namespace WiesnKrisn.Interactable.Texts
 
         public void MiniGamePlayed(bool success)
         {
+            if (_receivedAllHints.Contains(_currentWitness))
+            {
+                TextboxEnd();
+                return;
+            }
+            
             _currentProgress = success ? "Success" : "Fail";
             _progressInPart  = -1;
             
@@ -543,6 +592,7 @@ namespace WiesnKrisn.Interactable.Texts
             _gameOver = false;
 
             _hintsTheresSomethingWrong.Clear();
+            _receivedAllHints.Clear();
         }
         
         public bool WaitForOption() => _waitForOption;

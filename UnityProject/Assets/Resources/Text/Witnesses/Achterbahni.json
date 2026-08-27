@@ -32,6 +32,9 @@
   "Mass": [
     "You may be more angsty than my brother.\nBut you definitely have better drinking-stamina!"
   ],
+  "Afterwards": [
+    "Brave enough for another round?"
+  ],
   
   "IntroTime": [
     5.0
@@ -64,6 +67,9 @@
     5.0
   ],
   "MassTime": [
+    5.0
+  ],
+  "AfterwardsTime": [
     5.0
   ],
   

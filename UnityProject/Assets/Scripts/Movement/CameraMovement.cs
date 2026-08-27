@@ -7,6 +7,9 @@ namespace WiesnKrisn.Movement
         public static CameraMovement Instance {get; private set;}
         
         [SerializeField] private float backgroundWidth;
+        
+        [SerializeField] private Animator animator;
+        [SerializeField] private SpriteRenderer spriteRenderer;
 
         private float _rightMax;
         private float _leftMax;
@@ -47,14 +50,14 @@ namespace WiesnKrisn.Movement
             if (Input.GetKey(KeyCode.D))
             {
                 movement += Time.deltaTime * Speed;
+                
+                spriteRenderer.flipX = false;
             }
             else if (Input.GetKey(KeyCode.A))
             {
                 movement -= Time.deltaTime * Speed;
-            }
-            else
-            {
-                return;
+                
+                spriteRenderer.flipX = true;
             }
 
             if (_pos + movement > _rightMax || _pos + movement < _leftMax)
@@ -64,6 +67,8 @@ namespace WiesnKrisn.Movement
             
             transform.Translate(movement, 0, 0);
             _pos += movement;
+            
+            animator.SetBool("Walking", movement != 0);
         }
 
         public float GetPos() => _pos;

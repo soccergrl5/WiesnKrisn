@@ -23,7 +23,8 @@ namespace WiesnKrisn
             { Witnesses.Achterbahni , Games.RollerCoaster},
             { Witnesses.Geisterbahni , Games.GhostTrain},
             { Witnesses.DosiWerfi , Games.Dosenwerfen},
-            { Witnesses.GreifiTypi , Games.Greifautomat}
+            { Witnesses.GreifiTypi , Games.Greifautomat},
+            { Witnesses.SuessigkeitenFan , Games.CandyShop}
         };
 
         private static readonly Dictionary<Attractions, Games> AttractionGames = new Dictionary<Attractions, Games>()

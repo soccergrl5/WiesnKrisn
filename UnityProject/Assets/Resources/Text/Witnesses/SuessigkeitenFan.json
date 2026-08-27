@@ -30,6 +30,9 @@
   "Mass": [
     "Oh dear. So this is where it goes?"
   ],
+  "Afterwards": [
+    "Back to get more sweets for me?"
+  ],
 
   "IntroTime": [
     5.0
@@ -60,6 +63,9 @@
     5.0
   ],
   "MassTime": [
+    5.0
+  ],
+  "AfterwardsTime": [
     5.0
   ],
 
