@@ -1,0 +1,60 @@
+﻿{
+  "Intro": [
+    
+  ],
+  "NoIntel": [
+    
+  ],
+  "IntelGathered": [
+    
+  ],
+  "Refuse": [
+    
+  ],
+  "Success": [
+    
+  ],
+  "Fail": [
+  
+  ],
+  "Retry":[
+    
+  ],
+  "Mass": [
+    
+  ],
+  "Afterwards": [
+    
+  ],
+
+  "IntroTime": [
+    
+  ],
+  "NoIntelTime": [
+    
+  ],
+  "IntelGatheredTime": [
+    
+  ],
+  "RefuseTime": [
+    
+  ],
+  "SuccessTime": [
+    
+  ],
+  "FailTime": [
+    
+  ],
+  "RetryTime": [
+    
+  ],
+  "MassTime": [
+    
+  ],
+  "AfterwardsTime": [
+    
+  ],
+
+  "IndexFirstInfo": 0,
+  "IndexOtherInfos" : 0
+}

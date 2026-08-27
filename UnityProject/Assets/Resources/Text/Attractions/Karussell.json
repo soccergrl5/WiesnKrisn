@@ -1,0 +1,25 @@
+﻿{
+  "Intro": [
+    "Welcome!\nYou want to get on the carousel?",
+    "Then I must disappoint you.\nThis thing's broken.\nIt just won't stop spinning.",
+    "But maybe you can fix this?\nYou at least look like you could handle that.\nAre you an electrician?"
+  ],
+  "Accept": [
+    "Phew, what a relief to hear.\nThank you."
+  ],
+  "Refuse": [
+    "Sigh, then I guess it'll spin forever."
+  ],
+
+  "IntroTime": [
+    5.0,
+    5.0,
+    5.0
+  ],
+  "AcceptTime": [
+    5.0
+  ],
+  "RefuseTime": [
+    5.0
+  ]
+}

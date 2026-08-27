@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using WiesnKrisn.Audio;
 using WiesnKrisn.CandyShop;
 using WiesnKrisn.Roles;
 using WiesnKrisn.UI;
@@ -22,6 +23,7 @@ namespace WiesnKrisn.Interactable.Texts
         private string _type;
         
         private List<Attractions> _hintsTheresSomethingWrong = new List<Attractions>();
+        private List<Witnesses> _receivedAllHints = new List<Witnesses>();
 
         private bool _waitForUI;
         private string[] _waitForUITexts;
@@ -61,22 +63,28 @@ namespace WiesnKrisn.Interactable.Texts
         {
             InputBlock.Instance.TextboxShown();
             
-            TextAsset savedJson    = Resources.Load<TextAsset>("Witnesses/" + witness);
+            TextAsset savedJson    = Resources.Load<TextAsset>("Text/Witnesses/" + witness);
             _currentTextWitness    = JsonUtility.FromJson<TextFormatWitness>(savedJson.text);
             _currentWitness        = witness;
             _currentProgress       = "Intro";
             _progressInPart        = 0;
             _currentSelectedOption = 0;
             _type                  = "Witness";
-            
-            DisplayText(_currentTextWitness.Intro, _currentTextWitness.IntroTime);
+
+            if (_receivedAllHints.Contains(witness))
+            {
+                _currentProgress = "Afterwards";
+                DisplayText(_currentTextWitness.Afterwards, _currentTextWitness.AfterwardsTime);
+            }
+            else
+                DisplayText(_currentTextWitness.Intro, _currentTextWitness.IntroTime);
         }
 
         public void ShowTextboxFor(Attractions attraction)
         {
             InputBlock.Instance.TextboxShown();
             
-            TextAsset savedJson    = Resources.Load<TextAsset>("Attractions/" + attraction);
+            TextAsset savedJson    = Resources.Load<TextAsset>("Text/Attractions/" + attraction);
             _currentTextAttraction = JsonUtility.FromJson<TextFormatAttraction>(savedJson.text);
             _currentAttraction     = attraction;
             _currentProgress       = "Intro";
@@ -111,6 +119,15 @@ namespace WiesnKrisn.Interactable.Texts
                     if (_currentTextWitness.Intro.Length == _progressInPart)
                     {
                         _progressInPart = 0;
+
+                        if (_currentWitness == Witnesses.KarussellKid)
+                        {
+                            _currentProgress = "Success";
+                            _progressInPart  = -1;
+                            ShowNextTextbox();
+                            return;
+                        }
+                        
                         if (_hintsTheresSomethingWrong.Count >= 2)
                         {
                             _currentProgress = "IntelGathered";
@@ -167,6 +184,7 @@ namespace WiesnKrisn.Interactable.Texts
                             int category = RoleDistribution.Instance.GetTestimonyTypeForWitness(_currentWitness, 0);
                             
                             CluesManager.Instance.AddClue(category, _currentWitness, info);
+                            VoiceLineManager.Instance.SelectFirstTrait(category, info);
 
                             _currentTextWitness.IntelGathered[_progressInPart] = _currentTextWitness.IntelGathered[_progressInPart].Replace("[]", info);
                         }
@@ -203,6 +221,10 @@ namespace WiesnKrisn.Interactable.Texts
                             
                             CluesManager.Instance.AddClue(category1, _currentWitness, info1);
                             CluesManager.Instance.AddClue(category2, _currentWitness, info2);
+                            
+                            VoiceLineManager.Instance.SelectOtherTraits(category1, info1, category2, info2);
+                            
+                            _receivedAllHints.Add(_currentWitness);
                             
                             string info = info1 + " and " + info2;
                             
@@ -270,6 +292,30 @@ namespace WiesnKrisn.Interactable.Texts
                     else
                     {
                         DisplayText(_currentTextWitness.Mass, _currentTextWitness.MassTime);
+                    }
+                    break;
+                
+                case "Afterwards":
+                    if (_currentTextWitness.Afterwards.Length == _progressInPart)
+                    {
+                        _progressInPart = 0;
+                        
+                        if (_currentSelectedOption == 1)
+                        {
+                            DoGameOption();
+                        }
+                        else
+                        {
+                            _currentProgress = "Refuse";
+                            
+                            DisplayText(_currentTextWitness.Refuse, _currentTextWitness.RefuseTime);
+                        }
+                        
+                        _currentSelectedOption = 0;
+                    }
+                    else
+                    {
+                        DisplayText(_currentTextWitness.Afterwards, _currentTextWitness.AfterwardsTime);
                     }
                     break;
             }
@@ -343,6 +389,8 @@ namespace WiesnKrisn.Interactable.Texts
         {
             InputBlock.Instance.TextboxHidden();
             TextboxUI.Instance.Hide();
+            
+            VoiceLineManager.Instance.Stop();
         }
 
         private void DisplayText(string[] texts, float[] times)
@@ -359,6 +407,9 @@ namespace WiesnKrisn.Interactable.Texts
             Debug.Log(texts[_progressInPart]);
             
             TextboxUI.Instance.DisplayText(texts[_progressInPart], times[_progressInPart]);
+            
+            string identifier = _type == "Witness" ? _currentWitness.ToString() : _currentAttraction.ToString();
+            VoiceLineManager.Instance.PlayVoiceLine(identifier, _currentProgress, _progressInPart + 1);
             
             _inProgress = true;
             Invoke(nameof(ProgressOver), times[_progressInPart]);
@@ -398,6 +449,16 @@ namespace WiesnKrisn.Interactable.Texts
                         TextboxUI.Instance.TextsForTwoOptions(_currentWitness);
                         TextboxUI.Instance.TextsForThreeOptions(_currentWitness);
                         TextboxUI.Instance.ShowThreeOptions();
+                        _waitForOption = true;
+                        Cursor.visible = true;
+                    }
+                    break;
+                
+                case "Afterwards":
+                    if (_progressInPart == _currentTextWitness.Afterwards.Length - 1)
+                    {
+                        TextboxUI.Instance.TextsForTwoOptions(_currentWitness);
+                        TextboxUI.Instance.ShowTwoOptions();
                         _waitForOption = true;
                         Cursor.visible = true;
                     }
@@ -486,6 +547,12 @@ namespace WiesnKrisn.Interactable.Texts
 
         public void MiniGamePlayed(bool success)
         {
+            if (_receivedAllHints.Contains(_currentWitness))
+            {
+                TextboxEnd();
+                return;
+            }
+            
             _currentProgress = success ? "Success" : "Fail";
             _progressInPart  = -1;
             
@@ -525,6 +592,7 @@ namespace WiesnKrisn.Interactable.Texts
             _gameOver = false;
 
             _hintsTheresSomethingWrong.Clear();
+            _receivedAllHints.Clear();
         }
         
         public bool WaitForOption() => _waitForOption;

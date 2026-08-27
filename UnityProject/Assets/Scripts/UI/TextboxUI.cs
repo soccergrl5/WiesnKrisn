@@ -86,6 +86,16 @@ namespace WiesnKrisn.UI
                 option1 = "Drink an Aperol - " + prize + "€";
                 option1Available = prize <= GameManager.Instance.GetMoney();
             }
+            else if (witness == Witnesses.KarussellParents)
+            {
+                option1          = "Fix Carousel";
+                option1Available = true;
+            }
+            else if (witness == Witnesses.SuessigkeitenFan)
+            {
+                option1          = "Go buy Sweets";
+                option1Available = true;
+            }
             else
             {
                 float prize =
@@ -142,7 +152,7 @@ namespace WiesnKrisn.UI
             }
             else if (attraction == Attractions.Karussell)
             {
-                option1          = "Fix Karussell";
+                option1          = "Fix Carousel";
                 option1Available = true;
             }
             else

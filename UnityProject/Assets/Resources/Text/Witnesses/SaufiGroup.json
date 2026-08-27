@@ -1,0 +1,76 @@
+﻿{
+  "Intro": [
+    "I'm at my 4th Beer now.\nWhat's your count?"
+  ],
+  "NoIntel": [
+    "When I was your age, I was already in my 40s.\nI may be old but my love for drinking will never age.",
+    "Now that I feel it, I might need a new liver soon.\nThis thing really has a nasty habit of failing.",
+    "It'll be the third time this year.."
+  ],
+  "IntelGathered": [
+    "Your looking for a drinking buddy?\nMaybe I can be of help.",
+    "Not so long ago I saw someone who I wished would be sitting here with us now.",
+    "They [].",
+    "But before I can tell you more you gotta drink a round with us, mate!",
+    "There's no getting around it."
+  ],
+  "Refuse": [
+    "Your lack of drinking enthusiasm scares me."
+  ],
+  "Success": [
+    "Seems like you're quite the player, haha!\nNow to that person I saw.",
+    "They [].",
+    "That's it from me. Happy drinking!"
+  ],
+  "Fail": [
+
+  ],
+  "Retry":[
+
+  ],
+  "Mass": [
+    "That's my boy!\nNow to that person I saw."
+  ],
+  "Afterwards": [
+    "Back for another round, mate?"
+  ],
+
+  "IntroTime": [
+    3.0
+  ],
+  "NoIntelTime": [
+    7.0,
+    7.0,
+    2.0
+  ],
+  "IntelGatheredTime": [
+    3.0,
+    4.0,
+    2.0,
+    4.0,
+    2.0
+  ],
+  "RefuseTime": [
+    3.0
+  ],
+  "SuccessTime": [
+    5.0,
+    4.0,
+    2.0
+  ],
+  "FailTime": [
+
+  ],
+  "RetryTime": [
+
+  ],
+  "MassTime": [
+    3.0
+  ],
+  "AfterwardsTime": [
+    5.0
+  ],
+
+  "IndexFirstInfo": 2,
+  "IndexOtherInfos" : 1
+}

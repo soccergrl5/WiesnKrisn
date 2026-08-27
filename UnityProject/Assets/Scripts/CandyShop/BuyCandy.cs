@@ -13,6 +13,8 @@ namespace WiesnKrisn.CandyShop
 
         [SerializeField] private Button exit;
 
+        private bool _boughtStrawberrys = false;
+        
         private void Awake()
         {
             chocolateStrawberry.onClick.AddListener(() =>
@@ -20,6 +22,8 @@ namespace WiesnKrisn.CandyShop
                 GameManager.Instance.BuyCandy(Candy.ChocolateStrawberry);
                 
                 CheckAvailability();
+                
+                _boughtStrawberrys = true;
             });
             
             candiedAlmonds.onClick.AddListener(() =>
@@ -38,7 +42,7 @@ namespace WiesnKrisn.CandyShop
             
             exit.onClick.AddListener(() =>
             {
-                GameManager.Instance.ExitMiniGame(true);
+                GameManager.Instance.ExitMiniGame(_boughtStrawberrys);
             });
         }
 

@@ -66,7 +66,7 @@ namespace WiesnKrisn.Roles
                     switch (_clotheColor)
                     {
                         case ClotheColor.Red:
-                            return "had blue clothing";
+                            return "had red clothing";
                         
                         case ClotheColor.Green:
                             return "had green clothing";
@@ -83,7 +83,7 @@ namespace WiesnKrisn.Roles
                             return "wore sneakers";
                         
                         case Shoes.Heels:
-                            return "wore heels";
+                            return "wore high-heels";
                         
                         case Shoes.Haferl:
                             return "wore haferl-shoes";
@@ -122,7 +122,7 @@ namespace WiesnKrisn.Roles
                     switch (_headpiece)
                     {
                         case Headpiece.Nothing:
-                            return "wore no head gear";
+                            return "wore no headwear";
                         
                         case Headpiece.Cap:
                             return "wore a cap";

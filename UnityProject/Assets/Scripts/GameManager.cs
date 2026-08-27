@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using WiesnKrisn.Audio;
 using WiesnKrisn.CandyShop;
 using WiesnKrisn.Interactable.Texts;
 using WiesnKrisn.Movement;
@@ -22,7 +23,8 @@ namespace WiesnKrisn
             { Witnesses.Achterbahni , Games.RollerCoaster},
             { Witnesses.Geisterbahni , Games.GhostTrain},
             { Witnesses.DosiWerfi , Games.Dosenwerfen},
-            { Witnesses.GreifiTypi , Games.Greifautomat}
+            { Witnesses.GreifiTypi , Games.Greifautomat},
+            { Witnesses.SuessigkeitenFan , Games.CandyShop}
         };
 
         private static readonly Dictionary<Attractions, Games> AttractionGames = new Dictionary<Attractions, Games>()
@@ -152,12 +154,12 @@ namespace WiesnKrisn
                 
                 case Games.Autoscooter:
                     _money -= AttractionPrizes[Games.Autoscooter];
-                    SceneManager.LoadScene("SampleScene");
+                    SceneManager.LoadScene("AutoScooter");
                     break;
                 
                 case Games.RollerCoaster:
                     _money -= AttractionPrizes[Games.RollerCoaster];
-                    SceneManager.LoadScene("SampleScene");
+                    SceneManager.LoadScene("RollerCoasterScene");
                     break;
                 
                 case Games.GhostTrain:
@@ -282,6 +284,8 @@ namespace WiesnKrisn
             InputBlock.Instance.OnResume();
             InputBlock.Instance.TextboxHidden();
             Cursor.visible = true;
+            
+            VoiceLineManager.Instance.Stop();
         }
 
         public void GameWon()
