@@ -148,7 +148,7 @@ namespace WiesnKrisn.Audio
                 case 3:
                     if (info.Contains("sneakers"))
                         path = "ShoesSneaker";
-                    else if (info.Contains("heels"))
+                    else if (info.Contains("high-heels"))
                         path = "ShoesHeels";
                     else
                         path = "ShoesHaferl";

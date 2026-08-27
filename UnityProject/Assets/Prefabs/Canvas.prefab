@@ -2766,7 +2766,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1930187339369063787, guid: a375b98f9fae2de4ba1947422e28f15d, type: 3}
+  m_Sprite: {fileID: -3870662857854360086, guid: f35e077da45bb6340914feb38081adc5, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3837,7 +3837,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1930187339369063787, guid: a375b98f9fae2de4ba1947422e28f15d, type: 3}
+  m_Sprite: {fileID: 5339569388314557682, guid: 3d109f7be28996546b8368abaa9c48d5, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4999,22 +4999,22 @@ MonoBehaviour:
   - {fileID: 7980482109305627993}
   clues:
   - {fileID: 4557089227871111269}
+  - {fileID: 8209418998903377915}
   - {fileID: 1493526098148976185}
-  - {fileID: 7400632479895619507}
   - {fileID: 5562031950762355183}
   - {fileID: 6514929123416023463}
-  - {fileID: 8209418998903377915}
   - {fileID: 5108774733977087127}
-  - {fileID: 7881889911199253195}
+  - {fileID: 7400632479895619507}
   - {fileID: 2817600325011480486}
   - {fileID: 909227953305432570}
+  - {fileID: 7881889911199253195}
   selectSuspect: {fileID: 1468621172421994232}
   interrogateSuspect: {fileID: 3844613173426796190}
   suspectImages:
   - {fileID: 21300000, guid: e518292cbd68def4aba6e698c6669ac5, type: 3}
   - {fileID: 21300000, guid: e518292cbd68def4aba6e698c6669ac5, type: 3}
-  - {fileID: -1930187339369063787, guid: a375b98f9fae2de4ba1947422e28f15d, type: 3}
-  - {fileID: -1930187339369063787, guid: a375b98f9fae2de4ba1947422e28f15d, type: 3}
+  - {fileID: -3870662857854360086, guid: f35e077da45bb6340914feb38081adc5, type: 3}
+  - {fileID: 5339569388314557682, guid: 3d109f7be28996546b8368abaa9c48d5, type: 3}
   - {fileID: -8596722007438641837, guid: e3c6f9cc925ea1b40b6ee7eca917d9f6, type: 3}
   - {fileID: -3202628254449220699, guid: e952f6d78ec380e4fbef683c26f79532, type: 3}
   - {fileID: -6753369564051292906, guid: 2046b2cad3b8a6a40ad68d7cdbd59568, type: 3}
@@ -6496,7 +6496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4082998309409132654, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_text
-      value: HairColor
+      value: Clothing Color
       objectReference: {fileID: 0}
     - target: {fileID: 4190544765816612678, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6593,6 +6593,10 @@ PrefabInstance:
     - target: {fileID: 5730411257105885307, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737075379533947415, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
+      propertyPath: m_Name
+      value: ClothingColor
       objectReference: {fileID: 0}
     - target: {fileID: 6190699494946700933, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_Pivot.x
@@ -6721,6 +6725,10 @@ PrefabInstance:
     - target: {fileID: 7206489744849995303, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213136276096486475, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
+      propertyPath: m_Name
+      value: Clothes
       objectReference: {fileID: 0}
     - target: {fileID: 7691466248950840638, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6945,7 +6953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1381940726256877106, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_text
-      value: Gingerbread Heart
+      value: Rose
       objectReference: {fileID: 0}
     - target: {fileID: 1723505221007081147, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7077,7 +7085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4082998309409132654, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_text
-      value: Glasses
+      value: Gingerbread Heart
       objectReference: {fileID: 0}
     - target: {fileID: 4190544765816612678, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7174,6 +7182,10 @@ PrefabInstance:
     - target: {fileID: 5730411257105885307, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737075379533947415, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
+      propertyPath: m_Name
+      value: GingerbreadHeart
       objectReference: {fileID: 0}
     - target: {fileID: 6190699494946700933, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_Pivot.x
@@ -7302,6 +7314,10 @@ PrefabInstance:
     - target: {fileID: 7206489744849995303, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213136276096486475, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
+      propertyPath: m_Name
+      value: Rose
       objectReference: {fileID: 0}
     - target: {fileID: 7691466248950840638, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7526,7 +7542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1381940726256877106, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_text
-      value: Color Clothes
+      value: Headwear
       objectReference: {fileID: 0}
     - target: {fileID: 1723505221007081147, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7756,6 +7772,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5737075379533947415, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
+      propertyPath: m_Name
+      value: Shoes
+      objectReference: {fileID: 0}
     - target: {fileID: 6190699494946700933, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7883,6 +7903,10 @@ PrefabInstance:
     - target: {fileID: 7206489744849995303, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213136276096486475, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
+      propertyPath: m_Name
+      value: Headwear
       objectReference: {fileID: 0}
     - target: {fileID: 7691466248950840638, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchorMax.y
@@ -8239,7 +8263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4082998309409132654, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_text
-      value: Eye Color
+      value: Hair Color
       objectReference: {fileID: 0}
     - target: {fileID: 4190544765816612678, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchorMax.y
@@ -8336,6 +8360,10 @@ PrefabInstance:
     - target: {fileID: 5730411257105885307, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737075379533947415, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
+      propertyPath: m_Name
+      value: HairColor
       objectReference: {fileID: 0}
     - target: {fileID: 6190699494946700933, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_Pivot.x
@@ -8464,6 +8492,10 @@ PrefabInstance:
     - target: {fileID: 7206489744849995303, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213136276096486475, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
+      propertyPath: m_Name
+      value: Hairstyle
       objectReference: {fileID: 0}
     - target: {fileID: 7691466248950840638, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchorMax.y
@@ -8688,7 +8720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1381940726256877106, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_text
-      value: Headpiece
+      value: Eye Color
       objectReference: {fileID: 0}
     - target: {fileID: 1723505221007081147, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchorMax.y
@@ -8820,7 +8852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4082998309409132654, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_text
-      value: Rose
+      value: Glasses
       objectReference: {fileID: 0}
     - target: {fileID: 4190544765816612678, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchorMax.y
@@ -8917,6 +8949,10 @@ PrefabInstance:
     - target: {fileID: 5730411257105885307, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737075379533947415, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
+      propertyPath: m_Name
+      value: Glasses
       objectReference: {fileID: 0}
     - target: {fileID: 6190699494946700933, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_Pivot.x
@@ -9045,6 +9081,10 @@ PrefabInstance:
     - target: {fileID: 7206489744849995303, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213136276096486475, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
+      propertyPath: m_Name
+      value: EyeColor
       objectReference: {fileID: 0}
     - target: {fileID: 7691466248950840638, guid: b883ea9095653ce42bd16f2cb4f5b7ab, type: 3}
       propertyPath: m_AnchorMax.y

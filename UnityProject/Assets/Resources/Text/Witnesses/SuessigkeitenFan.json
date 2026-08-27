@@ -1,0 +1,68 @@
+﻿{
+  "Intro": [
+    "Hi, have you been in the ghost ride yet?"
+  ],
+  "NoIntel": [
+    "I have, and it was terrifying.\nI won't go in there ever again.",
+    "Why does it have to be spooky ghosts?\nWhy not adorable kittens?",
+    "Would have been much cooler, am I right?"
+  ],
+  "IntelGathered": [
+    "Ohh, you're looking for someone.\nSomeone suspicious too?",
+    "Hmmm, I think I saw one that'd match that vibe.\nThey [].",
+    "But I said too much already.\nIf you want more then you must buy me something sweet.",
+    "How about chocolate-coated strawberries?\nYep, I want those."
+  ],
+  "Refuse": [
+    "No sweets for me?\nFine, then I guess I continue gatekeeping."
+  ],
+  "Success": [
+    "Yess, exactly what I want.",
+    "Back to that suspicious one.\nThey [].",
+    "Good luck finding them.\nIf you excuse me, I need to finish my strawberries.\nSee ya."
+  ],
+  "Fail": [
+    "You.. you had one job.. and failed."
+  ],
+  "Retry":[
+    "Will I get my sweets this time?"
+  ],
+  "Mass": [
+    "Oh dear. So this is where it goes?"
+  ],
+
+  "IntroTime": [
+    5.0
+  ],
+  "NoIntelTime": [
+    5.0,
+    5.0,
+    5.0
+  ],
+  "IntelGatheredTime": [
+    5.0,
+    5.0,
+    5.0,
+    5.0
+  ],
+  "RefuseTime": [
+    5.0
+  ],
+  "SuccessTime": [
+    5.0,
+    5.0,
+    5.0
+  ],
+  "FailTime": [
+    5.0
+  ],
+  "RetryTime": [
+    5.0
+  ],
+  "MassTime": [
+    5.0
+  ],
+
+  "IndexFirstInfo": 1,
+  "IndexOtherInfos" : 1
+}
