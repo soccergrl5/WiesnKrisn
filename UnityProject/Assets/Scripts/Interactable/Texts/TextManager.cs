@@ -30,6 +30,7 @@ namespace WiesnKrisn.Interactable.Texts
         private float[] _waitForUITimes;
 
         private bool _gameOver;
+        private bool _parentsSpecial;
 
         private void Awake()
         {
@@ -71,8 +72,21 @@ namespace WiesnKrisn.Interactable.Texts
             _currentSelectedOption = 0;
             _type                  = "Witness";
 
-            if (_receivedAllHints.Contains(witness))
+            if (_currentWitness == Witnesses.KarussellParents && GameManager.Instance.GetTimmyUnlocked() && !_receivedAllHints.Contains(_currentWitness))
             {
+                _parentsSpecial = true;
+                
+                _currentProgress = "Afterwards";
+                DisplayText(_currentTextWitness.Afterwards, _currentTextWitness.AfterwardsTime);
+            }
+            else if (_receivedAllHints.Contains(witness))
+            {
+                if (_currentWitness == Witnesses.KarussellParents && !GameManager.Instance.GetTimmyUnlocked())
+                {
+                    DisplayText(_currentTextWitness.Intro, _currentTextWitness.IntroTime);
+                    return;
+                }
+                
                 _currentProgress = "Afterwards";
                 DisplayText(_currentTextWitness.Afterwards, _currentTextWitness.AfterwardsTime);
             }
@@ -131,8 +145,9 @@ namespace WiesnKrisn.Interactable.Texts
                         if (_hintsTheresSomethingWrong.Count >= 2)
                         {
                             _currentProgress = "IntelGathered";
-                            
-                            DisplayText(_currentTextWitness.IntelGathered, _currentTextWitness.IntelGatheredTime);
+
+                            _progressInPart = -1;
+                            ShowNextTextbox();
                         }
                         else
                         {
@@ -159,7 +174,12 @@ namespace WiesnKrisn.Interactable.Texts
                     break;
                 
                 case "IntelGathered":
-                    if (_currentTextWitness.IntelGathered.Length == _progressInPart)
+                    if (_parentsSpecial && _progressInPart != _currentTextWitness.IndexFirstInfo)
+                    {
+                        _parentsSpecial = false;
+                        TextboxEnd();
+                    }
+                    else if (_currentTextWitness.IntelGathered.Length == _progressInPart)
                     {
                         _progressInPart = 0;
                         
@@ -185,6 +205,9 @@ namespace WiesnKrisn.Interactable.Texts
                             
                             CluesManager.Instance.AddClue(category, _currentWitness, info);
                             VoiceLineManager.Instance.SelectFirstTrait(category, info);
+                            
+                            if (_currentWitness == Witnesses.KarussellParents)
+                                _receivedAllHints.Add(_currentWitness);
 
                             _currentTextWitness.IntelGathered[_progressInPart] = _currentTextWitness.IntelGathered[_progressInPart].Replace("[]", info);
                         }
@@ -298,6 +321,22 @@ namespace WiesnKrisn.Interactable.Texts
                 case "Afterwards":
                     if (_currentTextWitness.Afterwards.Length == _progressInPart)
                     {
+                        if (_parentsSpecial)
+                        {
+                            _progressInPart = _currentTextWitness.IndexFirstInfo - 1;
+                            _currentProgress = "IntelGathered";
+                            
+                            ShowNextTextbox();
+
+                            break;
+                        }
+
+                        if (_currentWitness == Witnesses.KarussellParents)
+                        {
+                            TextboxEnd();
+                            break;
+                        }
+                        
                         _progressInPart = 0;
                         
                         if (_currentSelectedOption == 1)
@@ -455,6 +494,8 @@ namespace WiesnKrisn.Interactable.Texts
                     break;
                 
                 case "Afterwards":
+                    if (_currentWitness == Witnesses.KarussellParents) break;
+                    
                     if (_progressInPart == _currentTextWitness.Afterwards.Length - 1)
                     {
                         TextboxUI.Instance.TextsForTwoOptions(_currentWitness);
@@ -547,7 +588,7 @@ namespace WiesnKrisn.Interactable.Texts
 
         public void MiniGamePlayed(bool success)
         {
-            if (_receivedAllHints.Contains(_currentWitness))
+            if (_receivedAllHints.Contains(_currentWitness) && _currentWitness != Witnesses.KarussellParents)
             {
                 TextboxEnd();
                 return;

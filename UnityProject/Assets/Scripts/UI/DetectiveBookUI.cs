@@ -18,6 +18,7 @@ namespace WiesnKrisn.UI
         [SerializeField] private Button interrogateSuspect;
         [SerializeField] private Sprite[] suspectImages;
         [SerializeField] private Image suspectDisplay;
+        [SerializeField] private TMP_Text suspectDisplayName;
         
         private int _currentPage;
         private Suspects _currentSuspect;
@@ -137,8 +138,9 @@ namespace WiesnKrisn.UI
 
         public void DisplaySuspect(Suspects suspect)
         {
-            suspectDisplay.sprite = suspectImages[(int) suspect];
-            _currentSuspect       = suspect;
+            suspectDisplay.sprite   = suspectImages[(int) suspect];
+            suspectDisplayName.text = WitnessNames.SuspectNames[suspect];
+            _currentSuspect         = suspect;
         }
 
         public void ToggleUI()

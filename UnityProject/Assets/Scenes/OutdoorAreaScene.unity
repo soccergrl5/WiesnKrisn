@@ -3700,13 +3700,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2042803012045204939, guid: bd53956968470cd4691372540ecefe11, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1462828014}
   m_SourcePrefab: {fileID: 100100000, guid: bd53956968470cd4691372540ecefe11, type: 3}
 --- !u!4 &1462828012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8346016681917035370, guid: bd53956968470cd4691372540ecefe11, type: 3}
   m_PrefabInstance: {fileID: 1462828011}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1462828013 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2042803012045204939, guid: bd53956968470cd4691372540ecefe11, type: 3}
+  m_PrefabInstance: {fileID: 1462828011}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1462828014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462828013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099b875c904e48a28f69986f69dc69dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1493405581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5912,7 +5932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2060096021
 SpriteRenderer:
   m_ObjectHideFlags: 0

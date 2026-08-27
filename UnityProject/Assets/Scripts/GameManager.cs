@@ -69,6 +69,9 @@ namespace WiesnKrisn
         private const float HardDrunkTime = 9f;
         
         private bool _playWithWitness;
+
+        private bool _playingWireGame = false;
+        private bool _timmyUnlocked   = false;
         
         private void Awake()
         {
@@ -168,6 +171,7 @@ namespace WiesnKrisn
                     break;
                 
                 case Games.WireGame:
+                    _playingWireGame = true;
                     SceneManager.LoadScene("SampleScene");
                     break;
                 
@@ -192,6 +196,13 @@ namespace WiesnKrisn
         public void ExitMiniGame(bool success)
         {
             ChangeLocation("OutdoorAreaScene");
+
+            if (_playingWireGame)
+            {
+                _timmyUnlocked = true;
+                if (Timmy.Instance != null)
+                    Timmy.Instance.Unlock();
+            }
             
             if (_playWithWitness)
                 TextManager.Instance.MiniGamePlayed(success);
@@ -312,6 +323,8 @@ namespace WiesnKrisn
         public Games GetGameForWitness(Witnesses witness) => WitnessGames[witness];
         
         public Games GetGameForAttraction(Attractions attraction) => AttractionGames[attraction];
+
+        public bool GetTimmyUnlocked() => _timmyUnlocked;
         
         public void BackToMainMenu()
         {
