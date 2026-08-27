@@ -152,12 +152,12 @@ namespace WiesnKrisn
                 
                 case Games.Autoscooter:
                     _money -= AttractionPrizes[Games.Autoscooter];
-                    SceneManager.LoadScene("SampleScene");
+                    SceneManager.LoadScene("AutoScooter");
                     break;
                 
                 case Games.RollerCoaster:
                     _money -= AttractionPrizes[Games.RollerCoaster];
-                    SceneManager.LoadScene("SampleScene");
+                    SceneManager.LoadScene("RollerCoasterScene");
                     break;
                 
                 case Games.GhostTrain:
