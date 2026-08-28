@@ -1,12 +1,14 @@
 ﻿{
   "Intro": [
-    "Hi, you wanna try?"
+    "Hi, you wanna toss some cans?",
+    "You gotta be careful out there.\nNot everyone around here is so trust-worthy.",
+    "I'm telling you this because even I cannot trust my co-workers apparently.\nAs for what that actually means, I'm afraid I can't tell you more."
   ],
   "Accept": [
-    "Alright, go ahead."
+    "Nice, the can's are standing. Ready when you are."
   ],
   "Refuse": [
-    "Some other time perhaps?"
+    "Hey, you can still trust me when I say that this is fun, okay?"
   ],
 
   "IntroTime": [

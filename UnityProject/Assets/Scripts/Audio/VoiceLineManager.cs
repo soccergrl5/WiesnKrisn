@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using WiesnKrisn.Interactable.Texts;
 
 namespace WiesnKrisn.Audio
 {
@@ -23,6 +24,8 @@ namespace WiesnKrisn.Audio
             Instance = this;
             
             _audioSource = GetComponent<AudioSource>();
+            
+            TextManager.Instance.AudioReady();
         }
 
         public void SelectFirstTrait(int category, string info)

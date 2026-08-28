@@ -26,8 +26,9 @@ namespace WiesnKrisn.Interactable.Texts
         private List<Witnesses> _receivedAllHints = new List<Witnesses>();
 
         private bool _waitForUI;
-        private string[] _waitForUITexts;
-        private float[] _waitForUITimes;
+        private bool _waitForAudio;
+        private string[] _waitingTexts;
+        private float[] _waitingTimes;
 
         private bool _gameOver;
         private bool _parentsSpecial;
@@ -125,8 +126,6 @@ namespace WiesnKrisn.Interactable.Texts
         
         private void ShowNextTextboxWitness()
         {
-            _progressInPart++;
-            
             switch (_currentProgress)
             {
                 case "Intro":
@@ -137,7 +136,7 @@ namespace WiesnKrisn.Interactable.Texts
                         if (_currentWitness == Witnesses.KarussellKid)
                         {
                             _currentProgress = "Success";
-                            _progressInPart  = -1;
+                            
                             ShowNextTextbox();
                             return;
                         }
@@ -146,14 +145,13 @@ namespace WiesnKrisn.Interactable.Texts
                         {
                             _currentProgress = "IntelGathered";
 
-                            _progressInPart = -1;
                             ShowNextTextbox();
                         }
                         else
                         {
                             _currentProgress = "NoIntel";
                             
-                            DisplayText(_currentTextWitness.NoIntel, _currentTextWitness.NoIntelTime);
+                            ShowNextTextbox();
                         }
                     }
                     else
@@ -191,7 +189,7 @@ namespace WiesnKrisn.Interactable.Texts
                         {
                             _currentProgress = "Refuse";
                             
-                            DisplayText(_currentTextWitness.Refuse, _currentTextWitness.RefuseTime);
+                            ShowNextTextbox();
                         }
                         
                         _currentSelectedOption = 0;
@@ -266,7 +264,7 @@ namespace WiesnKrisn.Interactable.Texts
                         {
                             _currentProgress = "Retry";
                             
-                            DisplayText(_currentTextWitness.Retry, _currentTextWitness.RetryTime);
+                            ShowNextTextbox();
                         }
                         else if (_currentSelectedOption == 2)
                         {
@@ -277,13 +275,13 @@ namespace WiesnKrisn.Interactable.Texts
                             
                             _currentProgress = "Mass";
                             
-                            DisplayText(_currentTextWitness.Mass, _currentTextWitness.MassTime);
+                            ShowNextTextbox();
                         }
                         else
                         {
                             _currentProgress = "Refuse";
                             
-                            DisplayText(_currentTextWitness.Refuse, _currentTextWitness.RefuseTime);
+                            ShowNextTextbox();
                         }
                     }
                     else
@@ -307,7 +305,7 @@ namespace WiesnKrisn.Interactable.Texts
                     if (_currentTextWitness.Mass.Length == _progressInPart)
                     {
                         _currentProgress = "Success";
-                        _progressInPart  = _currentTextWitness.IndexOtherInfos - 1;
+                        _progressInPart  = _currentTextWitness.IndexOtherInfos;
                         
                         // Don't Change this, I'm fucking stupid
                         ShowNextTextbox();
@@ -323,8 +321,8 @@ namespace WiesnKrisn.Interactable.Texts
                     {
                         if (_parentsSpecial)
                         {
-                            _progressInPart = _currentTextWitness.IndexFirstInfo - 1;
                             _currentProgress = "IntelGathered";
+                            _progressInPart  = _currentTextWitness.IndexFirstInfo;
                             
                             ShowNextTextbox();
 
@@ -347,7 +345,7 @@ namespace WiesnKrisn.Interactable.Texts
                         {
                             _currentProgress = "Refuse";
                             
-                            DisplayText(_currentTextWitness.Refuse, _currentTextWitness.RefuseTime);
+                            ShowNextTextbox();
                         }
                         
                         _currentSelectedOption = 0;
@@ -362,8 +360,6 @@ namespace WiesnKrisn.Interactable.Texts
 
         private void ShowNextTextboxAttraction()
         {
-            _progressInPart++;
-
             switch (_currentProgress)
             {
                 case "Intro":
@@ -375,13 +371,13 @@ namespace WiesnKrisn.Interactable.Texts
                         {
                             _currentProgress = "Accept";
                             
-                            DisplayText(_currentTextAttraction.Accept, _currentTextAttraction.AcceptTime);
+                            ShowNextTextbox();
                         }
                         else
                         {
                             _currentProgress = "Refuse";
                             
-                            DisplayText(_currentTextAttraction.Refuse, _currentTextAttraction.RefuseTime);
+                            ShowNextTextbox();
                         }
                         
                         _currentSelectedOption = 0;
@@ -436,10 +432,18 @@ namespace WiesnKrisn.Interactable.Texts
         {
             if (TextboxUI.Instance == null)
             {
-                _waitForUI      = true;
-                _waitForUITexts = texts;
-                _waitForUITimes = times;
+                _waitForUI    = true;
+                _waitingTexts = texts;
+                _waitingTimes = times;
 
+                return;
+            }
+
+            if (VoiceLineManager.Instance == null)
+            {
+                _waitForAudio = true;
+                _waitingTexts = texts;
+                _waitingTimes = times;
                 return;
             }
             
@@ -453,6 +457,8 @@ namespace WiesnKrisn.Interactable.Texts
             
             _inProgress = true;
             Invoke(nameof(ProgressOver), times[_progressInPart]);
+            
+            _progressInPart++;
         }
 
         private void CheckIfOptionsDisplay()
@@ -474,7 +480,7 @@ namespace WiesnKrisn.Interactable.Texts
             switch (_currentProgress)
             {
                 case "IntelGathered":
-                    if (_progressInPart == _currentTextWitness.IntelGathered.Length - 1)
+                    if (_progressInPart == _currentTextWitness.IntelGathered.Length)
                     {
                         TextboxUI.Instance.TextsForTwoOptions(_currentWitness);
                         TextboxUI.Instance.ShowTwoOptions();
@@ -484,7 +490,7 @@ namespace WiesnKrisn.Interactable.Texts
                     break;
                 
                 case "Fail":
-                    if (_progressInPart == _currentTextWitness.Fail.Length - 1)
+                    if (_progressInPart == _currentTextWitness.Fail.Length)
                     {
                         TextboxUI.Instance.TextsForTwoOptions(_currentWitness);
                         TextboxUI.Instance.TextsForThreeOptions(_currentWitness);
@@ -497,7 +503,7 @@ namespace WiesnKrisn.Interactable.Texts
                 case "Afterwards":
                     if (_currentWitness == Witnesses.KarussellParents) break;
                     
-                    if (_progressInPart == _currentTextWitness.Afterwards.Length - 1)
+                    if (_progressInPart == _currentTextWitness.Afterwards.Length)
                     {
                         TextboxUI.Instance.TextsForTwoOptions(_currentWitness);
                         TextboxUI.Instance.ShowTwoOptions();
@@ -513,7 +519,7 @@ namespace WiesnKrisn.Interactable.Texts
             switch (_currentProgress)
             {
                 case "Intro":
-                    if (_progressInPart == _currentTextAttraction.Intro.Length - 1)
+                    if (_progressInPart == _currentTextAttraction.Intro.Length)
                     {
                         TextboxUI.Instance.TextsForTwoOptions(_currentAttraction);
                         TextboxUI.Instance.ShowTwoOptions();
@@ -560,7 +566,7 @@ namespace WiesnKrisn.Interactable.Texts
                 _currentProgress = "Mass";
                 _progressInPart  = 0;
                 
-                DisplayText(_currentTextWitness.Mass, _currentTextWitness.MassTime);
+                ShowNextTextbox();
                 return;
             }
 
@@ -575,7 +581,7 @@ namespace WiesnKrisn.Interactable.Texts
                 _currentProgress = "Mass";
                 _progressInPart  = 0;
                 
-                DisplayText(_currentTextWitness.Mass, _currentTextWitness.MassTime);
+                ShowNextTextbox();
                 return;
             }
             
@@ -596,7 +602,7 @@ namespace WiesnKrisn.Interactable.Texts
             }
             
             _currentProgress = success ? "Success" : "Fail";
-            _progressInPart  = -1;
+            _progressInPart  = 0;
             
             InputBlock.Instance.TextboxShown();
             ShowNextTextbox();
@@ -606,11 +612,18 @@ namespace WiesnKrisn.Interactable.Texts
         {
             if (!_waitForUI) return;
             
-            DisplayText(_waitForUITexts, _waitForUITimes);
+            DisplayText(_waitingTexts, _waitingTimes);
             
-            _waitForUI      = false;
-            _waitForUITexts = null;
-            _waitForUITimes = null;
+            _waitForUI = false;
+        }
+
+        public void AudioReady()
+        {
+            if (!_waitForAudio) return;
+            
+            DisplayText(_waitingTexts, _waitingTimes);
+            
+            _waitForAudio = false;
         }
 
         public void AddHintForSituation(Attractions attraction)
@@ -627,8 +640,9 @@ namespace WiesnKrisn.Interactable.Texts
             _currentSelectedOption = 0;
             _inProgress            = false;
             _waitForUI             = false;
-            _waitForUITexts        = null;
-            _waitForUITimes        = null;
+            _waitForAudio          = false;
+            _waitingTexts          = null;
+            _waitingTimes          = null;
             _waitForOption         = false;
 
             _gameOver = false;
