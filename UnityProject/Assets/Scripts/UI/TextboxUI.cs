@@ -13,6 +13,7 @@ namespace WiesnKrisn.UI
 
         [SerializeField] private TMP_Text textField;
         [SerializeField] private Button[] optionButtons;
+        [SerializeField] private TMP_Text nameTag;
 
         private int _maxLength;
         private float _betweenLettersTime;
@@ -43,9 +44,11 @@ namespace WiesnKrisn.UI
             TextManager.Instance.UIReady();
         }
 
-        public void DisplayText(string text, float duration)
+        public void DisplayText(string text, float duration, string witness)
         {
             Show();
+            
+            nameTag.text = witness;
             
             textField.maxVisibleCharacters = 1;
             textField.text = text;

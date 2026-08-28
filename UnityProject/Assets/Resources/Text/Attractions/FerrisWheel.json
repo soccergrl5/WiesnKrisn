@@ -1,14 +1,14 @@
 ﻿{
   "Intro": [
-    "Hi, you wanna take a ride?",
-    "I must warn you though.\nThis ride's not working as intended.",
-    "We are facing some technical difficulties right now.\nLuckily, your safety isn't at any risk."
+    "Greetings, you want to step into the ferris wheel?",
+    "I must inform you however, that the wheel turns only to the next gondola, making it extremely slow.",
+    "Do you want to take the ride anyway?"
   ],
   "Accept": [
-    "Alright, go ahead."
+    "Sure, then go get your gondola."
   ],
   "Refuse": [
-    "Some other time perhaps?"
+    "Until later then."
   ],
 
   "IntroTime": [

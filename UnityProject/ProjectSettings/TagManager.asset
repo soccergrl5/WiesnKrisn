@@ -9,6 +9,8 @@ TagManager:
   - GameWonPanel
   - Grabber
   - DropBox
+  - OpponentCar
+  - PlayerCar
   layers:
   - Default
   - TransparentFX

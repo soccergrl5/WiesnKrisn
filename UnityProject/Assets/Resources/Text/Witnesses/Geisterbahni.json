@@ -1,0 +1,84 @@
+﻿{
+  "Intro": [
+    "Oh hey, what brings you here?\nEnjoying the fest so far?"
+  ],
+  "NoIntel": [
+    "Have you tried the ghost ride already?\nIt's a child's play, really.\nAnd not scary at all.",
+    "Only the kids do get scared by those petty ghosts.\nI never even flinched.",
+    "You wanna know what's really scary though?\nIt's a toaster. Simple, yet terrifying.",
+    "Whenever this thing shoots up my toast I scream like a toddler.\nUnpredictable, this thing."
+  ],
+  "IntelGathered": [
+    "Looking for a person, huh?\nThe one responsible for the sabotage I suppose.",
+    "Yes, I've seen someone fishy. They [].",
+    "Perhaps they're who you're looking for.",
+    "But look, everything's got a price, ya know?",
+    "Step in the ghost ride and beat my score of 800 points, got it?\nAfter that, I'll tell you all I know. Promise.",
+    "See you soon."
+  ],
+  "Refuse": [
+    "Looks like you're no different than all the kids around here.\nOr you simply cannot beat me, heh!"
+  ],
+  "Success": [
+    "Ah, you're back. How did it go? Catched a few ghosts?",
+    "No beating you, huh?",
+    "Alright, ready your cup. I'll spill the tea.",
+    "That certain someone, they [].",
+    "That's it from me.\nPleasure talking with ya."
+  ],
+  "Fail": [
+    "Guess you got too spooked in there, hmm?\nHow embarrassing.."
+  ],
+  "Retry":[
+    "Off you go then. Time to face your fear."
+  ],
+  "Mass": [
+    "Can't say no to a beer. Screw the liver!\nCheers!"
+  ],
+  "Afterwards": [
+    "Back at ghost hunting again?"
+  ],
+
+  "IntroTime": [
+    5.0
+  ],
+  "NoIntelTime": [
+    5.0,
+    5.0,
+    5.0,
+    5.0
+  ],
+  "IntelGatheredTime": [
+    5.0,
+    5.0,
+    5.0,
+    5.0,
+    5.0,
+    5.0
+  ],
+  "RefuseTime": [
+    5.0
+  ],
+  "SuccessTime": [
+    5.0,
+    5.0,
+    5.0,
+    5.0,
+    5.0
+  ],
+  "FailTime": [
+    5.0
+  ],
+  "RetryTime": [
+    5.0
+  ],
+  "MassTime": [
+    5.0
+  ],
+  "AfterwardsTime": [
+    5.0
+  ],
+
+  "IndexFirstInfo": 1,
+  "IndexOtherInfos" : 3
+}

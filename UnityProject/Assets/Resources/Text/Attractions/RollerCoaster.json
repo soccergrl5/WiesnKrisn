@@ -1,14 +1,14 @@
 ﻿{
   "Intro": [
-    "Hi, you wanna take a ride?",
-    "I must warn you though.\nThis ride's not working as intended.",
-    "We are facing some technical difficulties right now.\nLuckily, your safety isn't at any risk."
+    "Hi, you want to step in the rollercoaster?",
+    "I discovered that this year's Oktoberfest is full of liars\nand people you shouldn't trust so easily.",
+    "How do I know this? Well, because today I've been tricked twice already."
   ],
   "Accept": [
-    "Alright, go ahead."
+    "Sure thing, here, take your seat."
   ],
   "Refuse": [
-    "Some other time perhaps?"
+    "You here to trick me too?"
   ],
 
   "IntroTime": [

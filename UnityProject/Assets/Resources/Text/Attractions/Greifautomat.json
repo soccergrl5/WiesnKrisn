@@ -1,12 +1,12 @@
 ﻿{
   "Intro": [
-    "Wanna Try to Grab a Plushie?"
+    "Do you want to proceed?"
   ],
   "Accept": [
-    "Let's go!"
+    "*Cheerful machine noises*"
   ],
   "Refuse": [
-    "Some other time perhaps?"
+    "*Sad machine noises*"
   ],
 
   "IntroTime": [

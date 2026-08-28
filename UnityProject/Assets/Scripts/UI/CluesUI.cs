@@ -8,6 +8,7 @@ namespace WiesnKrisn.UI
     public class CluesUI : MonoBehaviour
     {
         [SerializeField] private TMP_Text[] cluesTexts;
+        [SerializeField] private TMP_Text[] witnessTexts;
         [SerializeField] private Button[] cluesButtons;
 
         [SerializeField] private string id;
@@ -21,60 +22,21 @@ namespace WiesnKrisn.UI
                 _status[0] = (_status[0] + 1) % 3;
                 PlayerPrefs.SetInt(id + 0, _status[0]);
 
-                switch (_status[0])
-                {
-                    case 0:
-                        cluesTexts[0].color = Color.black;
-                        break;
-                    
-                    case 1:
-                        cluesTexts[0].color = Color.green;
-                        break;
-                    
-                    case 2:
-                        cluesTexts[0].color = Color.red;
-                        break;
-                }
+                SetColors(0);
             });
             cluesButtons[1].onClick.AddListener(() =>
             {
                 _status[1] = (_status[1] + 1) % 3;
                 PlayerPrefs.SetInt(id + 1, _status[1]);
 
-                switch (_status[1])
-                {
-                    case 0:
-                        cluesTexts[1].color = Color.black;
-                        break;
-                    
-                    case 1:
-                        cluesTexts[1].color = Color.green;
-                        break;
-                    
-                    case 2:
-                        cluesTexts[1].color = Color.red;
-                        break;
-                }
+                SetColors(1);
             });
             cluesButtons[2].onClick.AddListener(() =>
             {
                 _status[2] = (_status[2] + 1) % 3;
                 PlayerPrefs.SetInt(id + 2, _status[2]);
 
-                switch (_status[2])
-                {
-                    case 0:
-                        cluesTexts[2].color = Color.black;
-                        break;
-                    
-                    case 1:
-                        cluesTexts[2].color = Color.green;
-                        break;
-                    
-                    case 2:
-                        cluesTexts[2].color = Color.red;
-                        break;
-                }
+                SetColors(2);
             });
             
             cluesButtons[0].enabled = false;
@@ -84,66 +46,30 @@ namespace WiesnKrisn.UI
 
         public void SetFirstText(Witnesses witness, string text)
         {
-            cluesTexts[0].text      = text + "\nfrom " + witness;
+            cluesTexts[0].text      = text;
+            witnessTexts[0].text    = "- " + WitnessNames.Names[witness];
             cluesButtons[0].enabled = true;
 
             _status[0] = PlayerPrefs.GetInt(id + 0, 0);
-            switch (_status[0])
-            {
-                case 0:
-                    cluesTexts[0].color = Color.black;
-                    break;
-                    
-                case 1:
-                    cluesTexts[0].color = Color.green;
-                    break;
-                    
-                case 2:
-                    cluesTexts[0].color = Color.red;
-                    break;
-            }
+            SetColors(0);
         }
         public void SetSecondText(Witnesses witness, string text)
         {
-            cluesTexts[1].text      = text + "\nfrom " + witness;
+            cluesTexts[1].text      = text;
+            witnessTexts[1].text    = "- " + WitnessNames.Names[witness];
             cluesButtons[1].enabled = true;
 
             _status[1] = PlayerPrefs.GetInt(id + 1, 0);
-            switch (_status[1])
-            {
-                case 0:
-                    cluesTexts[1].color = Color.black;
-                    break;
-                    
-                case 1:
-                    cluesTexts[1].color = Color.green;
-                    break;
-                    
-                case 2:
-                    cluesTexts[1].color = Color.red;
-                    break;
-            }
+            SetColors(1);
         }
         public void SetThirdText(Witnesses witness, string text)
         {
-            cluesTexts[2].text      = text + "\nfrom " + witness;
+            cluesTexts[2].text      = text;
+            witnessTexts[2].text    = "- " + WitnessNames.Names[witness];
             cluesButtons[2].enabled = true;
 
             _status[2] = PlayerPrefs.GetInt(id + 2, 0);
-            switch (_status[2])
-            {
-                case 0:
-                    cluesTexts[02].color = Color.black;
-                    break;
-                    
-                case 1:
-                    cluesTexts[2].color = Color.green;
-                    break;
-                    
-                case 2:
-                    cluesTexts[2].color = Color.red;
-                    break;
-            }
+            SetColors(2);
         }
 
         public void ResetColors()
@@ -151,6 +77,27 @@ namespace WiesnKrisn.UI
             PlayerPrefs.SetInt(id + 0, 0);
             PlayerPrefs.SetInt(id + 1, 0);
             PlayerPrefs.SetInt(id + 2, 0);
+        }
+
+        private void SetColors(int index)
+        {
+            switch (_status[index])
+            {
+                case 0:
+                    cluesTexts[index].color   = Color.black;
+                    witnessTexts[index].color = Color.black;
+                    break;
+                    
+                case 1:
+                    cluesTexts[index].color   = Color.green;
+                    witnessTexts[index].color = Color.green;
+                    break;
+                    
+                case 2:
+                    cluesTexts[index].color   = Color.red;
+                    witnessTexts[index].color = Color.red;
+                    break;
+            }
         }
     }
 }

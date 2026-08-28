@@ -1,14 +1,14 @@
 ﻿{
   "Intro": [
-    "Hi, you wanna take a ride?",
-    "I must warn you though.\nThis ride's not working as intended.",
-    "We are facing some technical difficulties right now.\nLuckily, your safety isn't at any risk."
+    "Hello, are you ready to bump into some cars?",
+    "I must tell you though that as of now, the cars can only go backward.",
+    "It seems like they're not working as intended.\nWould you still like to go?"
   ],
   "Accept": [
-    "Alright, go ahead."
+    "Very well, the cars are yours."
   ],
   "Refuse": [
-    "Some other time perhaps?"
+    "Alright, have fun exploring the place then."
   ],
 
   "IntroTime": [
