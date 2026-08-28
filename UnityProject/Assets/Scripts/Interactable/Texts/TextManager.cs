@@ -302,6 +302,12 @@ namespace WiesnKrisn.Interactable.Texts
                     break;
                 
                 case "Mass":
+                    if ((_currentWitness == Witnesses.SaufiGroup || _currentWitness == Witnesses.AperoliGroup) && _receivedAllHints.Contains(_currentWitness))
+                    {
+                        TextboxEnd();
+                        return;
+                    }
+
                     if (_currentTextWitness.Mass.Length == _progressInPart)
                     {
                         _currentProgress = "Success";
