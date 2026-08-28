@@ -78,21 +78,21 @@ namespace WiesnKrisn.Interactable.Texts
                 _parentsSpecial = true;
                 
                 _currentProgress = "Afterwards";
-                DisplayText(_currentTextWitness.Afterwards, _currentTextWitness.AfterwardsTime);
+                ShowNextTextbox();
             }
             else if (_receivedAllHints.Contains(witness))
             {
                 if (_currentWitness == Witnesses.KarussellParents && !GameManager.Instance.GetTimmyUnlocked())
                 {
-                    DisplayText(_currentTextWitness.Intro, _currentTextWitness.IntroTime);
+                    ShowNextTextbox();
                     return;
                 }
                 
                 _currentProgress = "Afterwards";
-                DisplayText(_currentTextWitness.Afterwards, _currentTextWitness.AfterwardsTime);
+                ShowNextTextbox();
             }
             else
-                DisplayText(_currentTextWitness.Intro, _currentTextWitness.IntroTime);
+                ShowNextTextbox();
         }
 
         public void ShowTextboxFor(Attractions attraction)
@@ -107,7 +107,7 @@ namespace WiesnKrisn.Interactable.Texts
             _currentSelectedOption = 0;
             _type                  = "Attraction";
             
-            DisplayText(_currentTextAttraction.Intro, _currentTextAttraction.IntroTime);
+            ShowNextTextbox();
         }
 
         private void ShowNextTextbox()

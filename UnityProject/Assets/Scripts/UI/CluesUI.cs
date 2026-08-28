@@ -8,6 +8,7 @@ namespace WiesnKrisn.UI
     public class CluesUI : MonoBehaviour
     {
         [SerializeField] private TMP_Text[] cluesTexts;
+        [SerializeField] private TMP_Text[] witnessTexts;
         [SerializeField] private Button[] cluesButtons;
 
         [SerializeField] private string id;
@@ -45,7 +46,8 @@ namespace WiesnKrisn.UI
 
         public void SetFirstText(Witnesses witness, string text)
         {
-            cluesTexts[0].text      = text + "\n- " + WitnessNames.Names[witness];
+            cluesTexts[0].text      = text;
+            witnessTexts[0].text    = "- " + WitnessNames.Names[witness];
             cluesButtons[0].enabled = true;
 
             _status[0] = PlayerPrefs.GetInt(id + 0, 0);
@@ -53,7 +55,8 @@ namespace WiesnKrisn.UI
         }
         public void SetSecondText(Witnesses witness, string text)
         {
-            cluesTexts[1].text      = text + "\n- " + WitnessNames.Names[witness];
+            cluesTexts[1].text      = text;
+            witnessTexts[1].text    = "- " + WitnessNames.Names[witness];
             cluesButtons[1].enabled = true;
 
             _status[1] = PlayerPrefs.GetInt(id + 1, 0);
@@ -61,7 +64,8 @@ namespace WiesnKrisn.UI
         }
         public void SetThirdText(Witnesses witness, string text)
         {
-            cluesTexts[2].text      = text + "\n- " + WitnessNames.Names[witness];
+            cluesTexts[2].text      = text;
+            witnessTexts[2].text    = "- " + WitnessNames.Names[witness];
             cluesButtons[2].enabled = true;
 
             _status[2] = PlayerPrefs.GetInt(id + 2, 0);
@@ -80,15 +84,18 @@ namespace WiesnKrisn.UI
             switch (_status[index])
             {
                 case 0:
-                    cluesTexts[index].color = Color.black;
+                    cluesTexts[index].color   = Color.black;
+                    witnessTexts[index].color = Color.black;
                     break;
                     
                 case 1:
-                    cluesTexts[index].color = Color.green;
+                    cluesTexts[index].color   = Color.green;
+                    witnessTexts[index].color = Color.green;
                     break;
                     
                 case 2:
-                    cluesTexts[index].color = Color.red;
+                    cluesTexts[index].color   = Color.red;
+                    witnessTexts[index].color = Color.red;
                     break;
             }
         }

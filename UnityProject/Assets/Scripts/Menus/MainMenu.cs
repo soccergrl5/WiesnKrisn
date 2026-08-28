@@ -28,7 +28,7 @@ namespace WiesnKrisn.Menus
             
             settings.onClick.AddListener(() =>
             {
-                Debug.Log("Settings");
+                Settings.Instance.Show();
             });
         }
     }
