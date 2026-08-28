@@ -54,9 +54,9 @@ namespace WiesnKrisn.RollerCoaster
 
         public void StartCoaster()
         {
-            Invoke(nameof(SelectKey), 2f);
+            Invoke(nameof(SelectKey), 1f);
             
-            Invoke(nameof(Finished), 30f);
+            Invoke(nameof(Finished), 31f);
         }
 
         private void SelectKey()
