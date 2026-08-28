@@ -13,7 +13,7 @@
     "A shady one by any chance? \nThey [].",
     "Yes, I've seen them.",
     "But I cannot tell you more.\nNot unless you have a drink with us girls.",
-    "You see, information has a price, and that price is your alocohol-to-blood-ratio."
+    "You see, information has a price, and that price is your alcohol-to-blood-ratio."
   ],
   "Refuse": [
     "What a shame.\nI guess I'll remain silent then."
@@ -36,27 +36,27 @@
   ],
 
   "IntroTime": [
-    5.0
+    2.0
   ],
   "NoIntelTime": [
-    5.0,
-    5.0,
-    5.0,
-    5.0
+    3.0,
+    4.0,
+    3.0,
+    1.0
   ],
   "IntelGatheredTime": [
-    5.0,
-    5.0,
-    5.0,
+    1.0,
+    4.0,
+    1.0,
     5.0,
     5.0
   ],
   "RefuseTime": [
-    5.0
+    2.0
   ],
   "SuccessTime": [
-    5.0,
-    5.0
+    2.0,
+    3.0
   ],
   "FailTime": [
 
@@ -65,7 +65,7 @@
 
   ],
   "MassTime": [
-    5.0
+    4.0
   ],
   "AfterwardsTime": [
     

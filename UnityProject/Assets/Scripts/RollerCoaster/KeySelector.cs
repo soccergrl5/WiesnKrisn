@@ -50,8 +50,11 @@ namespace WiesnKrisn.RollerCoaster
         {
             Cursor.visible = false;
             WrongKeyCounter.Instance.ResetCounter();
-            
-            SelectKey();
+        }
+
+        public void StartCoaster()
+        {
+            Invoke(nameof(SelectKey), 2f);
             
             Invoke(nameof(Finished), 30f);
         }
