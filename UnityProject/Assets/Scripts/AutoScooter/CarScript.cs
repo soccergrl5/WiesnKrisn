@@ -5,7 +5,8 @@ public class CarScript : MonoBehaviour
 {
     private Vector2 _movement;
     
-    private float _speed = 0.0f;
+    private float _acceleration = 10f;
+    private float _deceleration = -5f;
 
     private float _rotation = 0.0f;
     private Rigidbody2D _rigidBodyCar;
@@ -52,41 +53,34 @@ public class CarScript : MonoBehaviour
         AddSpeedWhenPressingW();
         TurnWhenPressingAOrD();
     }
-
+    
+    //DO NOT TOUCH THIS UNDER ANY CIRCUMSTANCES I WARN YOU
     private void AddSpeedWhenPressingW()
     {
-        while (Input.GetKeyDown(KeyCode.W) && _speed < 1.0f)
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            _speed += 0.1f;
-            print(_speed);
-        }
+            _rigidBodyCar.AddForce(_acceleration * transform.up);
+            print(_rigidBodyCar.totalForce);
 
-        while (Input.GetKeyUp(KeyCode.W) && _speed > 0.6f)
-        {
-            _speed -= 0.5f;
-            print(_speed);
         }
-
-        while (Input.GetKeyUp(KeyCode.W) && _speed < 0.6f)
-        {
-            _speed -= 0.2f;
-            print(_speed);
-        }
-        if(Input.GetKey(KeyCode.W) && _speed < 1.0f)
-        {
-            _speed = 0;
-        }
-        _rigidBodyCar.AddForce(transform.up * _speed);
-
-        if (_speed == 0)
-        {
-            _rigidBodyCar.linearVelocity = Vector2.zero;
-        }
-        
         else
         {
-            _rigidBodyCar.linearVelocity = transform.forward;
+            if (!(_rigidBodyCar.totalForce.x < 0 & _rigidBodyCar.totalForce.y < 0))
+            {
+                if (_rigidBodyCar.totalForce.x == 0 & _rigidBodyCar.totalForce.y == 0)
+                {
+                    _deceleration = 0;
+                } 
+                else
+                {
+                    _deceleration = (-_acceleration)/2;
+                }
+                _rigidBodyCar.AddForce(_deceleration * transform.up);
+            }
+            
         }
+
+        
     }
 
     private void TurnWhenPressingAOrD()
