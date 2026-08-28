@@ -172,7 +172,7 @@ namespace WiesnKrisn
                 
                 case Games.WireGame:
                     _playingWireGame = true;
-                    SceneManager.LoadScene("SampleScene");
+                    SceneManager.LoadScene("WireGameScene");
                     break;
                 
                 case Games.FerrisWheel:

@@ -6389,12 +6389,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game: 0
-  gameOverPanel: {fileID: 0}
-  gameWonPanel: {fileID: 0}
-  gameOverRetry: {fileID: 0}
-  gameOverExit: {fileID: 0}
-  gameWonRetry: {fileID: 0}
-  gameWonExit: {fileID: 0}
+  gameOverPanel: {fileID: 335744192}
+  gameWonPanel: {fileID: 704381666}
+  gameOverRetry: {fileID: 427271864}
+  gameOverExit: {fileID: 474839205}
+  gameWonRetry: {fileID: 1598312751}
+  gameWonExit: {fileID: 1676801044}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
