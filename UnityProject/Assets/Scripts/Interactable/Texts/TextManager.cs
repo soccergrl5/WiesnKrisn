@@ -444,8 +444,9 @@ namespace WiesnKrisn.Interactable.Texts
             }
             
             Debug.Log(texts[_progressInPart]);
-            
-            TextboxUI.Instance.DisplayText(texts[_progressInPart], times[_progressInPart]);
+
+            string nameTag = _type == "Witness" ? WitnessNames.Names[_currentWitness] : AttractionNames.Names[_currentAttraction];
+            TextboxUI.Instance.DisplayText(texts[_progressInPart], times[_progressInPart], nameTag);
             
             string identifier = _type == "Witness" ? _currentWitness.ToString() : _currentAttraction.ToString();
             VoiceLineManager.Instance.PlayVoiceLine(identifier, _currentProgress, _progressInPart + 1);
