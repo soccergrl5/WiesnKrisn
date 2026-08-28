@@ -40,43 +40,43 @@
   ],
 
   "IntroTime": [
-    5.0
+    4.0
   ],
   "NoIntelTime": [
+    6.0,
     5.0,
     5.0,
-    5.0,
-    5.0
+    6.0
   ],
   "IntelGatheredTime": [
+    6.0,
     5.0,
-    5.0,
-    5.0,
-    5.0,
-    5.0,
-    5.0
+    2.0,
+    3.0,
+    9.0,
+    1.0
   ],
   "RefuseTime": [
-    5.0
+    6.0
   ],
   "SuccessTime": [
+    4.0,
+    2.0,
+    3.0,
     5.0,
-    5.0,
-    5.0,
-    5.0,
-    5.0
+    3.0
   ],
   "FailTime": [
-    5.0
+    4.0
   ],
   "RetryTime": [
-    5.0
+    3.0
   ],
   "MassTime": [
-    5.0
+    4.0
   ],
   "AfterwardsTime": [
-    5.0
+    1.0
   ],
 
   "IndexFirstInfo": 1,

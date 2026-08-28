@@ -1,7 +1,7 @@
 ﻿{
   "Intro": [
     "Hello, are you ready to bump into some cars?",
-    "I must tell you though that as of now, the cars can only go backward.",
+    "I must tell you though that as of now, the cars can only go backwards.",
     "It seems like they're not working as intended.\nWould you still like to go?"
   ],
   "Accept": [
@@ -12,14 +12,14 @@
   ],
 
   "IntroTime": [
-    5.0,
-    5.0,
-    5.0
+    2.0,
+    4.0,
+    4.0
   ],
   "AcceptTime": [
-    5.0
+    2.0
   ],
   "RefuseTime": [
-    5.0
+    2.0
   ]
 }
