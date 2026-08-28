@@ -429,9 +429,12 @@ namespace WiesnKrisn.Interactable.Texts
         private void TextboxEnd()
         {
             InputBlock.Instance.TextboxHidden();
-            TextboxUI.Instance.Hide();
             
-            VoiceLineManager.Instance.Stop();
+            if (TextboxUI.Instance != null)
+                TextboxUI.Instance.Hide();
+            
+            if (VoiceLineManager.Instance != null)
+                VoiceLineManager.Instance.Stop();
         }
 
         private void DisplayText(string[] texts, float[] times)

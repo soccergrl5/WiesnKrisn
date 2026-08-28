@@ -177,7 +177,7 @@ namespace WiesnKrisn
                 
                 case Games.FerrisWheel:
                     _money -= AttractionPrizes[Games.FerrisWheel];
-                    SceneManager.LoadScene("SampleScene");
+                    SceneManager.LoadScene("FerrisWheelScene");
                     break;
                 
                 case Games.Greifautomat:

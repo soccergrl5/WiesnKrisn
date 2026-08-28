@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace WiesnKrisn.RollerCoaster
 {
@@ -17,6 +18,12 @@ namespace WiesnKrisn.RollerCoaster
             GetComponentInChildren<TMP_Text>().text = _keyCode.ToString();
             
             Invoke(nameof(Fail), 3f);
+            Invoke(nameof(ColorChange), 1.5f);
+        }
+
+        private void ColorChange()
+        {
+            GetComponent<Image>().color = Color.red;
         }
 
         private void Fail()

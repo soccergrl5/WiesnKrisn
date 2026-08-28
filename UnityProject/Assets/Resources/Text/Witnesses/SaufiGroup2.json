@@ -33,7 +33,7 @@
     "That's the spirit!\nI knew you wouldn't refuse a cool beer with us!"
   ],
   "Afterwards": [
-    
+    "You're back! Come, drink another beer with us!"
   ],
 
   "IntroTime": [
@@ -70,7 +70,7 @@
     5.0
   ],
   "AfterwardsTime": [
-    
+    5.0
   ],
 
   "IndexFirstInfo": 1,
