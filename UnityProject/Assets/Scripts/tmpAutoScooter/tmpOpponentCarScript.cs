@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class OpponentCarScript : MonoBehaviour
+public class tmpOpponentCarScript : MonoBehaviour
 {
     [SerializeField] private GameObject playerCar;
-    private Rigidbody2D _rigidbodyOpponent;
+    private Rigidbody _rigidbodyOpponent;
     
     private float _acceleration = 3f;
     private float _deceleration = -1.5f;
@@ -13,7 +13,7 @@ public class OpponentCarScript : MonoBehaviour
 
     public void Awake()
     {
-        _rigidbodyOpponent = GetComponent<Rigidbody2D>();
+        _rigidbodyOpponent = GetComponent<Rigidbody>();
     }
 
     public void Start()
@@ -26,12 +26,12 @@ public class OpponentCarScript : MonoBehaviour
         MovingForward();
     }
     
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.tag.Equals("PlayerCar"))
         {
             Vector3 directionToOther = (other.transform.position - transform.position).normalized;
-            Vector3 myMovementDirection = GetComponent<Rigidbody2D>().linearVelocity.normalized;
+            Vector3 myMovementDirection = GetComponent<Rigidbody>().linearVelocity.normalized;
                     
             if (Vector3.Dot(myMovementDirection, directionToOther) > 0 && !_justCrashed)
             {
@@ -60,14 +60,17 @@ public class OpponentCarScript : MonoBehaviour
     {
         if (_moveForward)
         {
-            _rigidbodyOpponent.AddForce(_acceleration * transform.up);
+            if (_rigidbodyOpponent != null)
+            {
+                _rigidbodyOpponent.AddForce(_acceleration * transform.up);
 
+            }
         }
         else
         {
-            if (!(_rigidbodyOpponent.totalForce.x < 0 & _rigidbodyOpponent.totalForce.y < 0))
+            if (!(_rigidbodyOpponent.GetAccumulatedForce().x < 0 & _rigidbodyOpponent.GetAccumulatedForce().y < 0))
             {
-                if (_rigidbodyOpponent.totalForce.x == 0 & _rigidbodyOpponent.totalForce.y == 0)
+                if (_rigidbodyOpponent.GetAccumulatedForce().x == 0 & _rigidbodyOpponent.GetAccumulatedForce().y == 0)
                 {
                     _deceleration = 0;
                 } 
@@ -85,7 +88,7 @@ public class OpponentCarScript : MonoBehaviour
     {
         //Wir wollen hier den Vector haben in welcher Richtung der Spieler ist und uns da dann teilweise hindrehen
         //Frage: Ist es sinnvoll, uns auch etwas zu weit drehen können? Ich denke schon
-        float tempZ = Vector2.Angle(transform.up, playerCar.transform.position - transform.position);
+        float tempZ = Vector3.Angle(Vector3.right, playerCar.transform.position - transform.position);
         transform.Rotate(transform.forward, tempZ, Space.Self);
 
     }

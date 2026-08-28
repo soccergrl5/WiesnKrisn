@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CarScript : MonoBehaviour
+public class tmpCarScript : MonoBehaviour
 {
     private Vector2 _movement;
     
@@ -9,24 +9,24 @@ public class CarScript : MonoBehaviour
     private float _deceleration = -10f;
 
     private float _rotation = 0.0f;
-    private Rigidbody2D _rigidBodyCar;
+    private Rigidbody _rigidBodyCar;
     private bool _justCrashed = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         _movement = transform.forward;
-        if (GetComponent<Rigidbody2D>() != null)
+        if (GetComponent<Rigidbody>() != null)
         {
-            _rigidBodyCar = GetComponent<Rigidbody2D>();
+            _rigidBodyCar = GetComponent<Rigidbody>();
         }
         else
         {
-            gameObject.AddComponent<Rigidbody2D>();
-            _rigidBodyCar = GetComponent<Rigidbody2D>();
+            gameObject.AddComponent<Rigidbody>();
+            _rigidBodyCar = GetComponent<Rigidbody>();
         }
     }
     
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.tag.Equals("OpponentCar"))
         {
@@ -59,15 +59,15 @@ public class CarScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            _rigidBodyCar.AddForce(_acceleration * transform.up);
-            print(_rigidBodyCar.totalForce);
-
+            _rigidBodyCar.AddForce(_acceleration * transform.forward);
+            print(_rigidBodyCar.GetAccumulatedForce());
+            print("not again");
         }
         else
         {
-            if (!(_rigidBodyCar.totalForce.x < 0 & _rigidBodyCar.totalForce.y < 0))
+            if (!(_rigidBodyCar.GetAccumulatedForce().x < 0 & _rigidBodyCar.GetAccumulatedForce().y < 0))
             {
-                if (_rigidBodyCar.totalForce.x == 0 & _rigidBodyCar.totalForce.y == 0)
+                if (_rigidBodyCar.GetAccumulatedForce().x == 0 & _rigidBodyCar.GetAccumulatedForce().y == 0)
                 {
                     _deceleration = 0;
                 } 
@@ -75,7 +75,7 @@ public class CarScript : MonoBehaviour
                 {
                     _deceleration = (-_acceleration)/2;
                 }
-                _rigidBodyCar.AddForce(_deceleration * transform.up);
+                _rigidBodyCar.AddForce(_deceleration * transform.forward);
             }
             
         }
@@ -90,12 +90,12 @@ public class CarScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
         {
             _rotation -= 10;
-            rotationAxis = Vector3.forward;
+            rotationAxis = Vector3.up;
         }
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
             _rotation += 10;
-            rotationAxis = Vector3.back;
+            rotationAxis = Vector3.down;
         }
         
         transform.Rotate(rotationAxis, _rotation * Time.fixedDeltaTime);
