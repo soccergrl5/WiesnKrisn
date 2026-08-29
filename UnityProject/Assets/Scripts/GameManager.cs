@@ -73,6 +73,8 @@ namespace WiesnKrisn
 
         private bool _playingWireGame = false;
         private bool _timmyUnlocked   = false;
+
+        private Suspects _endSuspect;
         
         private void Awake()
         {
@@ -284,8 +286,10 @@ namespace WiesnKrisn
                 MoneyUI.Instance.UpdateAmount(_money);
         }
 
-        public void GameOverWrongGuy()
+        public void GameOverWrongGuy(Suspects wrongSuspect)
         {
+            _endSuspect = wrongSuspect;
+            
             GameOver();
             SceneManager.LoadScene("GameOverWrongGuy");
         }
@@ -301,8 +305,10 @@ namespace WiesnKrisn
             VoiceLineManager.Instance.Stop();
         }
 
-        public void GameWon()
+        public void GameWon(Suspects rightSuspect)
         {
+            _endSuspect = rightSuspect;
+            
             SceneManager.LoadScene("GameWonDecision");
         }
         
@@ -329,6 +335,10 @@ namespace WiesnKrisn
         public Games GetGameForAttraction(Attractions attraction) => AttractionGames[attraction];
 
         public bool GetTimmyUnlocked() => _timmyUnlocked;
+
+        public Suspects GetEndSuspect() => _endSuspect;
+
+        public Suspects GetLover() => RoleDistribution.Instance.GetLover();
         
         public void BackToMainMenu()
         {

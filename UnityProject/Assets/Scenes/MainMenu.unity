@@ -743,8 +743,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3509505204379215448, guid: c0603a4aeb7a66e44a20e6332e19c668, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: -6543572566188817186, guid: d72386727c2d3374aa04870f515771d3, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -818,7 +818,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7137287209990819639, guid: 6729d458e9d804347b66881f92d142a3, type: 3}
+  m_Sprite: {fileID: 8119004390221355246, guid: 12f9da2499d72994a9aa91c8aa0164a4, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -893,7 +893,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7137287209990819639, guid: 6729d458e9d804347b66881f92d142a3, type: 3}
+  m_Sprite: {fileID: 8119004390221355246, guid: 12f9da2499d72994a9aa91c8aa0164a4, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1638,8 +1638,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3509505204379215448, guid: c0603a4aeb7a66e44a20e6332e19c668, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: -6543572566188817186, guid: d72386727c2d3374aa04870f515771d3, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1962,8 +1962,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3509505204379215448, guid: c0603a4aeb7a66e44a20e6332e19c668, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: -6543572566188817186, guid: d72386727c2d3374aa04870f515771d3, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2871,7 +2871,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7137287209990819639, guid: 6729d458e9d804347b66881f92d142a3, type: 3}
+  m_Sprite: {fileID: 8119004390221355246, guid: 12f9da2499d72994a9aa91c8aa0164a4, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

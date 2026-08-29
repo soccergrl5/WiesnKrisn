@@ -15,7 +15,7 @@
     "But perhaps Timmy knows more, he's got better eyes than us two.\nHe can tell you more once you get him out of that thing."
   ],
   "Refuse": [
-    "You'll be a terrible parent in the future."
+    "Ahh, what a shame."
   ],
   "Success": [
     "Thank you so much for helping little Timmy!\nYou're a hero!"
@@ -34,25 +34,25 @@
   ],
 
   "IntroTime": [
-    5.0
+    4.0
   ],
   "NoIntelTime": [
-    5.0,
-    5.0,
-    5.0
+    4.0,
+    6.0,
+    4.0
   ],
   "IntelGatheredTime": [
+    3.0,
+    3.0,
+    2.0,
     5.0,
-    5.0,
-    5.0,
-    5.0,
-    5.0
+    6.0
   ],
   "RefuseTime": [
-    5.0
+    1.0
   ],
   "SuccessTime": [
-    5.0
+    3.0
   ],
   "FailTime": [
 
@@ -64,7 +64,7 @@
 
   ],
   "AfterwardsTime": [
-    5.0
+    4.0
   ],
 
   "IndexFirstInfo": 3,
