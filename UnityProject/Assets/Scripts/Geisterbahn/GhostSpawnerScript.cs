@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GhostSpawnerScript : MonoBehaviour
 {
@@ -8,10 +10,16 @@ public class GhostSpawnerScript : MonoBehaviour
     [SerializeField] private GameObject middleGhostPrefab;
     [SerializeField] private GameObject bigGhostPrefab;
     private List<GameObject> _ghostList = new List<GameObject>();
-    private int amountOfGhostsSpawned = 0;
-    
+    private int _amountOfGhostsSpawned;
 
-    public void Start()
+    public void Awake()
+    {
+        _ghostList = new List<GameObject>();
+        _amountOfGhostsSpawned = 0;
+        gameObject.SetActive(false);
+    }
+
+    public void StartSpawning()
     {
         InvokeRepeating(nameof(SpawnGhost), 0, 1);
         InvokeRepeating(nameof(MoveGhosts), 0, 0.1f);
@@ -19,17 +27,17 @@ public class GhostSpawnerScript : MonoBehaviour
 
     private void SpawnGhost()
     {
-        if (amountOfGhostsSpawned <= 10)
+        if (_amountOfGhostsSpawned <= 10)
         {
             InstantiateGhost(bigGhostPrefab);
-        } else if (amountOfGhostsSpawned <= 20)
+        } else if (_amountOfGhostsSpawned <= 20)
         {
             InstantiateGhost(middleGhostPrefab);
-        } else if (amountOfGhostsSpawned <= 30)
+        } else if (_amountOfGhostsSpawned <= 30)
         {
             InstantiateGhost(smallGhostPrefab);
         }
-        amountOfGhostsSpawned++;
+        _amountOfGhostsSpawned++;
     }
 
     private void InstantiateGhost(GameObject ghostPrefab)

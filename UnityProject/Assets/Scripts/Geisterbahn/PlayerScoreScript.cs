@@ -9,6 +9,10 @@ public class PlayerScoreScript : MonoBehaviour
     [SerializeField] private TMP_Text scoreText;
     private static PlayerScoreScript _instance;
 
+    public void Awake()
+    {
+        scoreText.SetText("Player Score: \n" + 0);
+    }
     public void Start()
     {
         if (_instance == null)
@@ -19,16 +23,7 @@ public class PlayerScoreScript : MonoBehaviour
 
     public void SetScore(int score)
     {
-        if (scoreText != null)
-        {
-            if (scoreText.text != null)
-            {
-                scoreText.SetText("Player Score: \n" + score);
-            }
-        }
-
-
-
+        scoreText.SetText("Player Score: \n" + score);
     }
 
     public static PlayerScoreScript Instance()

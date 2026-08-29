@@ -3,14 +3,21 @@ using UnityEngine;
 
 public class TimerGeisterbahncript : MonoBehaviour
 {
-    private static float totalTime = 30f;
+    private float totalTime = 30f;
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private GameObject ghostSpawner;
-    
+    private bool _isAllowedToCheck = true;
+
+    public void Awake()
+    {
+        totalTime = 30f;
+    }
 
     void Start()
     {
         timerText.text = "00:00:00";
+        totalTime = 30f;
+        _isAllowedToCheck = true;
 
     }
     void Update()
@@ -35,13 +42,20 @@ public class TimerGeisterbahncript : MonoBehaviour
 
     private void DetermineIfWon()
     {
-        if (StoringPointsScript.Instance().GetPlayerPoints() > 800)
+        if (_isAllowedToCheck)
         {
-            GameOverScript.Instance.GameOver(true);
+            _isAllowedToCheck = false;
+            if (StoringPointsScript.Instance().GetPlayerPoints() > 800)
+            {
+                print("Hihi");
+                GameOverScript.Instance.GameOver(true);
+            }
+            else
+            {
+                print("hihi");
+                GameOverScript.Instance.GameOver(false);
+            }
         }
-        else
-        {
-            GameOverScript.Instance.GameOver(false);
-        }
+        
     }
 }
