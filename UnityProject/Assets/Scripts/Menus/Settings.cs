@@ -9,11 +9,13 @@ namespace WiesnKrisn.Menus
         
         [SerializeField] private Slider volumeVoice;
         [SerializeField] private Slider voulumeSFX;
+        [SerializeField] private Slider volumeMusic;
         
         [SerializeField] private Button close;
         
         public const string VolumeVoiceKey = "VolumeVoice";
         public const string VolumeSFXKey = "VolumeSFX";
+        public const string VolumeMusicKey = "VolumeMusic";
         
         private void Awake()
         {
@@ -26,6 +28,10 @@ namespace WiesnKrisn.Menus
             voulumeSFX.onValueChanged.AddListener(volume =>
             {
                 PlayerPrefs.SetFloat(VolumeSFXKey, volume);
+            });
+            volumeMusic.onValueChanged.AddListener(volume =>
+            {
+                PlayerPrefs.SetFloat(VolumeMusicKey, volume);
             });
             
             close.onClick.AddListener(Hide);
@@ -41,10 +47,12 @@ namespace WiesnKrisn.Menus
 
                 PlayerPrefs.SetFloat(VolumeVoiceKey, 0.5f);
                 PlayerPrefs.SetFloat(VolumeSFXKey, 0.5f);
+                PlayerPrefs.SetFloat(VolumeMusicKey, 0.5f);
             }
             
             volumeVoice.value = PlayerPrefs.GetFloat(VolumeVoiceKey);
             voulumeSFX.value  = PlayerPrefs.GetFloat(VolumeSFXKey);
+            volumeMusic.value = PlayerPrefs.GetFloat(VolumeMusicKey);
         }
         
         private void Hide() => gameObject.SetActive(false);

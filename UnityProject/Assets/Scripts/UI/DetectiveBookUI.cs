@@ -145,6 +145,8 @@ namespace WiesnKrisn.UI
 
         public void ToggleUI()
         {
+            if (SelectSuspectUI.Instance.gameObject.activeSelf) return;
+            
             if (gameObject.activeSelf)
                 Hide();
             else

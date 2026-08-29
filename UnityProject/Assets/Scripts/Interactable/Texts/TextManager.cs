@@ -335,7 +335,7 @@ namespace WiesnKrisn.Interactable.Texts
                             break;
                         }
 
-                        if (_currentWitness == Witnesses.KarussellParents)
+                        if (_currentWitness == Witnesses.KarussellParents || _currentWitness == Witnesses.KarussellKid)
                         {
                             TextboxEnd();
                             break;
@@ -510,7 +510,7 @@ namespace WiesnKrisn.Interactable.Texts
                     break;
                 
                 case "Afterwards":
-                    if (_currentWitness == Witnesses.KarussellParents) break;
+                    if (_currentWitness == Witnesses.KarussellParents || _currentWitness == Witnesses.KarussellKid) break;
                     
                     if (_progressInPart == _currentTextWitness.Afterwards.Length)
                     {

@@ -167,7 +167,7 @@ namespace WiesnKrisn
                 
                 case Games.GhostTrain:
                     _money -= AttractionPrizes[Games.GhostTrain];
-                    SceneManager.LoadScene("SampleScene");
+                    SceneManager.LoadScene("Geisterbahn");
                     break;
                 
                 case Games.WireGame:

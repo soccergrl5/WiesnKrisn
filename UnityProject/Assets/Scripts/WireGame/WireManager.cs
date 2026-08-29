@@ -13,7 +13,7 @@ namespace WiesnKrisn.WireGame
         private SingleField _lastActiveField;
         
         private List<int> _finishedWires = new List<int>();
-        private const int MaxWires = 2;
+        private const int MaxWires       = 4;
         
         private void Awake()
         {

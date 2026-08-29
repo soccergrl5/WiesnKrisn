@@ -28,7 +28,7 @@ namespace WiesnKrisn.Audio
             
             TextManager.Instance.AudioReady();
 
-            float volume = PlayerPrefs.GetFloat(Settings.VolumeVoiceKey);
+            float volume        = PlayerPrefs.GetFloat(Settings.VolumeVoiceKey);
             _audioSource.volume = volume;
         }
 

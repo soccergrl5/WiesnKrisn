@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MiniGames/FerrisWheelScene.unity
     guid: 2151474da0fa41643b91e52e86e7b8cf
   - enabled: 1
+    path: Assets/Scenes/MiniGames/Geisterbahn.unity
+    guid: fe0ba17c4c8af9943bdd8b3902f18591
+  - enabled: 1
     path: Assets/Scenes/GameEndings/GameOverDrunk.unity
     guid: 4aeb7f81fd50cfe49ae6ccedad3b01ae
   - enabled: 1
