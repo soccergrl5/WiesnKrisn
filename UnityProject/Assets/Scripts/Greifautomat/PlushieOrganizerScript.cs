@@ -93,9 +93,9 @@ public class PlushieOrganizerScript : MonoBehaviour
         plushies.Add(PlushieTypes.Bear);
         plushies.Add(PlushieTypes.Bear);
         plushies.Add(PlushieTypes.Bear);
-        plushies.Add(PlushieTypes.Duck);
-        plushies.Add(PlushieTypes.Duck);
-        plushies.Add(PlushieTypes.Duck);
+        plushies.Add(PlushieTypes.Bee);
+        plushies.Add(PlushieTypes.Bee);
+        plushies.Add(PlushieTypes.Bee);
         plushies.Add(PlushieTypes.Unicorn);
         plushies.Add(PlushieTypes.Unicorn);
         plushies.Add(PlushieTypes.Unicorn);
@@ -105,7 +105,7 @@ public class PlushieOrganizerScript : MonoBehaviour
     private void SelectPlushieToGet()
     {
         var rand = Random.Range(0, 2);
-        var allPlushies = new[] { PlushieTypes.Bear, PlushieTypes.Duck, PlushieTypes.Unicorn };
+        var allPlushies = new[] { PlushieTypes.Bear, PlushieTypes.Bee, PlushieTypes.Unicorn };
         _plushieTypeToGet = allPlushies[rand];
     }
 
@@ -121,5 +121,5 @@ public class PlushieOrganizerScript : MonoBehaviour
 }
 
 public enum PlushieTypes{
-    Bear, Duck, Unicorn
+    Bear, Bee, Unicorn
 }

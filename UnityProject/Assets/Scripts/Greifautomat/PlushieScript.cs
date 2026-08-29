@@ -22,7 +22,7 @@ public class PlushieScript : MonoBehaviour
         switch (TypeForThisPlushie)
         {
             case PlushieTypes.Bear: gameObject.GetComponentInChildren<SpriteRenderer>().sprite = bearSprite; break;
-            case PlushieTypes.Duck: gameObject.GetComponentInChildren<SpriteRenderer>().sprite = duckSprite; break;
+            case PlushieTypes.Bee: gameObject.GetComponentInChildren<SpriteRenderer>().sprite = duckSprite; break;
             case PlushieTypes.Unicorn: gameObject.GetComponentInChildren<SpriteRenderer>().sprite = unicornSprite; break;
         }
     }

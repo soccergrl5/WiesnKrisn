@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class BowlScript1 : MonoBehaviour
 {
+    public void Awake()
+    {
+        gameObject.SetActive(false);
+    }
     void Update()
     {
         if (AreAllChildrenInactive())
