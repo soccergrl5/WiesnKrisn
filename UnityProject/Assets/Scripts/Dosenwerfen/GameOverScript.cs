@@ -26,6 +26,9 @@ public class GameOverScript : MonoBehaviour
         {
             GameManager.Instance.ReplayMiniGame(game);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
+            gameOverPanel.SetActive(false);
+            gameWonPanel.SetActive(false);
         });
         gameOverExit.onClick.AddListener(() =>
         {
@@ -37,6 +40,9 @@ public class GameOverScript : MonoBehaviour
         {
             GameManager.Instance.ReplayMiniGame(game);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
+            gameOverPanel.SetActive(false);
+            gameWonPanel.SetActive(false);
         });
         gameWonExit.onClick.AddListener(() =>
         {

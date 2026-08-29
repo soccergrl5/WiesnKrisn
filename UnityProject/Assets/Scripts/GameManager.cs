@@ -157,7 +157,7 @@ namespace WiesnKrisn
                 
                 case Games.Autoscooter:
                     _money -= AttractionPrizes[Games.Autoscooter];
-                    SceneManager.LoadScene("AutoScooter");
+                    SceneManager.LoadScene("TestAutoscooter");
                     break;
                 
                 case Games.RollerCoaster:
