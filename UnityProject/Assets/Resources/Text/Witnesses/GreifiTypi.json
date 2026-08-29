@@ -3,14 +3,15 @@
     "Hi, what's up?\nEnjoying your time here?"
   ],
   "NoIntel": [
-    "I'm just a chill girl who wants to have fun at the Oktoberfest.",
+    "I'm just a chill girl who wants to have some fun at the Oktoberfest.",
     "And you're a tourist, right?\nI can tell since your attire looks a bit out of place.",
     "And you're also an electrician, no?\nYou certainly got the hands of one."
   ],
   "IntelGathered": [
     "Chasing a person?\nI've seen someone who looked target-worthy.",
-    "They [].\nIf you want to know more about that someone I suggest we make a deal.",
-    "You get me this nice plushie from the Crane Game Machine over there.",
+    "They [].",
+    "If you want to know more about that someone I suggest we make a deal.",
+    "You get me this nice plushie from the Grappling Machine over there.",
     "In return, I tell you more about your target. Sound good?"
   ],
   "Refuse": [
@@ -35,38 +36,39 @@
   ],
 
   "IntroTime": [
-    5.0
+    2.0
   ],
   "NoIntelTime": [
+    3.0,
     5.0,
-    5.0,
-    5.0
+    4.0
   ],
   "IntelGatheredTime": [
-    5.0,
-    5.0,
-    5.0,
-    5.0
+    3.0,
+    2.0,
+    4.0,
+    3.0,
+    4.0
   ],
   "RefuseTime": [
-    5.0
+    1.0
   ],
   "SuccessTime": [
+    2.0,
     5.0,
-    5.0,
-    5.0
+    3.0
   ],
   "FailTime": [
-    5.0
+    3.0
   ],
   "RetryTime": [
-    5.0
+    1.0
   ],
   "MassTime": [
-    5.0
+    1.0
   ],
   "AfterwardsTime": [
-    5.0
+    1.0
   ],
 
   "IndexFirstInfo": 1,

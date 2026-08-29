@@ -6606,15 +6606,15 @@ MonoBehaviour:
   selectSuspect: {fileID: 1468621172421994232}
   interrogateSuspect: {fileID: 3844613173426796190}
   suspectImages:
-  - {fileID: 21300000, guid: e518292cbd68def4aba6e698c6669ac5, type: 3}
-  - {fileID: 21300000, guid: e518292cbd68def4aba6e698c6669ac5, type: 3}
+  - {fileID: 6889940272633006368, guid: e2b46bf936de0e34a8d022605811a3b9, type: 3}
+  - {fileID: -1607241598672627945, guid: f6cb22746b4923b4795ccbf00e64c886, type: 3}
   - {fileID: -3870662857854360086, guid: f35e077da45bb6340914feb38081adc5, type: 3}
   - {fileID: 5339569388314557682, guid: 3d109f7be28996546b8368abaa9c48d5, type: 3}
   - {fileID: -8596722007438641837, guid: 2d06d210d7e357e4983fa85b23179c68, type: 3}
-  - {fileID: -3202628254449220699, guid: e952f6d78ec380e4fbef683c26f79532, type: 3}
+  - {fileID: -3202628254449220699, guid: 4b61b8d8602299b4ba4110adcfe24e8e, type: 3}
   - {fileID: -6753369564051292906, guid: 2046b2cad3b8a6a40ad68d7cdbd59568, type: 3}
   - {fileID: 8046162180301259146, guid: 83a9be843e23e2944bb39f0d1a0f3a14, type: 3}
-  - {fileID: -7793759162727591969, guid: 21819f7afec26c0479e06153c2cb28e3, type: 3}
+  - {fileID: -7793759162727591969, guid: ee01ed0234168a84ab10356c1478443e, type: 3}
   - {fileID: -2666301957080747075, guid: db17306b283767e4796dbd59c954cf7a, type: 3}
   suspectDisplay: {fileID: 1984704391494092834}
   suspectDisplayName: {fileID: 7968745753301672720}
@@ -8047,7 +8047,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7793759162727591969, guid: 21819f7afec26c0479e06153c2cb28e3, type: 3}
+  m_Sprite: {fileID: -7793759162727591969, guid: ee01ed0234168a84ab10356c1478443e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class JoystickReader : MonoBehaviour
@@ -11,7 +12,12 @@ public class JoystickReader : MonoBehaviour
         //Subscribe to the action in JoyStick.cs
         JoystickScript.OnJoyStickMoved += GetJoyStickDirection;
     }
- 
+
+    private void OnDestroy()
+    {
+        JoystickScript.OnJoyStickMoved -= GetJoyStickDirection;
+    }
+
     void GetJoyStickDirection(Vector2 touchPosition)
     {
         //Touch direction updating every time joystick is moved.
