@@ -12,7 +12,6 @@ namespace WiesnKrisn.Interactable
             switch (interactableAttraction)
             {
                 case "RollerCoaster":
-                    TextManager.Instance.AddHintForSituation(Attractions.RollerCoaster);
                     TextManager.Instance.ShowTextboxFor(Attractions.RollerCoaster);
                     break;
                 

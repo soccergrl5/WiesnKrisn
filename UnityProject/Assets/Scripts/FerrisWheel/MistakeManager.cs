@@ -24,9 +24,12 @@ namespace WiesnKrisn.FerrisWheel
             _noticedMistakes++;
             
             CounterUI.Instance.UpdateAmount(_noticedMistakes, MaxMistakes);
-            
+
             if (_noticedMistakes == MaxMistakes)
+            {
+                CounterUI.Instance.Hide();
                 GameOverScript.Instance.GameOver(true);
+            }
         }
     }
 }

@@ -11,6 +11,9 @@ namespace WiesnKrisn.UI
         [SerializeField] private TMP_Text[] witnessTexts;
         [SerializeField] private Button[] cluesButtons;
 
+        [SerializeField] private Sprite wrong;
+        [SerializeField] private Sprite right;
+        
         [SerializeField] private string id;
         
         private int[] _status = new int[3];
@@ -84,18 +87,33 @@ namespace WiesnKrisn.UI
             switch (_status[index])
             {
                 case 0:
-                    cluesTexts[index].color   = Color.black;
-                    witnessTexts[index].color = Color.black;
+                    //cluesTexts[index].color   = Color.black;
+                    //witnessTexts[index].color = Color.black;
+
+                    cluesTexts[index].GetComponentInChildren<Image>().enabled   = false;
+                    witnessTexts[index].GetComponentInChildren<Image>().enabled = false;
                     break;
                     
                 case 1:
-                    cluesTexts[index].color   = Color.green;
-                    witnessTexts[index].color = Color.green;
+                    //cluesTexts[index].color   = Color.green;
+                    //witnessTexts[index].color = Color.green;
+
+                    cluesTexts[index].GetComponentInChildren<Image>().enabled   = true;
+                    witnessTexts[index].GetComponentInChildren<Image>().enabled = true;
+                    
+                    cluesButtons[index].GetComponentInChildren<Image>().sprite = right;
+                    witnessTexts[index].GetComponentInChildren<Image>().sprite = right;
                     break;
                     
                 case 2:
-                    cluesTexts[index].color   = Color.red;
-                    witnessTexts[index].color = Color.red;
+                    //cluesTexts[index].color   = Color.red;
+                    //witnessTexts[index].color = Color.red;
+
+                    cluesTexts[index].GetComponentInChildren<Image>().enabled   = true;
+                    witnessTexts[index].GetComponentInChildren<Image>().enabled = true;
+                    
+                    cluesButtons[index].GetComponentInChildren<Image>().sprite = wrong;
+                    witnessTexts[index].GetComponentInChildren<Image>().sprite = wrong;
                     break;
             }
         }

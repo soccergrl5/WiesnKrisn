@@ -85,7 +85,7 @@ namespace WiesnKrisn.UI
             
             CluesManager.Instance.FillUpDetectiveBook();
 
-            suspectDisplay.sprite           = null;
+            suspectDisplay.enabled          = false;
             interrogateSuspect.interactable = false;
         }
 
@@ -139,6 +139,7 @@ namespace WiesnKrisn.UI
         public void DisplaySuspect(Suspects suspect)
         {
             suspectDisplay.sprite   = suspectImages[(int) suspect];
+            suspectDisplay.enabled  = true;
             suspectDisplayName.text = WitnessNames.SuspectNames[suspect];
             _currentSuspect         = suspect;
         }
