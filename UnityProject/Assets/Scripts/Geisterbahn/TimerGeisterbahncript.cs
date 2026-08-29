@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class TimerGeisterbahncript : MonoBehaviour
 {
-    public float totalTime = 30f;
+    private static float totalTime = 30f;
     [SerializeField] private TMP_Text timerText;
-    public static bool IsTimeUp = false;
+    [SerializeField] private GameObject ghostSpawner;
+    
 
     void Start()
     {
@@ -26,7 +27,7 @@ public class TimerGeisterbahncript : MonoBehaviour
         {
             timerText.text = "Time's up";
             totalTime = 0;
-            IsTimeUp = true;
+            ghostSpawner.gameObject.SetActive(false);
 
             DetermineIfWon();
         }

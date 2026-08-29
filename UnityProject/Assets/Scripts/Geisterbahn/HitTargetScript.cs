@@ -10,21 +10,20 @@ public class HitTargetScript : MonoBehaviour
     {
         if (!isHit)
         {
-            print("hihi");
             isHit = true;
             StoringPointsScript.AddToPlayerPoints(AmountOfPointsForGhostType(targetType)); 
             PlayerScoreScript.SetScore(StoringPointsScript.GetPlayerPoints());
+            Destroy(this.gameObject);
         }
-        
     }
     
     private static int AmountOfPointsForGhostType(TargetEnum type)
     {
         switch (type)
         {
-            case TargetEnum.BigGhost: return 10;
-            case TargetEnum.SmallGhost: return 30;
-            case TargetEnum.MiddleGhost: return 20;
+            case TargetEnum.BigGhost: return 20;
+            case TargetEnum.SmallGhost: return 50;
+            case TargetEnum.MiddleGhost: return 30;
             default: return 0;
         }
     }
