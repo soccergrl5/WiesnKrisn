@@ -10,7 +10,8 @@
   ],
   "IntelGathered": [
     "Looking for someone to rizz up, huh?\nI've seen someone good-looking before.",
-    "They [].\nYou can try your luck on them.",
+    "They [].",
+    "You can try your luck on them.",
     "But before I can do you this favor you gotta do one for me, alright?",
     "How about you drink a mug of beer with us?\nCome on, doesn't hurt."
   ],
@@ -18,7 +19,6 @@
     "No? I should have known you wouldn't have the guts to keep up with us."
   ],
   "Success": [
-    "Damn! Didn't pull any punches there, did ya?\nYou sure you don't want to sit a little longer?",
     "Alright alright, I'll talk.\nThat person.",
     "They [].",
     "Hope this helped ya. Good luck with them!"
@@ -37,28 +37,28 @@
   ],
 
   "IntroTime": [
-    5.0
+    2.0
   ],
   "NoIntelTime": [
-    5.0,
-    5.0,
-    5.0,
-    5.0
+    4.0,
+    3.0,
+    3.0,
+    2.0
   ],
   "IntelGatheredTime": [
-    5.0,
-    5.0,
-    5.0,
-    5.0
+    4.0,
+    2.0,
+    1.0,
+    3.0,
+    3.0
   ],
   "RefuseTime": [
-    5.0
+    3.0
   ],
   "SuccessTime": [
-    5.0,
-    5.0,
-    5.0,
-    5.0
+    3.0,
+    3.0,
+    2.0
   ],
   "FailTime": [
 
@@ -67,12 +67,12 @@
 
   ],
   "MassTime": [
-    5.0
+    3.0
   ],
   "AfterwardsTime": [
-    5.0
+    3.0
   ],
 
   "IndexFirstInfo": 1,
-  "IndexOtherInfos" : 2
+  "IndexOtherInfos" : 1
 }
