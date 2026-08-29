@@ -15,7 +15,9 @@ namespace WiesnKrisn.FerrisWheel
 
         public void UpdateAmount(int amount, int max)
         {
-            GetComponent<TMP_Text>().text = amount + "/" + max;
+            GetComponentInChildren<TMP_Text>().text = amount + "/" + max;
         }
+        
+        public void Hide() => gameObject.SetActive(false);
     }
 }
