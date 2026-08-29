@@ -52,7 +52,7 @@ public class PlushieScript : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Equals("DropBox"))
+        if (other.gameObject.tag.Equals("DropBox") && this.gameObject.tag.Equals("Plushie"))
         {
             print("Plushie in Box!");
             GetComponent<Rigidbody>().useGravity = true;

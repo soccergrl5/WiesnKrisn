@@ -83,10 +83,7 @@ public class OpponentCarScript : MonoBehaviour
 
     private void TurnTowardsPlayerCar()
     {
-        //Wir wollen hier den Vector haben in welcher Richtung der Spieler ist und uns da dann teilweise hindrehen
-        //Frage: Ist es sinnvoll, uns auch etwas zu weit drehen können? Ich denke schon
         float tempZ = Vector2.Angle(transform.up, playerCar.transform.position - transform.position);
         transform.Rotate(transform.forward, tempZ, Space.Self);
-
     }
 }

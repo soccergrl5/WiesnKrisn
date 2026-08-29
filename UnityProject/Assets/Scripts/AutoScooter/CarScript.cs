@@ -60,7 +60,6 @@ public class CarScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             _rigidBodyCar.AddForce(_acceleration * transform.up);
-            print(_rigidBodyCar.totalForce);
 
         }
         else
@@ -77,7 +76,6 @@ public class CarScript : MonoBehaviour
                 }
                 _rigidBodyCar.AddForce(_deceleration * transform.up);
             }
-            
         }
 
         
