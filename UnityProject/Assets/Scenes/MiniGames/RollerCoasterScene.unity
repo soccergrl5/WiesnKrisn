@@ -329,7 +329,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyPrefab: {fileID: 7433993881938815707, guid: b72e04850e5ccb942a270dd7f204a3c4, type: 3}
   ui: {fileID: 807290729}
-  videoPlayer: {fileID: 1303701476}
 --- !u!4 &612566086
 Transform:
   m_ObjectHideFlags: 0
@@ -901,7 +900,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8190814799115280142, guid: c6aee74ca7af9f8479ecd38c3c0a9615, type: 3}
       propertyPath: m_text
-      value: Looks like you had a lot of fun!
+      value: 'Game Won
+
+        Looks like you had a lot of fun!'
       objectReference: {fileID: 0}
     - target: {fileID: 8194479153795494010, guid: c6aee74ca7af9f8479ecd38c3c0a9615, type: 3}
       propertyPath: game
@@ -909,7 +910,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8296087910816890711, guid: c6aee74ca7af9f8479ecd38c3c0a9615, type: 3}
       propertyPath: m_text
-      value: You really scream like a Toddler!
+      value: 'Game Over
+
+        You really scream like a Toddler!'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
