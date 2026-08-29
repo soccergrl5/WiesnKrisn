@@ -56,11 +56,11 @@ namespace WiesnKrisn.UI
             {
                 if (_currentSuspect == RoleDistribution.Instance.GetMainSuspect())
                 {
-                    GameManager.Instance.GameWon();
+                    GameManager.Instance.GameWon(_currentSuspect);
                 }
                 else
                 {
-                    GameManager.Instance.GameOverWrongGuy();
+                    GameManager.Instance.GameOverWrongGuy(_currentSuspect);
                 }
             });
         }

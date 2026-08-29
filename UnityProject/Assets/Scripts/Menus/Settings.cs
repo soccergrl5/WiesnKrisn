@@ -45,7 +45,7 @@ namespace WiesnKrisn.Menus
             {
                 PlayerPrefs.SetInt("StartedOnce", 1);
 
-                PlayerPrefs.SetFloat(VolumeVoiceKey, 0.5f);
+                PlayerPrefs.SetFloat(VolumeVoiceKey, 1f);
                 PlayerPrefs.SetFloat(VolumeSFXKey, 0.5f);
                 PlayerPrefs.SetFloat(VolumeMusicKey, 0.5f);
             }

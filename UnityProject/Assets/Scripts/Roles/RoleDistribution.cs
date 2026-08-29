@@ -635,5 +635,7 @@ namespace WiesnKrisn.Roles
         }
         
         public Suspects GetMainSuspect() => _mainSuspect;
+
+        public Suspects GetLover() => _lover;
     }
 }
