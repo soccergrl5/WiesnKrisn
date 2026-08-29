@@ -59,10 +59,11 @@ namespace WiesnKrisn
             { Candy.CottonCandy, 8f }
         };
 
-        private float _camPosition = -75f;
-        private int _bookPage      = 0;
-        private float _money       = 120f;
-        private float _drunkOMeter = 0f;
+        private float _camPosition  = -75f;
+        private bool _camFacingLeft = false;
+        private int _bookPage       = 0;
+        private float _money        = 120f;
+        private float _drunkOMeter  = 0f;
 
         private bool _easyMode;
         private const float EasyDrunkTime = 3f;
@@ -210,7 +211,8 @@ namespace WiesnKrisn
 
         private void SaveCamPosition()
         {
-            _camPosition = CameraMovement.Instance.GetPos();
+            _camPosition   = CameraMovement.Instance.GetPos();
+            _camFacingLeft = CameraMovement.Instance.IsFacingLeft();
         }
 
         private void SaveCurrentBookPage()
@@ -305,6 +307,8 @@ namespace WiesnKrisn
         }
         
         public float GetCamPosition() => _camPosition;
+        
+        public bool GetCameraFacingLeft() => _camFacingLeft;
         
         public int GetBookPage() => _bookPage;
         

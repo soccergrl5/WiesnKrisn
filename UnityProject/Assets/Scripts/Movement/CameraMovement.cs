@@ -35,6 +35,8 @@ namespace WiesnKrisn.Movement
 
             _pos = GameManager.Instance.GetCamPosition();
             transform.position = new Vector3(_pos, 0, -10);
+            
+            spriteRenderer.flipX = GameManager.Instance.GetCameraFacingLeft();
         }
 
         private void Update()
@@ -72,6 +74,7 @@ namespace WiesnKrisn.Movement
         }
 
         public float GetPos() => _pos;
+        public bool IsFacingLeft() => spriteRenderer.flipX;
     }
 }
 
