@@ -24,9 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MiniGames/RollerCoasterScene.unity
     guid: 3abe5729e50aa6f409d29c5ec2a01d2e
   - enabled: 1
-    path: Assets/Scenes/MiniGames/OldAutoScooter.unity
-    guid: 717bbb38c2fea2a44828397be6f1a0c7
-  - enabled: 1
     path: Assets/Scenes/MiniGames/WireGameScene.unity
     guid: e45bc47659f441643b53faebe1cdc713
   - enabled: 1
@@ -56,9 +53,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameEndings/GameWonLove.unity
     guid: 2da38587803c9454e9c7effbc727d58f
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
