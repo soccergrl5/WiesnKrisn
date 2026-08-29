@@ -10,10 +10,10 @@
   "IntelGathered": [
     "A person is what you are looking for.\nYes, I've seen someone in panic walking around here earlier.",
     "I could feel that their heart-rate spiked.\nThey [].",
-    "If you need more insights, I require you to toss a few cans for me."
+    "If you need more information, I require you to toss a few cans for me."
   ],
   "Refuse": [
-    "Fine, no additional intel for you."
+    "Fine, no additional information for you."
   ],
   "Success": [
     "Very good.\nIt seems you are proficient in throwing projectiles with high velocity.",
@@ -35,38 +35,38 @@
   ],
   
   "IntroTime": [
-    5.0
+    3.0
   ],
   "NoIntelTime": [
     5.0,
-    5.0,
-    5.0
+    4.0,
+    1.0
   ],
   "IntelGatheredTime":[
     5.0,
-    2.0,
-    5.0
+    4.0,
+    3.0
   ],
   "RefuseTime": [
-    5.0
+    2.0
   ],
   "SuccessTime": [
-    5.0,
+    4.0,
+    1.0,
     2.0,
-    2.0,
-    5.0
+    2.0
   ],
   "FailTime": [
-    5.0
+    2.0
   ],
   "RetryTime": [
-    5.0
+    2.0
   ],
   "MassTime": [
-    5.0
+    3.0
   ],
   "AfterwardsTime": [
-    5.0
+    1.0
   ],
   
   "IndexFirstInfo": 1,

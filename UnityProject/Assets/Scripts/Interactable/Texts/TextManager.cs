@@ -349,9 +349,7 @@ namespace WiesnKrisn.Interactable.Texts
                         }
                         else
                         {
-                            _currentProgress = "Refuse";
-                            
-                            ShowNextTextbox();
+                            TextboxEnd();
                         }
                         
                         _currentSelectedOption = 0;
