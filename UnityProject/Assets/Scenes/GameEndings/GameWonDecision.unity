@@ -376,6 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   love: {fileID: 2127567206}
   arrest: {fileID: 1942917867}
+  text: {fileID: 1818791320}
 --- !u!1 &153896170
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +846,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'YES, IT WAS ME...
 
-    BUT I DID IT BECAUSE I WANTED TO IMPRESS SOMEONE'
+    BUT I DID IT BECAUSE I WANTED TO IMPRESS []'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2fc04fb3beb0f2441a533e1c4baa16a4, type: 2}
   m_sharedMaterial: {fileID: 1523202857328592769, guid: 2fc04fb3beb0f2441a533e1c4baa16a4, type: 2}
