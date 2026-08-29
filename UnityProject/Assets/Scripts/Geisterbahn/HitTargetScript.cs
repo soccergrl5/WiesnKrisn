@@ -11,8 +11,8 @@ public class HitTargetScript : MonoBehaviour
         if (!isHit)
         {
             isHit = true;
-            StoringPointsScript.AddToPlayerPoints(AmountOfPointsForGhostType(targetType)); 
-            PlayerScoreScript.Instance().SetScore(StoringPointsScript.GetPlayerPoints());
+            StoringPointsScript.Instance().AddToPlayerPoints(AmountOfPointsForGhostType(targetType)); 
+            PlayerScoreScript.Instance().SetScore(StoringPointsScript.Instance().GetPlayerPoints());
             Destroy(this.gameObject);
         }
     }

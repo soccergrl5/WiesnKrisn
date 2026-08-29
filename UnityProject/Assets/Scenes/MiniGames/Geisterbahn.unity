@@ -273,6 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c334cd3f83779a84aaad3178716bcc4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 162725253}
 --- !u!1 &461112717
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c334cd3f83779a84aaad3178716bcc4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
 --- !u!4 &1053734412
 Transform:
   m_ObjectHideFlags: 0

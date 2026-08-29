@@ -35,7 +35,7 @@ public class TimerGeisterbahncript : MonoBehaviour
 
     private void DetermineIfWon()
     {
-        if (StoringPointsScript.GetPlayerPoints() > 800)
+        if (StoringPointsScript.Instance().GetPlayerPoints() > 800)
         {
             GameOverScript.Instance.GameOver(true);
         }
