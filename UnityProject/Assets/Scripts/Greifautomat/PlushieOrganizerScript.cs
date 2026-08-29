@@ -8,6 +8,10 @@ public class PlushieOrganizerScript : MonoBehaviour
     [SerializeField] private GameObject plushie;
     private PlushieTypes _plushieTypeToGet;
     private static PlushieOrganizerScript _instance;
+    public Color darkColor = new Color(0, 0.85f, 1);
+    public Color middleColor = new Color(0, 0.85f, 1);
+    public Color lightColor = new Color(0, 0.85f, 1);
+
 
 
     void Awake()
@@ -45,7 +49,8 @@ public class PlushieOrganizerScript : MonoBehaviour
                         //In the row with z=-3 the dropbox is in the bottom left corner, therefore there should spawn no plushies
                         if (z == -3)
                         {
-                            tempX = -steps + Random.Range(0, steps / 2);
+                            //Be gone plushie
+                            tempX = -100;
                         }
                         else
                         {
@@ -66,9 +71,12 @@ public class PlushieOrganizerScript : MonoBehaviour
                 GameObject tempPlush = Instantiate(plushie, new Vector3(tempX, 0, z), Quaternion.identity);
                 switch (z)
                 {
-                    case -3: tempPlush.GetComponent<SpriteRenderer>().color = new Color(0, 0.85f, 1); break;
-                    case -2: tempPlush.GetComponent<SpriteRenderer>().color = new Color(0, 0.58f, 0.74f); break;
-                    case -1: tempPlush.GetComponent<SpriteRenderer>().color = new Color(0, 0.38f, 0.49f); break;
+                    case -3:
+                        tempPlush.GetComponent<SpriteRenderer>().color = lightColor; break;
+                    case -2:
+                        tempPlush.GetComponent<SpriteRenderer>().color = middleColor; break;
+                    case -1:
+                        tempPlush.GetComponent<SpriteRenderer>().color = darkColor; break;
                     default: tempPlush.GetComponent<SpriteRenderer>().color = Color.white; break;
 
                 }

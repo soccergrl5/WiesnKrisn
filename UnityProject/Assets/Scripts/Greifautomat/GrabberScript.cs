@@ -31,9 +31,9 @@ public class GrabberScript : MonoBehaviour
         {
             switch (grabber.transform.position.z)
             {
-                case -3: child.color = new Color(0, 0.85f, 1); break;
-                case -2: child.color = new Color(0, 0.58f, 0.74f); break;
-                case -1: child.color = new Color(0, 0.38f, 0.49f); break;
+                case -3: child.color = new Color(1, 1, 1); break;
+                case -2: child.color = new Color(0.85f, 0.85f, 0.85f); break;
+                case -1: child.color = new Color(0.7f, 0.7f, 0.7f); break;
                 default: child.color = Color.white; break;
             }
         }
