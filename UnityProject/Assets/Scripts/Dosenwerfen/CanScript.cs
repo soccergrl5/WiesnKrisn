@@ -16,10 +16,6 @@ public class CanScript : MonoBehaviour
             }
         }
 
-        if (Counter == 18)
-        {
-            GameOverScript.Instance.GameOver(true);
-        }
     }
 
     void Start()
