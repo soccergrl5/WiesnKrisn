@@ -12,7 +12,7 @@ public class HitTargetScript : MonoBehaviour
         {
             isHit = true;
             StoringPointsScript.AddToPlayerPoints(AmountOfPointsForGhostType(targetType)); 
-            PlayerScoreScript.SetScore(StoringPointsScript.GetPlayerPoints());
+            PlayerScoreScript.Instance().SetScore(StoringPointsScript.GetPlayerPoints());
             Destroy(this.gameObject);
         }
     }

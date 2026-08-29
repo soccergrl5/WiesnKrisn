@@ -1,18 +1,38 @@
 using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerScoreScript : MonoBehaviour
 {
-    private static TMP_Text _scoreText;
+    [SerializeField] private TMP_Text scoreText;
+    private static PlayerScoreScript _instance;
 
-    public void Awake()
+    public void Start()
     {
-        _scoreText = GetComponent<TMP_Text>();
+        if (_instance == null)
+        {
+            _instance = this;
+        }
     }
 
-    public static void SetScore(int score)
+    public void SetScore(int score)
     {
-        _scoreText.text = "Player Score: \n" + score;
+        if (scoreText != null)
+        {
+            if (scoreText.text != null)
+            {
+                scoreText.SetText("Player Score: \n" + score);
+            }
+        }
+
+
+
+    }
+
+    public static PlayerScoreScript Instance()
+    {
+        return _instance;
     }
 }
