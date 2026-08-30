@@ -268,7 +268,7 @@ namespace WiesnKrisn.WireGame
                 //Debug.Log(_id + ": empty");
                 //Reset
                 
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+                wireSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
                 wireSprite.sprite  = null;
                 return;
             }
@@ -285,25 +285,25 @@ namespace WiesnKrisn.WireGame
                 {
                     case 1:
                         //Debug.Log(_id + ": from left");
-                        transform.rotation = Quaternion.Euler(0, 0, 90);
+                        wireSprite.transform.rotation = Quaternion.Euler(0, 0, 90);
                         wireSprite.sprite  = _currentColor[4];
                         break;
                     
                     case 2:
                         //Debug.Log(_id + ": from right");
-                        transform.rotation = Quaternion.Euler(0, 0, -90);
+                        wireSprite.transform.rotation = Quaternion.Euler(0, 0, -90);
                         wireSprite.sprite  = _currentColor[4];
                         break;
                     
                     case 3:
                         //Debug.Log(_id + ": from top");
-                        transform.rotation = Quaternion.Euler(0, 0, 0);
+                        wireSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
                         wireSprite.sprite  = _currentColor[4];
                         break;
                     
                     case 4:
                         //Debug.Log(_id + ": from bottom");
-                        transform.rotation = Quaternion.Euler(0, 0, 180);
+                        wireSprite.transform.rotation = Quaternion.Euler(0, 0, 180);
                         wireSprite.sprite  = _currentColor[4];
                         break;
                 }
@@ -315,42 +315,42 @@ namespace WiesnKrisn.WireGame
                 || (_enterDirection == 2 && _leaveDirection == 1))
             {
                 //Debug.Log(_id + ": horizontal");
-                transform.rotation = Quaternion.Euler(0, 0, 90);
+                wireSprite.transform.rotation = Quaternion.Euler(0, 0, 90);
                 wireSprite.sprite  = _currentColor[5];
             }
             else if ((_enterDirection == 3 && _leaveDirection == 4)
                      || (_enterDirection == 4 && _leaveDirection == 3))
             {
                 //Debug.Log(_id + ": vertical");
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+                wireSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
                 wireSprite.sprite  = _currentColor[5];
             }
             else if ((_enterDirection == 1 && _leaveDirection == 3)
                      || (_enterDirection == 3 && _leaveDirection == 1))
             {
                 //Debug.Log(_id + ": left/top");
-                transform.rotation = Quaternion.Euler(0, 0, 90);
+                wireSprite.transform.rotation = Quaternion.Euler(0, 0, 90);
                 wireSprite.sprite  = _currentColor[6];
             }
             else if ((_enterDirection == 1 && _leaveDirection == 4)
                      || (_enterDirection == 4 && _leaveDirection == 1))
             {
                 //Debug.Log(_id + ": left/bottom");
-                transform.rotation = Quaternion.Euler(0, 0, 180);
+                wireSprite.transform.rotation = Quaternion.Euler(0, 0, 180);
                 wireSprite.sprite  = _currentColor[6];
             }
             else if ((_enterDirection == 2 && _leaveDirection == 3)
                      || (_enterDirection == 3 && _leaveDirection == 2))
             {
                 //Debug.Log(_id + ": right/top");
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+                wireSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
                 wireSprite.sprite  = _currentColor[6];
             }
             else if ((_enterDirection == 2 && _leaveDirection == 4)
                      || (_enterDirection == 4 && _leaveDirection == 2))
             {
                 //Debug.Log(_id + ": right/bottom");
-                transform.rotation = Quaternion.Euler(0, 0, -90);
+                wireSprite.transform.rotation = Quaternion.Euler(0, 0, -90);
                 wireSprite.sprite  = _currentColor[6];
             }
         }
@@ -361,31 +361,31 @@ namespace WiesnKrisn.WireGame
             {
                 case 0:
                     //Reset
-                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                    wireSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
                     wireSprite.sprite  = _currentColor[0];
                     break;
                 
                 case 1:
                     //Left
-                    transform.rotation = Quaternion.Euler(0, 0, -90);
+                    wireSprite.transform.rotation = Quaternion.Euler(0, 0, -90);
                     wireSprite.sprite  = _currentColor[1];
                     break;
                 
                 case 2:
                     //Right
-                    transform.rotation = Quaternion.Euler(0, 0, 90);
+                    wireSprite.transform.rotation = Quaternion.Euler(0, 0, 90);
                     wireSprite.sprite  = _currentColor[1];
                     break;
                 
                 case 3:
                     //Top
-                    transform.rotation = Quaternion.Euler(0, 0, 180);
+                    wireSprite.transform.rotation = Quaternion.Euler(0, 0, 180);
                     wireSprite.sprite  = _currentColor[1];
                     break;
                 
                 case 4:
                     //Bottom
-                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                    wireSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
                     wireSprite.sprite  = _currentColor[1];
                     break;
             }
@@ -397,31 +397,31 @@ namespace WiesnKrisn.WireGame
             {
                 case 0:
                     //Reset
-                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                    wireSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
                     wireSprite.sprite  = _currentColor[2];
                     break;
                 
                 case 1:
                     //Left
-                    transform.rotation = Quaternion.Euler(0, 0, -90);
+                    wireSprite.transform.rotation = Quaternion.Euler(0, 0, -90);
                     wireSprite.sprite  = _currentColor[3];
                     break;
                 
                 case 2:
                     //Right
-                    transform.rotation = Quaternion.Euler(0, 0, 90);
+                    wireSprite.transform.rotation = Quaternion.Euler(0, 0, 90);
                     wireSprite.sprite  = _currentColor[3];
                     break;
                 
                 case 3:
                     //Top
-                    transform.rotation = Quaternion.Euler(0, 0, 180);
+                    wireSprite.transform.rotation = Quaternion.Euler(0, 0, 180);
                     wireSprite.sprite  = _currentColor[3];
                     break;
                 
                 case 4:
                     //Bottom
-                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                    wireSprite.transform.rotation = Quaternion.Euler(0, 0, 0);
                     wireSprite.sprite  = _currentColor[3];
                     break;
             }
