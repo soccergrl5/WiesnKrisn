@@ -2186,7 +2186,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joyStickDirection: 2
-  joyStickparent: {fileID: 1202167710}
 --- !u!114 &1700049775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2749,7 +2748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1dd0a6116d5534a864d6e5c185f8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grappleDownSound: {fileID: 8300000, guid: 716525f7f2290c045ba0d3841a3d8a3f, type: 3}
+  grappleDownSound: {fileID: 8300000, guid: c1451a1304c5bf04686e7f1b121a94ae, type: 3}
   grappleMoveSound: {fileID: 8300000, guid: 27b0ebe778e70ea4689d4fa0782e79ea, type: 3}
   correctPlushieSound: {fileID: 8300000, guid: a150eeb4e6aad5a489e523fab077a6ff, type: 3}
   plushiePickUpSound: {fileID: 8300000, guid: a5e3d0037342078439ca84cd97e3ccd8, type: 3}
