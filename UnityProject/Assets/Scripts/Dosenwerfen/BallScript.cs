@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework.Constraints;
 using UnityEngine;
 
@@ -12,18 +13,29 @@ public class BallScript : MonoBehaviour
       
       private Vector3 _mouseDistance = Vector3.zero;
       private Vector3 _startingPos = Vector3.zero;
-      private Vector3 _velocity = new Vector3(0.0f, 0.0f, 0.0f);
+      private Vector3 _velocity = Vector3.zero;
 
       private bool _ballThrown = false;
       private bool _isAiming = false;
     
       private LineRenderer _lineRenderer;
       private Rigidbody _rigidbody;
+      
 
-      public static int AmountOfBallsThrown = 5;
-    
-    // Pfad von Mauspunkt startet bis Mauspunkt endet ist Velocity
-    void Start()
+      public void Awake()
+      {
+            trajectoryPoints = 30;
+            trajectoryTimeStep = 0.05f;
+            _mouseDistance = Vector3.zero;
+            _startingPos = Vector3.zero;
+            _velocity = Vector3.zero;
+
+            _ballThrown = false;
+            _isAiming = false;
+
+      }
+
+      void Start()
     {
           _lineRenderer = GetComponent<LineRenderer>();
           _lineRenderer.positionCount = 0;
@@ -48,8 +60,8 @@ public class BallScript : MonoBehaviour
           if (IsOutOfBounds())
           {
                 gameObject.SetActive(false);
-                BowlScript.SetIsBallAlreadyThere(false);
-                AmountOfBallsThrown--;
+                BowlScript.Instance().SetIsBallAlreadyThere(false);
+                CountingScript.Instance().AddToAmountOfBallsThrown(1);
           }
     }
     

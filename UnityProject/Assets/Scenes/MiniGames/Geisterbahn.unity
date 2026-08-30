@@ -153,8 +153,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 71.075806}
-  m_SizeDelta: {x: 2815.3196, y: 1334.2473}
+  m_AnchoredPosition: {x: -13.67, y: 71.075806}
+  m_SizeDelta: {x: 3152.496, y: 1334.247}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7697417
 MonoBehaviour:
@@ -176,8 +176,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You have five balls to hit all eighteen cans. \nIf you miss even one,
-    you lose!\n\n\nPress Space to start"
+  m_text: 'Shoot at the ghost targets by clicking at them. Can you beat the 800 points
+    from Cryss Angel?
+
+
+
+    Press Space to start'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2fc04fb3beb0f2441a533e1c4baa16a4, type: 2}
   m_sharedMaterial: {fileID: 1523202857328592769, guid: 2fc04fb3beb0f2441a533e1c4baa16a4, type: 2}
@@ -739,9 +743,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8190814799115280142, guid: c6aee74ca7af9f8479ecd38c3c0a9615, type: 3}
+      propertyPath: m_text
+      value: 'Game Won
+
+
+        Those ghosts didn''t stand a chance!'
+      objectReference: {fileID: 0}
     - target: {fileID: 8194479153795494010, guid: c6aee74ca7af9f8479ecd38c3c0a9615, type: 3}
       propertyPath: game
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296087910816890711, guid: c6aee74ca7af9f8479ecd38c3c0a9615, type: 3}
+      propertyPath: m_text
+      value: 'Game Over
+
+
+        Shooting isn''t your strong suit, huh?'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

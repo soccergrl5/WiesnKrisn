@@ -3,15 +3,21 @@ using UnityEngine;
 
 public class CanScript : MonoBehaviour
 {
-    public static int Counter = 0;
     private bool _hit = false;
+
+    public void Awake()
+    {
+        _hit = false;
+    }
+
     private void Update()
     {
         if (gameObject.transform.position.y < -2)
         {
             if (!_hit)
             {
-                Counter++;
+                CountingScript.Instance().AddToPlayerScore(1);
+                print(CountingScript.Instance().GetPlayerScore());
                 _hit = true;
             }
         }
@@ -22,4 +28,5 @@ public class CanScript : MonoBehaviour
     {
         GetComponent<Rigidbody>().solverIterations = 12;
     }
+    
 }
