@@ -107,9 +107,17 @@ namespace WiesnKrisn.WireGame
 
                     SingleField lastActive = WireManager.Instance.GetLastActiveField();
                     if (!lastActive.IsEndField())
+                    {
                         WireManager.Instance.UnselectLastField();
+                    
+                        WireGameSounds.Instance.PlayMove();
+                    }
                     else
+                    {
                         WireManager.Instance.RemoveFinishedWire(_currentWire);
+                    
+                        WireGameSounds.Instance.PlayMove();
+                    }
 
                     lastActive._enterDirection = 0;
                     lastActive.SelectRightSprite();
@@ -133,6 +141,8 @@ namespace WiesnKrisn.WireGame
             WireManager.Instance.GetLastActiveField().LeaveDirection(this);
             
             WireManager.Instance.SetCurrentEndField(this);
+            
+            WireGameSounds.Instance.PlayMove();
         }
 
         private void OnMouseExit()

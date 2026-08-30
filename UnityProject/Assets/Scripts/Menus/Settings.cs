@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using WiesnKrisn.Audio;
 
 namespace WiesnKrisn.Menus
 {
@@ -32,6 +33,8 @@ namespace WiesnKrisn.Menus
             volumeMusic.onValueChanged.AddListener(volume =>
             {
                 PlayerPrefs.SetFloat(VolumeMusicKey, volume);
+                
+                MusicManager.Instance.GetComponent<AudioSource>().volume = volume;
             });
             
             close.onClick.AddListener(Hide);

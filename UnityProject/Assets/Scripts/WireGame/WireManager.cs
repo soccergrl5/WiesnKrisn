@@ -34,6 +34,8 @@ namespace WiesnKrisn.WireGame
         public void AddFinishedWire(int wire)
         {
             _finishedWires.Add(wire);
+            
+            WireGameSounds.Instance.PlayFinish();
 
             if (_finishedWires.Count == MaxWires)
             {

@@ -20,6 +20,8 @@ namespace WiesnKrisn.TestAutoScooter
             TestAutoscooterManager.Instance.HitOtherCar(car);
             
             Invoke(nameof(ReadyForNextCollision), 3f);
+            
+            AutoScooterSounds.Instance.PlayCrash();
         }
         
         private void ReadyForNextCollision() => _onCollision = false;

@@ -24,6 +24,8 @@ namespace WiesnKrisn.CandyShop
                 CheckAvailability();
                 
                 _boughtStrawberrys = true;
+                
+                CandyShopSounds.Instance.PlayBuy();
             });
             
             candiedAlmonds.onClick.AddListener(() =>
@@ -31,6 +33,8 @@ namespace WiesnKrisn.CandyShop
                 GameManager.Instance.BuyCandy(Candy.CandiedAlmonds);
                 
                 CheckAvailability();
+                
+                CandyShopSounds.Instance.PlayBuy();
             });
             
             cottonCandy.onClick.AddListener(() =>
@@ -38,6 +42,8 @@ namespace WiesnKrisn.CandyShop
                 GameManager.Instance.BuyCandy(Candy.CottonCandy);
                 
                 CheckAvailability();
+                
+                CandyShopSounds.Instance.PlayBuy();
             });
             
             exit.onClick.AddListener(() =>
