@@ -16,6 +16,8 @@ namespace WiesnKrisn.Movement
 
         private float _pos = 0f;
 
+        private bool _inverted = false;
+
         private const float Speed = 10f;
 
         private void Awake()
@@ -37,6 +39,8 @@ namespace WiesnKrisn.Movement
             transform.position = new Vector3(_pos, 0, -10);
             
             spriteRenderer.flipX = GameManager.Instance.GetCameraFacingLeft();
+            
+            _inverted = GameManager.Instance.GetDrunkOMeter() > 0.6f;
         }
 
         private void Update()
@@ -48,18 +52,19 @@ namespace WiesnKrisn.Movement
             
             // Move Camera
             float movement = 0f;
+            float invert   = _inverted ? -1 : 1;
             
             if (Input.GetKey(KeyCode.D))
             {
-                movement += Time.deltaTime * Speed;
+                movement += Time.deltaTime * Speed * invert;
                 
-                spriteRenderer.flipX = false;
+                spriteRenderer.flipX = _inverted;
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                movement -= Time.deltaTime * Speed;
+                movement -= Time.deltaTime * Speed * invert;
                 
-                spriteRenderer.flipX = true;
+                spriteRenderer.flipX = !_inverted;
             }
 
             if (_pos + movement > _rightMax || _pos + movement < _leftMax)
@@ -75,6 +80,9 @@ namespace WiesnKrisn.Movement
 
         public float GetPos() => _pos;
         public bool IsFacingLeft() => spriteRenderer.flipX;
+
+        public void Invert() => _inverted = true;
+        public void UndoInvert() => _inverted = false;
     }
 }
 

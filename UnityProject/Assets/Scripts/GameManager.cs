@@ -257,6 +257,15 @@ namespace WiesnKrisn
                 return;
             }
 
+            if (_drunkOMeter > 0.6f)
+            {
+                if (CameraMovement.Instance != null)
+                    CameraMovement.Instance.Invert();
+                
+                if (PlayerMovement.Instance != null)
+                    PlayerMovement.Instance.Invert();
+            }
+
             if (_drunkOMeter > 0f)
             {
                 CancelInvoke();
@@ -274,6 +283,15 @@ namespace WiesnKrisn
             if (DrunkOMeterUI.Instance != null)
             {
                 DrunkOMeterUI.Instance.UpdateValue(_drunkOMeter);
+            }
+
+            if (_drunkOMeter < 0.6f)
+            {
+                if (CameraMovement.Instance != null)
+                    CameraMovement.Instance.UndoInvert();
+                
+                if (PlayerMovement.Instance != null)
+                    PlayerMovement.Instance.UndoInvert();
             }
 
             if (_drunkOMeter > 0f)
