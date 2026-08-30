@@ -30,6 +30,8 @@ namespace WiesnKrisn.RollerCoaster
                 }
                 
                 KeySelector.Instance.PressedKey(e.keyCode);
+                
+                RollerCoasterSounds.Instance.PlayWoooh();
             }
         }
     }
