@@ -1166,9 +1166,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'YOU DID IT!
+  m_text: 'GREAT JOB!
 
-    YOU ARRESTED THE ONE RESPONISBLE FOR THE CHAOS!'
+    YOU PUT AN END TO THIS CHAOS!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2fc04fb3beb0f2441a533e1c4baa16a4, type: 2}
   m_sharedMaterial: {fileID: 1523202857328592769, guid: 2fc04fb3beb0f2441a533e1c4baa16a4, type: 2}

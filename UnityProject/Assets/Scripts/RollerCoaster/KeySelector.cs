@@ -9,7 +9,8 @@ namespace WiesnKrisn.RollerCoaster
         public static KeySelector Instance{get; private set;}
 
         [SerializeField] private GameObject keyPrefab;
-        [SerializeField] private GameObject ui;
+        
+        [SerializeField] private GameObject[] spawnPoints;
 
         private readonly List<KeyCode> _availableKeys = new List<KeyCode>()
         {
@@ -26,18 +27,7 @@ namespace WiesnKrisn.RollerCoaster
         private List<KeyCode> _usedKeys = new List<KeyCode>();
         private List<KeyElement> _usedElements = new List<KeyElement>();
         
-        private readonly List<Vector3> _positions = new List<Vector3>()
-        {
-            new Vector3(-1021, -607, 0),
-            new Vector3(-209, -292, 0),
-            new Vector3(1692, -207, 0),
-            new Vector3(1152, 201, 0),
-            new Vector3(236, 794, 0),
-            new Vector3(803, -874, 0),
-            new Vector3(-669, 402, 0),
-            new Vector3(-1077, 889, 0),
-            new Vector3(-1585, 58, 0),
-        };
+        private readonly List<int> _positionIndexes = new List<int>() {0, 1, 2, 3, 4, 5, 6, 7, 8 };
 
         private int _keyAmount = 0;
         
@@ -68,13 +58,14 @@ namespace WiesnKrisn.RollerCoaster
             
             _usedKeys.Add(selected);
             
-            int indexPosition = random.Next(_positions.Count);
+            int position = random.Next(_positionIndexes.Count);
+            int positionIndex = _positionIndexes[position];
+            _positionIndexes.RemoveAt(position);
             
-            GameObject keyObject = Instantiate(keyPrefab, ui.transform);
+            GameObject keyObject = Instantiate(keyPrefab, spawnPoints[positionIndex].transform);
             _usedElements.Add(keyObject.GetComponent<KeyElement>());
-            keyObject.GetComponent<KeyElement>().StartTimer(selected, _positions[indexPosition]);
+            keyObject.GetComponent<KeyElement>().StartTimer(selected, positionIndex);
             
-            _positions.RemoveAt(indexPosition);
             Debug.Log(selected);
 
             if (_keyAmount == 5)
@@ -117,7 +108,7 @@ namespace WiesnKrisn.RollerCoaster
             
             _usedKeys.RemoveAt(index);
             _usedElements.RemoveAt(index);
-            _positions.Add(keyElement.GetPosition());
+            _positionIndexes.Add(keyElement.GetPositionIndex());
             
             Destroy(keyElement.gameObject);
         }

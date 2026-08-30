@@ -7,14 +7,14 @@ namespace WiesnKrisn.RollerCoaster
     public class KeyElement : MonoBehaviour
     {
         private KeyCode _keyCode;
-        private Vector3 _position;
         
-        public void StartTimer(KeyCode keyCode, Vector3 position)
+        private int _positionIndex;
+        
+        public void StartTimer(KeyCode keyCode, int positionIndex)
         {
-            _keyCode = keyCode;
-            _position = position;
+            _keyCode       = keyCode;
+            _positionIndex = positionIndex;
             
-            transform.Translate(_position);
             GetComponentInChildren<TMP_Text>().text = _keyCode.ToString();
             
             Invoke(nameof(Fail), 3f);
@@ -31,6 +31,6 @@ namespace WiesnKrisn.RollerCoaster
             KeySelector.Instance.FailedKey(_keyCode);
         }
 
-        public Vector3 GetPosition() => _position;
+        public int GetPositionIndex() => _positionIndex;
     }
 }
