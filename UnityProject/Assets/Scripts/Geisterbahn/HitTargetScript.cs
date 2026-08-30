@@ -10,6 +10,7 @@ public class HitTargetScript : MonoBehaviour
     {
         if (!isHit)
         {
+            SoundeffectScriptGeisterbahn.Instance().PlayShootingSound();
             isHit = true;
             StoringPointsScript.Instance().AddToPlayerPoints(AmountOfPointsForGhostType(targetType)); 
             PlayerScoreScript.Instance().SetScore(StoringPointsScript.Instance().GetPlayerPoints());
