@@ -28,10 +28,8 @@ namespace WiesnKrisn.Movement
 
         private void Start()
         {
-            float cameraWidth = Camera.main.orthographicSize * Camera.main.aspect;
-
-            _rightMax = cameraWidth - 0.8f;
-            _leftMax  = -cameraWidth + 0.8f;
+            _rightMax = 8.5f;
+            _leftMax  = -8.5f;
             
             transform.position = new Vector3(_pos, transform.position.y, transform.position.z);
             

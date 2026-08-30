@@ -107,6 +107,8 @@ namespace WiesnKrisn
             _bookPage    = 0;
             _money       = 200f;
             _drunkOMeter = 0f;
+
+            _timmyUnlocked = false;
             
             TextManager.Instance.ResetManager();
             CluesManager.Instance.ResetManager();

@@ -103,6 +103,17 @@ namespace WiesnKrisn.WireGame
                 {
                     if (!IsValidPosition()) return;
                     
+                    SingleField previous = WireManager.Instance.GetLastActiveField();
+                    
+                    if (previous._enterDirection == 1 && _leaveDirection != 2)
+                        return;
+                    if (previous._enterDirection == 2 && _leaveDirection != 1)
+                        return;
+                    if (previous._enterDirection == 3 && _leaveDirection != 4)
+                        return;
+                    if (previous._enterDirection == 4 && _leaveDirection != 3)
+                        return;
+                    
                     WireManager.Instance.SetCurrentEndField(this);
 
                     SingleField lastActive = WireManager.Instance.GetLastActiveField();

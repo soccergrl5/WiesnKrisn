@@ -16,6 +16,7 @@ public class BallScript : MonoBehaviour
       private Vector3 _velocity = Vector3.zero;
 
       private bool _ballThrown = false;
+      private bool _ballReleased = false;
       private bool _isAiming = false;
     
       private LineRenderer _lineRenderer;
@@ -31,6 +32,7 @@ public class BallScript : MonoBehaviour
             _velocity = Vector3.zero;
 
             _ballThrown = false;
+            _ballReleased = false;
             _isAiming = false;
 
       }
@@ -59,6 +61,8 @@ public class BallScript : MonoBehaviour
 
           if (IsOutOfBounds())
           {
+                CancelInvoke();
+                
                 gameObject.SetActive(false);
                 BowlScript.Instance().SetIsBallAlreadyThere(false);
                 CountingScript.Instance().AddToAmountOfBallsThrown(1);
@@ -71,6 +75,8 @@ public class BallScript : MonoBehaviour
      /// </summary>
     private void CalculateMouseDistance()
     {
+          if (_ballReleased) return;
+
           if (Input.GetMouseButtonDown(0))
           {
                 _startingPos = Input.mousePosition;
@@ -86,6 +92,9 @@ public class BallScript : MonoBehaviour
                 // ballThrown is set to true, because that makes life easier
                 _ballThrown = true;
                 _isAiming = false;
+                _ballReleased = true;
+                
+                Invoke(nameof(TooLongNoReaction), 5f);
           }
     }
 
@@ -132,5 +141,12 @@ public class BallScript : MonoBehaviour
                 return true;
           } 
           return false;
+    }
+
+    private void TooLongNoReaction()
+    {
+          gameObject.SetActive(false);
+          BowlScript.Instance().SetIsBallAlreadyThere(false);
+          CountingScript.Instance().AddToAmountOfBallsThrown(1);
     }
 }
