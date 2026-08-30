@@ -747,7 +747,6 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Game Won
 
-
         Those ghosts didn''t stand a chance!'
       objectReference: {fileID: 0}
     - target: {fileID: 8194479153795494010, guid: c6aee74ca7af9f8479ecd38c3c0a9615, type: 3}
@@ -757,7 +756,6 @@ PrefabInstance:
     - target: {fileID: 8296087910816890711, guid: c6aee74ca7af9f8479ecd38c3c0a9615, type: 3}
       propertyPath: m_text
       value: 'Game Over
-
 
         Shooting isn''t your strong suit, huh?'
       objectReference: {fileID: 0}

@@ -9,7 +9,6 @@ public class JoystickReader : MonoBehaviour
     private float _zCor = 0;
     private void Start()
     {
-        //Subscribe to the action in JoyStick.cs
         JoystickScript.OnJoyStickMoved += GetJoyStickDirection;
     }
 

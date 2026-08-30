@@ -1,4 +1,5 @@
 using UnityEngine;
+using WiesnKrisn.Audio;
 
 public class BowlScript1 : MonoBehaviour
 {
@@ -27,12 +28,16 @@ public class BowlScript1 : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
-        
     }
 
     private bool AreAllBallsThrown()
     {
         if (CountingScript.Instance().GetAmountOfBallsThrown() == 0)
+        {
+            return true;
+        }
+
+        if (CountingScript.Instance().GetPlayerScore() >= 18)
         {
             return true;
         }

@@ -13,6 +13,7 @@ public class GrabberHeadScript : MonoBehaviour
             //We only want to grab one/ the first plushie
             if (!_grabbed)
             {
+                SoundScriptGreifautomat.Instance().PlayPlushiePickUpSound();
                 other.gameObject.GetComponent<PlushieScript>().SetIsHit(true);
                 _grabbed = true;
             }

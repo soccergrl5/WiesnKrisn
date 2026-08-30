@@ -41,7 +41,8 @@ public class JoystickScript: MonoBehaviour, IDragHandler, IPointerUpHandler, IPo
 		if (RectTransformUtility.ScreenPointToLocalPointInRectangle
 			(_outerCircle.rectTransform, ped.position, ped.pressEventCamera, out tappedpOint))
 		{
-
+			//We play the movement sound
+			SoundScriptGreifautomat.Instance().PlayGrappleMoveSound();
 			//Getting tappedPoint position in fraction where  maxmimum value would be in denominator of below fraction.
 			tappedpOint.x = (tappedpOint.x / (_bgImageSizeX * _offsetFactorWithBgSize));
 			tappedpOint.y = (tappedpOint.y / (_bgImageSizey * _offsetFactorWithBgSize));
@@ -59,7 +60,6 @@ public class JoystickScript: MonoBehaviour, IDragHandler, IPointerUpHandler, IPo
 
 		}
 	}
-	public GameObject joyStickparent;
 	/// <summary>
 	/// Unity function called when we tapped on the screen.
 	/// Here we enable joystick at initial press point.

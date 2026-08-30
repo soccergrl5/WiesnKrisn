@@ -16,6 +16,7 @@ public class DropBoxScript : MonoBehaviour
 
             if (otherPlushie.Equals(shouleBePlushie))
             {
+                SoundScriptGreifautomat.Instance().PlayRightPlushieSound();
                 _gameOverScript.GameOver(true);
                 print("Game Won");
             }
