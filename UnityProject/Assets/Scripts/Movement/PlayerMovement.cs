@@ -4,6 +4,8 @@ namespace WiesnKrisn.Movement
 {
     public class PlayerMovement : MonoBehaviour
     {
+        public static PlayerMovement Instance {get; private set;}
+        
         private Animator _animator;
         private SpriteRenderer _spriteRenderer;
         
@@ -11,11 +13,15 @@ namespace WiesnKrisn.Movement
         private float _leftMax;
 
         private float _pos = -7;
+
+        private bool _inverted = false;
         
         private const float Speed = 5f;
 
         private void Awake()
         {
+            Instance = this;
+            
             _animator       = GetComponent<Animator>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
         }
@@ -28,6 +34,8 @@ namespace WiesnKrisn.Movement
             _leftMax  = -cameraWidth + 0.8f;
             
             transform.position = new Vector3(_pos, transform.position.y, transform.position.z);
+            
+            _inverted = GameManager.Instance.GetDrunkOMeter() > 0.6f;
         }
         
         private void Update()
@@ -39,18 +47,19 @@ namespace WiesnKrisn.Movement
             
             // Move Camera
             float movement = 0f;
+            float invert   = _inverted ? -1 : 1;
             
             if (Input.GetKey(KeyCode.D))
             {
-                movement += Time.deltaTime * Speed;
+                movement += Time.deltaTime * Speed * invert;
                 
-                _spriteRenderer.flipX = false;
+                _spriteRenderer.flipX = _inverted;
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                movement -= Time.deltaTime * Speed;
+                movement -= Time.deltaTime * Speed * invert;
                 
-                _spriteRenderer.flipX = true;
+                _spriteRenderer.flipX = !_inverted;
             }
 
             if (_pos + movement > _rightMax || _pos + movement < _leftMax)
@@ -63,5 +72,8 @@ namespace WiesnKrisn.Movement
             
             _animator.SetBool("Walking", movement != 0);
         }
+
+        public void Invert() => _inverted = true;
+        public void UndoInvert() => _inverted = false;
     }
 }
