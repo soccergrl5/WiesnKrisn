@@ -8,8 +8,13 @@
         
         private WrongKeyCounter() { }
         
-        public void IncreaseCounter() => _counter++;
-        
+        public void IncreaseCounter()
+        {
+            _counter++;
+            
+            RollerCoasterSounds.Instance.PlayScream();
+        }
+
         public void ResetCounter() => _counter = 0;
         
         public int GetCounter() => _counter;
