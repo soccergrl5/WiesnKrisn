@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace WiesnKrisn.Menus
@@ -7,6 +8,8 @@ namespace WiesnKrisn.Menus
     {
         [SerializeField] private Button retry;
         [SerializeField] private Button mainMenu;
+
+        [SerializeField] private string ending;
 
         private void Awake()
         {
@@ -19,6 +22,15 @@ namespace WiesnKrisn.Menus
             {
                 GameManager.Instance.BackToMainMenu();
             });
+        }
+
+        private void Start()
+        {
+            if (ending == "Drunk")
+                PlayerPrefs.SetInt(Endings.DrunkKey, 1);
+            
+            if (ending == "WrongGuy")
+                PlayerPrefs.SetInt(Endings.WrongGuyKey, 1);
         }
     }
 }

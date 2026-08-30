@@ -3476,6 +3476,7 @@ MonoBehaviour:
   again: {fileID: 2127567206}
   hardMode: {fileID: 1942917867}
   mainMenu: {fileID: 1868396939}
+  ending: Love
 --- !u!1 &1735007031
 GameObject:
   m_ObjectHideFlags: 0

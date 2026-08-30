@@ -376,6 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   retry: {fileID: 2127567206}
   mainMenu: {fileID: 1942917867}
+  ending: WrongGuy
 --- !u!224 &106504179 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 348164073045260833, guid: e774b2864814e8f40baa7e6c5bf96be0, type: 3}

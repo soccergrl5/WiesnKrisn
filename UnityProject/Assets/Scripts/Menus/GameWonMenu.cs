@@ -9,6 +9,8 @@ namespace WiesnKrisn.Menus
         [SerializeField] private Button hardMode;
         [SerializeField] private Button mainMenu;
 
+        [SerializeField] private string ending;
+        
         private void Awake()
         {
             again.onClick.AddListener(() =>
@@ -31,6 +33,12 @@ namespace WiesnKrisn.Menus
         {
             if (!GameManager.Instance.InEasyMode())
                 hardMode.gameObject.SetActive(false);
+            
+            if (ending == "Arrest")
+                PlayerPrefs.SetInt(Endings.ArrestKey, 1);
+            
+            if (ending == "Love")
+                PlayerPrefs.SetInt(Endings.LoveKey, 1);
         }
     }
 }

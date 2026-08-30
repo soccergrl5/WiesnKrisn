@@ -570,6 +570,12 @@ namespace WiesnKrisn.Interactable.Texts
                 if (_gameOver)
                     return;
 
+                if (_receivedAllHints.Contains(_currentWitness))
+                {
+                    TextboxEnd();
+                    return;
+                }
+                
                 _currentProgress = "Mass";
                 _progressInPart  = 0;
                 
@@ -584,6 +590,12 @@ namespace WiesnKrisn.Interactable.Texts
                 
                 if (_gameOver)
                     return;
+
+                if (_receivedAllHints.Contains(_currentWitness))
+                {
+                    TextboxEnd();
+                    return;
+                }
 
                 _currentProgress = "Mass";
                 _progressInPart  = 0;

@@ -376,6 +376,7 @@ MonoBehaviour:
   again: {fileID: 2127567206}
   hardMode: {fileID: 1942917867}
   mainMenu: {fileID: 1368562274}
+  ending: Arrest
 --- !u!1 &153896170
 GameObject:
   m_ObjectHideFlags: 0
