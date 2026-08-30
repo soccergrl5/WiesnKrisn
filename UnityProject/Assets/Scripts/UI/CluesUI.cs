@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using WiesnKrisn.Audio;
 using WiesnKrisn.Roles;
 
 namespace WiesnKrisn.UI
@@ -99,6 +100,8 @@ namespace WiesnKrisn.UI
                     
                     cluesMarker[index].GetComponent<Image>().sprite   = right;
                     witnessMarker[index].GetComponent<Image>().sprite = right;
+                    
+                    OutdoorSounds.Instance.PlayPencil();
                     break;
                     
                 case 2:
@@ -107,6 +110,8 @@ namespace WiesnKrisn.UI
                     
                     cluesMarker[index].GetComponent<Image>().sprite   = wrong;
                     witnessMarker[index].GetComponent<Image>().sprite = wrong;
+                    
+                    OutdoorSounds.Instance.PlayPencil();
                     break;
             }
         }

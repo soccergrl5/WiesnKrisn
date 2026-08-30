@@ -6,8 +6,8 @@ namespace WiesnKrisn.FerrisWheel
     {
         public static MistakeManager Instance {get; private set;}
 
-        private int _noticedMistakes = 0;
-        private const int MaxMistakes = 5;
+        private int _noticedMistakes  = 0;
+        private const int MaxMistakes = 10;
         
         private void Awake()
         {

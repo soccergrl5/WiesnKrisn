@@ -228,6 +228,8 @@ namespace WiesnKrisn
         {
             _money -= BeerPrize;
             
+            OutdoorSounds.Instance.PlayProst();
+            
             UpdateMoney();
             UpdateDrunkOMeter(0.25f);
         }

@@ -18,7 +18,7 @@ namespace WiesnKrisn.FerrisWheel
         public void Notice()
         {
             _noticed = true;
-            GetComponent<SpriteRenderer>().color = Color.green;
+            GetComponentInChildren<SpriteRenderer>().enabled = true;
         }
     }
 }
