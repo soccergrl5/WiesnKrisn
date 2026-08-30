@@ -62,7 +62,7 @@ namespace WiesnKrisn
         private float _camPosition  = -75f;
         private bool _camFacingLeft = false;
         private int _bookPage       = 0;
-        private float _money        = 120f;
+        private float _money        = 200f;
         private float _drunkOMeter  = 0f;
 
         private bool _easyMode;
@@ -86,6 +86,8 @@ namespace WiesnKrisn
         public void StartGame(bool easyMode)
         {
             _easyMode = easyMode;
+
+            _money = _easyMode ? 200f : 160f;
             
             SceneManager.LoadScene("OutdoorAreaScene");
             
@@ -103,7 +105,7 @@ namespace WiesnKrisn
         {
             _camPosition = -75f;
             _bookPage    = 0;
-            _money       = 120f;
+            _money       = 200f;
             _drunkOMeter = 0f;
             
             TextManager.Instance.ResetManager();
