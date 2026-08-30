@@ -2255,8 +2255,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 506.5, y: -145}
-  m_SizeDelta: {x: 907, y: 560}
+  m_AnchoredPosition: {x: 591.5, y: -145}
+  m_SizeDelta: {x: 737, y: 560}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &784119864
 MonoBehaviour:
@@ -2929,8 +2929,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -506.5, y: -145}
-  m_SizeDelta: {x: 907, y: 560}
+  m_AnchoredPosition: {x: -421.5, y: -145}
+  m_SizeDelta: {x: 1077, y: 560}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1669496517
 MonoBehaviour:
@@ -2952,7 +2952,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cryss Angel, Employees, Leon
+  m_text: 'Cryss Angel, Employees, Leon, Timmy
 
     Rory
 

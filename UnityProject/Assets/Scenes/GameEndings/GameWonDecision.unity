@@ -821,8 +821,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 275, y: 275}
-  m_SizeDelta: {x: -550, y: 300}
+  m_AnchoredPosition: {x: 250, y: 202.09204}
+  m_SizeDelta: {x: -540, y: 635.8259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1818791320
 MonoBehaviour:
@@ -846,7 +846,17 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'YES, IT WAS ME...
 
-    BUT I DID IT BECAUSE I WANTED TO IMPRESS []'
+    MADE A BIGGER FUSS THAN PLANNED.
+
+    I INITIALLY
+    TRIED TO TURN THE LIGHT PARK PINK.
+
+    INSTEAD, I BROKE ALL THE RIDES.
+
+    I
+    JUST WANTED TO IMPRESS []!
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2fc04fb3beb0f2441a533e1c4baa16a4, type: 2}
   m_sharedMaterial: {fileID: 1523202857328592769, guid: 2fc04fb3beb0f2441a533e1c4baa16a4, type: 2}
@@ -873,8 +883,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 88.5
-  m_fontSizeBase: 88.5
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -962,7 +972,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 280, y: -170}
+  m_AnchoredPosition: {x: 280, y: -370}
   m_SizeDelta: {x: 330, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1942917867
@@ -1083,7 +1093,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 280, y: -50}
+  m_AnchoredPosition: {x: 280, y: -250}
   m_SizeDelta: {x: 330, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2127567206
