@@ -16,8 +16,8 @@ public class CanScript : MonoBehaviour
         {
             if (!_hit)
             {
+                SoundeffectScriptDosenwerfen.Instance().PlayCanHit();
                 CountingScript.Instance().AddToPlayerScore(1);
-                print(CountingScript.Instance().GetPlayerScore());
                 _hit = true;
             }
         }

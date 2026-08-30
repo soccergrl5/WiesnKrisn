@@ -2219,6 +2219,85 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.9700003, y: 9.65, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &889335665
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1608070155333551363, guid: 63efc8e334a7d6f46a676523522ff164, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608070155333551363, guid: 63efc8e334a7d6f46a676523522ff164, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608070155333551363, guid: 63efc8e334a7d6f46a676523522ff164, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608070155333551363, guid: 63efc8e334a7d6f46a676523522ff164, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608070155333551363, guid: 63efc8e334a7d6f46a676523522ff164, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608070155333551363, guid: 63efc8e334a7d6f46a676523522ff164, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608070155333551363, guid: 63efc8e334a7d6f46a676523522ff164, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608070155333551363, guid: 63efc8e334a7d6f46a676523522ff164, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608070155333551363, guid: 63efc8e334a7d6f46a676523522ff164, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608070155333551363, guid: 63efc8e334a7d6f46a676523522ff164, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946431505853050848, guid: 63efc8e334a7d6f46a676523522ff164, type: 3}
+      propertyPath: m_Name
+      value: SFXSound
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1946431505853050848, guid: 63efc8e334a7d6f46a676523522ff164, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 889335667}
+  m_SourcePrefab: {fileID: 100100000, guid: 63efc8e334a7d6f46a676523522ff164, type: 3}
+--- !u!1 &889335666 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1946431505853050848, guid: 63efc8e334a7d6f46a676523522ff164, type: 3}
+  m_PrefabInstance: {fileID: 889335665}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &889335667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889335666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a90a74b6fe96545bedd372f9a6b55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballThrowSound: {fileID: 8300000, guid: 56685e6d8aae0604594cba66fe9ec2bd, type: 3}
+  canHitSound: {fileID: 8300000, guid: dfc5488c426dce647aa371c70e16271d, type: 3}
 --- !u!1 &961036142
 GameObject:
   m_ObjectHideFlags: 0
@@ -3697,6 +3776,20 @@ PrefabInstance:
     - target: {fileID: 7323814540379862971, guid: c6aee74ca7af9f8479ecd38c3c0a9615, type: 3}
       propertyPath: m_Name
       value: GameOverCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8190814799115280142, guid: c6aee74ca7af9f8479ecd38c3c0a9615, type: 3}
+      propertyPath: m_text
+      value: 'Game Won!
+
+        Wow, what a strong left arm!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296087910816890711, guid: c6aee74ca7af9f8479ecd38c3c0a9615, type: 3}
+      propertyPath: m_text
+      value: 'Game Over
+
+        Practice your throwing skills!
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5348,6 +5441,7 @@ SceneRoots:
   - {fileID: 62291530}
   - {fileID: 594514871}
   - {fileID: 1634377051}
+  - {fileID: 2137249424}
   - {fileID: 1539174605}
   - {fileID: 48005482}
-  - {fileID: 2137249424}
+  - {fileID: 889335665}
