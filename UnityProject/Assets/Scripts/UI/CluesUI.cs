@@ -29,6 +29,9 @@ namespace WiesnKrisn.UI
                 PlayerPrefs.SetInt(id + 0, _status[0]);
 
                 SetColors(0);
+                
+                if (_status[0] != 0)
+                    OutdoorSounds.Instance.PlayPencil();
             });
             cluesButtons[1].onClick.AddListener(() =>
             {
@@ -36,6 +39,9 @@ namespace WiesnKrisn.UI
                 PlayerPrefs.SetInt(id + 1, _status[1]);
 
                 SetColors(1);
+                
+                if (_status[1] != 0)
+                    OutdoorSounds.Instance.PlayPencil();
             });
             cluesButtons[2].onClick.AddListener(() =>
             {
@@ -43,6 +49,9 @@ namespace WiesnKrisn.UI
                 PlayerPrefs.SetInt(id + 2, _status[2]);
 
                 SetColors(2);
+                
+                if (_status[2] != 0)
+                    OutdoorSounds.Instance.PlayPencil();
             });
             
             cluesButtons[0].enabled = false;
@@ -53,7 +62,7 @@ namespace WiesnKrisn.UI
         public void SetFirstText(Witnesses witness, string text)
         {
             cluesTexts[0].text      = text;
-            witnessTexts[0].text    = "- " + WitnessNames.Names[witness];
+            witnessTexts[0].text    = "- " + GetWitnessName(witness);
             cluesButtons[0].enabled = true;
 
             _status[0] = PlayerPrefs.GetInt(id + 0, 0);
@@ -62,7 +71,7 @@ namespace WiesnKrisn.UI
         public void SetSecondText(Witnesses witness, string text)
         {
             cluesTexts[1].text      = text;
-            witnessTexts[1].text    = "- " + WitnessNames.Names[witness];
+            witnessTexts[1].text    = "- " + GetWitnessName(witness);
             cluesButtons[1].enabled = true;
 
             _status[1] = PlayerPrefs.GetInt(id + 1, 0);
@@ -71,7 +80,7 @@ namespace WiesnKrisn.UI
         public void SetThirdText(Witnesses witness, string text)
         {
             cluesTexts[2].text      = text;
-            witnessTexts[2].text    = "- " + WitnessNames.Names[witness];
+            witnessTexts[2].text    = "- " + GetWitnessName(witness);
             cluesButtons[2].enabled = true;
 
             _status[2] = PlayerPrefs.GetInt(id + 2, 0);
@@ -100,8 +109,6 @@ namespace WiesnKrisn.UI
                     
                     cluesMarker[index].GetComponent<Image>().sprite   = right;
                     witnessMarker[index].GetComponent<Image>().sprite = right;
-                    
-                    OutdoorSounds.Instance.PlayPencil();
                     break;
                     
                 case 2:
@@ -110,10 +117,22 @@ namespace WiesnKrisn.UI
                     
                     cluesMarker[index].GetComponent<Image>().sprite   = wrong;
                     witnessMarker[index].GetComponent<Image>().sprite = wrong;
-                    
-                    OutdoorSounds.Instance.PlayPencil();
                     break;
             }
+        }
+
+        private string GetWitnessName(Witnesses witness)
+        {
+            if (witness == Witnesses.SaufiGroup || witness == Witnesses.SaufiGroup2)
+                return WitnessNames.Names[Witnesses.SaufiGroup] + " and " + WitnessNames.Names[Witnesses.SaufiGroup2];
+            
+            if (witness == Witnesses.AperoliGroup || witness == Witnesses.AperoliGroup2)
+                return WitnessNames.Names[Witnesses.AperoliGroup] + " and " + WitnessNames.Names[Witnesses.AperoliGroup2];
+
+            if (witness == Witnesses.KarussellKid || witness == Witnesses.KarussellParents)
+                return WitnessNames.Names[Witnesses.KarussellKid] + " and Parents";
+            
+            return WitnessNames.Names[witness];
         }
     }
 }

@@ -44,8 +44,8 @@ namespace WiesnKrisn.Roles
             },
             new Dictionary<Suspects, Trait>()
             {
-                { Suspects.Saufi1, new Trait(Clothes.Lederhosn, HairColor.Colorful, ClotheColor.Blue, Shoes.Heels, Hairstyle.Zopf, EyeColor.Green, Headpiece.Hendl, Rose.Red, Lebkuchenherz.Big, Glasses.Nothing)},
-                { Suspects.Saufi2, new Trait(Clothes.Dirndl, HairColor.Dark, ClotheColor.Green, Shoes.Sneaker, Hairstyle.Zopf, EyeColor.Blue, Headpiece.Nothing, Rose.Nothing, Lebkuchenherz.Nothing, Glasses.Normal)},
+                { Suspects.Saufi2, new Trait(Clothes.Lederhosn, HairColor.Colorful, ClotheColor.Blue, Shoes.Heels, Hairstyle.Zopf, EyeColor.Green, Headpiece.Hendl, Rose.Red, Lebkuchenherz.Big, Glasses.Nothing)},
+                { Suspects.Saufi1, new Trait(Clothes.Dirndl, HairColor.Dark, ClotheColor.Green, Shoes.Sneaker, Hairstyle.Zopf, EyeColor.Blue, Headpiece.Nothing, Rose.Nothing, Lebkuchenherz.Nothing, Glasses.Normal)},
                 { Suspects.Aperoli1, new Trait(Clothes.Casual, HairColor.Colorful, ClotheColor.Green, Shoes.Heels, Hairstyle.Kurz, EyeColor.Brown, Headpiece.Hendl, Rose.Nothing, Lebkuchenherz.Small, Glasses.Normal)},
                 { Suspects.Aperoli2, new Trait(Clothes.Casual, HairColor.Dark, ClotheColor.Green, Shoes.Sneaker, Hairstyle.Kurz, EyeColor.Blue, Headpiece.Nothing, Rose.Red, Lebkuchenherz.Small, Glasses.Nothing)},
                 { Suspects.Infoluenci, new Trait(Clothes.Casual, HairColor.Colorful, ClotheColor.Green, Shoes.Haferl, Hairstyle.Open, EyeColor.Green, Headpiece.Cap, Rose.Nothing, Lebkuchenherz.Nothing, Glasses.Normal)},

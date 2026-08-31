@@ -1061,6 +1061,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 263808709795710184, guid: c6aee74ca7af9f8479ecd38c3c0a9615, type: 3}
+      propertyPath: m_text
+      value: "Try Again - 4\u20AC"
+      objectReference: {fileID: 0}
     - target: {fileID: 2145729226664445801, guid: c6aee74ca7af9f8479ecd38c3c0a9615, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1140,6 +1144,10 @@ PrefabInstance:
     - target: {fileID: 2145729226664445801, guid: c6aee74ca7af9f8479ecd38c3c0a9615, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090397539219703480, guid: c6aee74ca7af9f8479ecd38c3c0a9615, type: 3}
+      propertyPath: m_text
+      value: "Play Again - 4\u20AC"
       objectReference: {fileID: 0}
     - target: {fileID: 7323814540379862971, guid: c6aee74ca7af9f8479ecd38c3c0a9615, type: 3}
       propertyPath: m_Name

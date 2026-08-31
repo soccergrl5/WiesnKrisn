@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace WiesnKrisn.TestAutoScooter
 {
@@ -23,7 +24,14 @@ namespace WiesnKrisn.TestAutoScooter
             
             AutoScooterSounds.Instance.PlayCrash();
         }
-        
+
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            CancelInvoke();
+            
+            Invoke(nameof(ReadyForNextCollision), 1f);
+        }
+
         private void ReadyForNextCollision() => _onCollision = false;
     }
 }

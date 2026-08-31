@@ -30,7 +30,12 @@ public class SoundScriptGreifautomat : MonoBehaviour
 
     public void PlayGrappleMoveSound()
     {
-        SFXManager.Instance.PlayEffect(grappleMoveSound);
+        SFXManager.Instance.PlayRepeating(grappleMoveSound);
+    }
+
+    public void StopGrappleMoveSound()
+    {
+        SFXManager.Instance.StopRepeating();
     }
 
     public void PlayRightPlushieSound()

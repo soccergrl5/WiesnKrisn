@@ -41,8 +41,6 @@ public class JoystickScript: MonoBehaviour, IDragHandler, IPointerUpHandler, IPo
 		if (RectTransformUtility.ScreenPointToLocalPointInRectangle
 			(_outerCircle.rectTransform, ped.position, ped.pressEventCamera, out tappedpOint))
 		{
-			//We play the movement sound
-			SoundScriptGreifautomat.Instance().PlayGrappleMoveSound();
 			//Getting tappedPoint position in fraction where  maxmimum value would be in denominator of below fraction.
 			tappedpOint.x = (tappedpOint.x / (_bgImageSizeX * _offsetFactorWithBgSize));
 			tappedpOint.y = (tappedpOint.y / (_bgImageSizey * _offsetFactorWithBgSize));
@@ -68,6 +66,9 @@ public class JoystickScript: MonoBehaviour, IDragHandler, IPointerUpHandler, IPo
 	{
 		Vector2 initMousePos =ped.pressEventCamera.ScreenToWorldPoint(Input.mousePosition);
 		OnDrag(ped);
+		
+		//We play the movement sound
+		SoundScriptGreifautomat.Instance().PlayGrappleMoveSound();
 	}
 
 	/// <summary>
@@ -77,6 +78,8 @@ public class JoystickScript: MonoBehaviour, IDragHandler, IPointerUpHandler, IPo
 	public virtual void OnPointerUp(PointerEventData ped)
 	{
 		_innerCircle.transform.position = transform.position;
+		
+		SoundScriptGreifautomat.Instance().StopGrappleMoveSound();
 	}
 
 	/// <summary>
